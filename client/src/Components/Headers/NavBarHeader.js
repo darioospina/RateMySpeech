@@ -1,10 +1,10 @@
 import React from 'react'
 import Logo from '../Images/logo.png'
 
-export const Header1 = () => {
+export const NavBarHeader = () => {
     return (
         <div className='divHeader'>
-        <img src={Logo} className="header1-logo" alt="logo"/>
+        <img src={Logo} className="header2-logo" alt="logo"/>
         </div>    
     )
 }
