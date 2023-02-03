@@ -3,6 +3,8 @@ import Table from 'react-bootstrap/Table'
 
 export const ListOfEvents = () => {
     return (
+      <div>
+      <h1>List Of All Events</h1>
     <Table striped>
       <thead>
         <tr>
@@ -27,5 +29,6 @@ export const ListOfEvents = () => {
         </tr>
       </tbody>
     </Table>  
+    </div>
     )
 }
