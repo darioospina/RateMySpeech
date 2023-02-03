@@ -6,7 +6,7 @@ export const MainMenu = () => {
     return (
         <div>
         <h1>Main Menu</h1>
-            <div style={{border:'solid black', width:'max-content', paddingRight:"20px"}}>
+            <div style={{width:'max-content', paddingRight:"20px"}}>
             <ListGroup as="ol">
                 <ListGroup.Item>
                     <a style={{fontWeight:'bold'}} href='/Dashboard'>
