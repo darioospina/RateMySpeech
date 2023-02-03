@@ -8,7 +8,7 @@ export const UpcomingEvents = () => {
     return (
         <div>
             <h1>Upcoming Events In the Next Two Weeks</h1>
-            <div style={{border:'solid black', width:'max-content'}}>
+            <div style={{border:'solid black', width:'max-content', paddingRight:'20px'}}>
             <ListGroup as="ol">
                 <ListGroup.Item>
                     <a style={{fontWeight:'bold', marginRight:'10px'}} href='/SingleEvent'>Birds</a>
