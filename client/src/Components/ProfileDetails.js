@@ -1,6 +1,5 @@
 import React from 'react'
-
-// import './ProfileDetails.css'
+import '../Styles/ProfileDetails.css'
 
 export const ProfileDetails = () => {
   const profiles = [
@@ -51,11 +50,11 @@ export const ProfileDetails = () => {
          <p>socialMedia: {profile.socialMedia}</p>
           <p>picture:{profile.picture}</p>
           
-          <ul>
+          {/* <ul>
             {profile.socialMedia.map(socialMedia => (
               <li key={socialMedia}>{socialMedia}</li>
             ))}
-          </ul>
+          </ul> */}
         </div>
       ))}
     </div>
