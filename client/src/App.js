@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Components
 import {Header1, MainHeader} from './Components/Headers/MainHeader'
 import {Footer} from './Components/Footer'
+import {ProfileDetails} from './Components/ProfileDetails'
+import {ProfileEdit} from './Components/ProfileEdit'
 
 // Pages
 import {Login} from './Pages/Login'
@@ -19,6 +21,10 @@ function App() {
       <Routes>
         <Route path="/Start" index element={<Login />}/>
         <Route path="/AllEvents" index element={<AllEvents />} />
+
+        
+        <Route path="/profiledetails" element={<ProfileDetails />}/>
+        <Route path="/profileedit" element={<ProfileEdit />}/>
       </Routes>
       <Footer/>
     </Router>
