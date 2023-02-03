@@ -7,23 +7,27 @@ import ListGroup from 'react-bootstrap/ListGroup';
 export const UpcomingEvents = () => {
     return (
         <div>
-            <h1>Upcoming Events In the Next Two Weeks</h1>
+            <h1>Your Upcoming Three Events</h1>
             <div style={{border:'solid black', width:'max-content', paddingRight:'20px'}}>
             <ListGroup as="ol">
-                <ListGroup.Item>
-                    <a style={{fontWeight:'bold', marginRight:'10px'}} href='/SingleEvent'>Birds</a>
+                <ListGroup.Item id='EventDate'>
+                    <a id='EventTitle' style={{fontWeight:'bold', marginRight:'10px'}} href='/SingleEvent'>
+                        Birds</a>
                     April 2, 2023
                 </ListGroup.Item>
-                <ListGroup.Item>
-                    <a style={{fontWeight:'bold', marginRight:'10px'}} href='/SingleEvent'>Trees</a>
+                <ListGroup.Item id='EventDate'>
+                    <a id='EventTitle' style={{fontWeight:'bold', marginRight:'10px'}} href='/SingleEvent'>
+                        Trees</a>
                     March 3, 2023
                 </ListGroup.Item>
-                <ListGroup.Item>
-                    <a style={{fontWeight:'bold', marginRight:'10px'}} href='/SingleEvent'>Event Title</a>
+                <ListGroup.Item id='EventDate'>
+                    <a id='EventTitle' style={{fontWeight:'bold', marginRight:'10px'}} href='/SingleEvent'>
+                        Event Title</a>
                     Date
                 </ListGroup.Item>
                 <ListGroup.Item>
-                    <a style={{fontWeight:'bold', marginRight:'10px'}} href='/AllEvents'> ~ All Events ~</a>
+                    <a style={{fontWeight:'bold', marginRight:'10px'}} href='/AllEvents'>
+                         ~ All Events ~</a>
                 </ListGroup.Item>
             </ListGroup>
             </div>
