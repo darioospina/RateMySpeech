@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import { BrowserRouter as Router,Routes, Route  } from 'react-router-dom';
 import './Styles/App.css';
+import {ProfileDetails} from './Components/ProfileDetails'
 
 // Components
 import {Header1} from './Components/Header1'
@@ -17,7 +18,9 @@ function App() {
       <Routes>
         <Route path="/" index element={<Login />}/>
       </Routes>
+      <ProfileDetails/>
       <Footer/>
+    
     </Router>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react'
-import './ProfileDetails.css'
+
+// import './ProfileDetails.css'
 
 export const ProfileDetails = () => {
   const profiles = [
@@ -47,8 +48,8 @@ export const ProfileDetails = () => {
           <p>Age: {profile.age}</p>
           <p>Location: {profile.location}</p>
           <p>Occupation: {profile.occupation}</p>
-          <p>socialMedia: {profile.socialMedia}</p>
-          <p>picture: {profile.picture}</p>
+         <p>socialMedia: {profile.socialMedia}</p>
+          <p>picture:{profile.picture}</p>
           
           <ul>
             {profile.socialMedia.map(socialMedia => (
@@ -59,4 +60,4 @@ export const ProfileDetails = () => {
       ))}
     </div>
   );
-};
+}
