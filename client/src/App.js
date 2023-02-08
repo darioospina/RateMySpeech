@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import { BrowserRouter as Router,Routes, Route  } from 'react-router-dom';
 import './Styles/App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Components
 import {MainHeader} from './Components/Headers/MainHeader'
@@ -38,7 +38,7 @@ function App() {
         {/* General Pages*/}    
         <Route path='/Dashboard' element={<Dashboard/>}/>
         <Route path='/Login' index element={<Login />}/>
-        <Route path='Report' element={<Report/>}/>
+        <Route path='/Report' element={<Report/>}/>
         
         
       </Routes>

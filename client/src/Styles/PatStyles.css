@@ -1,0 +1,12 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.header2-logo
+{
+    height: 50px;
+    width: 200px;
+}
+
+.me-auto
+{
+    padding-left: 79%;
+}
