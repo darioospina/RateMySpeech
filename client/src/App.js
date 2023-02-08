@@ -4,7 +4,7 @@ import './Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Components
-import {Header1, MainHeader} from './Components/Headers/MainHeader'
+import {MainHeader} from './Components/Headers/MainHeader'
 import {Footer} from './Components/Footer'
 import {ProfileDetails} from './Components/ProfileDetails'
 import {ProfileEdit} from './Components/ProfileEdit'
@@ -12,6 +12,10 @@ import {ProfileEdit} from './Components/ProfileEdit'
 // Pages
 import {Login} from './Pages/Login'
 import {AllEvents} from './Pages/Events/AllEvents'
+import {NewEvent} from './Pages/Events/NewEvent'
+import {SingleEvent} from './Pages/Events/SingleEvent'
+import {Dashboard} from './Pages/Dashboard'
+import {Report} from './Pages/Report'
 
 function App() {
   return (
@@ -19,12 +23,24 @@ function App() {
       <MainHeader/>
       {/* {window.location.pathname === "/" ? null : <Header1/>} */}
       <Routes>
-        <Route path="/Start" index element={<Login />}/>
-        <Route path="/AllEvents" index element={<AllEvents />} />
+        {/* Audience Related Pages*/}
 
-        
+
+        {/* Profile Related Pages*/}
         <Route path="/profiledetails" element={<ProfileDetails />}/>
         <Route path="/profileedit" element={<ProfileEdit />}/>
+
+        {/* Event Related Pages*/}    
+        <Route path='/AllEvents' index element={<AllEvents />} />
+        <Route path='/NewEvent' index element={<NewEvent />} />
+        <Route path='/SingleEvent' index element={<SingleEvent />} />
+
+        {/* General Pages*/}    
+        <Route path='/Dashboard' element={<Dashboard/>}/>
+        <Route path='/Login' index element={<Login />}/>
+        <Route path='Report' element={<Report/>}/>
+        
+        
       </Routes>
       <Footer/>
     </Router>
