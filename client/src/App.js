@@ -37,7 +37,7 @@ function App() {
 
         {/* General Pages*/}    
         <Route path='/Dashboard' element={<Dashboard/>}/>
-        <Route path='/Login' index element={<Login />}/>
+        <Route path='/' index element={<Login />}/>   {/*Website Startup Location */}
         <Route path='/Report' element={<Report/>}/>
         
         
