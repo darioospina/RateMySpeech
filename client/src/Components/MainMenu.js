@@ -9,8 +9,8 @@ export const MainMenu = () => {
             <div style={{width:'max-content', paddingRight:"20px"}}>
             <ListGroup as="ol">
                 <ListGroup.Item>
-                    <a style={{fontWeight:'bold'}} href='/SingleEvent'>
-                        Update My Profile</a>
+                    <a style={{fontWeight:'bold'}} href='/profiledetails'>
+                        My Profile</a>
                 </ListGroup.Item>
                 <ListGroup.Item>
                     <a style={{fontWeight:'bold'}} href='/Report'>
@@ -18,7 +18,7 @@ export const MainMenu = () => {
                     </a>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                    <a style={{fontWeight:'bold'}} href='/AllEvents'>
+                    <a style={{fontWeight:'bold'}} href='/NewEvent'>
                         Create a New Event
                     </a>
                 </ListGroup.Item>
