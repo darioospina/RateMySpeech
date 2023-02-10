@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 export function Questionary
 () {
   return (
@@ -19,10 +19,10 @@ export function Questionary
                   >
                     Your Feedback
                   </h1>
-                  <h6>
-                    Please rate the aspects of the speech as poor,good,very
-                    good, or excellent
-                  </h6>
+                  <h2>
+                    Please rate the aspects of the speech 
+                    
+                  </h2>
                   <div className="form-group my-3">
                     <label htmlFor="">
                       {" "}
@@ -257,26 +257,24 @@ export function Questionary
                       <br />
                     </div>
                   </div>
+                  <button
+                  type="next"
+                  className="btn btn-primary"
+                  style={{backgroundColor:"gold", textDecoration:"none"}}
 
+                >
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
+                    to="/comments"
+                    style={{color:"black"}}
+                  >
+                    Save
+                  </Link>
+                </button>
                  
 
 
-                  <div className="form-group">
-                    <label htmlFor="">
-                      {" "}
-                      <b>  Write your review here </b> 
-                    </label>
-                    <textarea className="form-control" name="q3"></textarea>
-                  </div>
-                  <button
-                    type="button"
-                    className="btn btn-lg btn-warning"
-                    data-bs-toggle="popover"
-                    data-bs-title="Popover title"
-                    data-bs-content="Thanks! Your feedback is valuable "
-                  >
-                    Save
-                  </button>
                 </form>
                 <center>
                   <span className="badge badge-pill disabled"></span>

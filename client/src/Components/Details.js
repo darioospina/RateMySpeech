@@ -6,7 +6,7 @@ export function Details() {
     <div className="container-fluid">
       <div className="col-md-5 m-auto" style={{ fontFamily: "monospace" }}>
         <div className="">
-          <div className="card text-left">
+          <div className="">
             <div className="card-body">
               <form>
                 <h1 className="">Personal Details</h1>
@@ -21,9 +21,9 @@ export function Details() {
                     type="text"
                     className="form-control"
                     name="name"
-                    placeholder="Please enter your name"
+                    placeholder=""
                     autoComplete="off"
-                    style={{ padding: "2%" }}
+                    style={{ padding: "1%" }}
                   />
                 </div>
 
@@ -36,7 +36,7 @@ export function Details() {
                     className="form-control"
                     type="text"
                     name="email"
-                    placeholder="Please enter your E-mail"
+                    placeholder=""
                     autoComplete="off"
                     style={{ padding: "1%" }}
                   />
@@ -45,11 +45,14 @@ export function Details() {
                 <button
                   type="next"
                   className="btn btn-primary"
+                  style={{backgroundColor:"gold", textDecoration:"none"}}
+
                 >
                   <Link
                     className="nav-link active"
                     aria-current="page"
                     to="/questions"
+                    style={{color:"black"}}
                   >
                     Next
                   </Link>

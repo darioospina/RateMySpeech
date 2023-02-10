@@ -11,6 +11,7 @@ import {Login} from './Pages/Login'
 import {Details} from './Components/Details'
 import {QRCodeComp} from './Components/QRCodeComp'
 import {Questionary} from './Components/Questionary'
+import { SurveyComments } from './Components/SurveyComments';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Route path="/details" index element={<Details />}/>
         <Route path="/qrcomp" index element={<QRCodeComp />}/>
         <Route path="/questions" index element={<Questionary />}/>
+        <Route path="/comments" index element={<SurveyComments />}/>
+
       </Routes>
       <Footer/>
     </Router>
