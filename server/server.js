@@ -1,5 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+dotenv.config();
 
 // express app
 const app = express();
@@ -14,4 +16,17 @@ mongoose.connect(process.env.MONGO_URI)
     })
     .catch((error) => {
         console.log(error)
+    })
+
+app.post("/authentication", (req, res) => {
+        const email = req.body.Email
+        const password = req.body.Password
+    
+        Students.find({email: email, password: password})
+            .then((result) => {
+                console.log(result)
+                res.send(result)
+            })
+            .catch((err) => 
+                console.log(err))
     })
