@@ -16,6 +16,10 @@ import { NewEvent } from './Pages/Events/NewEvent'
 import { SingleEvent } from './Pages/Events/SingleEvent'
 import { Dashboard } from './Pages/Dashboard'
 import { Report } from './Pages/Report'
+import {Details} from './Components/Details'
+import {QRCodeComp} from './Components/QRCodeComp'
+import {Questionary} from './Components/Questionary'
+import { SurveyComments } from './Components/SurveyComments';
 
 function App() {
   return (
@@ -23,6 +27,7 @@ function App() {
       <MainHeader />
       {/* {window.location.pathname === "/" ? null : <Header1/>} */}
       <Routes>
+
         {/* Audience Related Pages*/}
 
 
