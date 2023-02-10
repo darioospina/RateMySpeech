@@ -5,6 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 export const MainMenu = () => {
     return (
         <div>
+            {/* Navigation Box on Dashboard.js */}
             <h2>Where Do You Want To Go?</h2>
             <div id='dashboard-table' >
                 <ListGroup horizontal>

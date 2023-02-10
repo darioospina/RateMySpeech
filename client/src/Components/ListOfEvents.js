@@ -19,14 +19,14 @@ export const ListOfEvents = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  //Assigns the designated SingleEvent Data depending on which event is clicked
+  //Assigns the designated Data of a single event depending on which event is clicked
   const [singleEventData, setsingleEventData] = useState(null);
   const handleButtonClick = singleEventData_id => {
     setsingleEventData(EventsData[singleEventData_id]);
     setShow(true);
   }
 
-  //maps over all event data and inserts it into the body of table
+  //Maps over all the event data and inserts it into the body of the table
   const ListOfEvents = EventsData.map((event) =>
     <tr>
       <td>{event.speaker}</td>
@@ -34,12 +34,13 @@ export const ListOfEvents = () => {
       <td>{event.auditoriumSize}</td>
       <td>{event.location}</td>
       <td>
-        {/* These are the clickable icons to open EventDetails popup and to Delete the entry */}
+        {/* These are the clickable icons to open popup with detials of a single event
+             and to Delete the entry */}
         <NavLink className='AllEvents-Actions'>
-          <FaSearchPlus onClick={() => handleButtonClick(event.id)} />
+          <FaSearchPlus id='moreInfoIcon' onClick={() => handleButtonClick(event.id)} />
         </NavLink>
         <NavLink className='AllEvents-Actions'>
-          <AiFillDelete className='delete' />
+          <AiFillDelete id='deleteIcon' />
         </NavLink>
       </td>
     </tr>
@@ -64,7 +65,7 @@ export const ListOfEvents = () => {
         </tbody>
       </Table>
 
-      {/*Creates the popup that contains specific event details */}
+      {/* Creates the popup that contains specific event details */}
       {singleEventData && (
         <Modal onShow={handleShow} show={show} onHide={handleClose}>
           <Modal.Header closeButton>

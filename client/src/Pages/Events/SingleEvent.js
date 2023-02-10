@@ -5,10 +5,10 @@ import { NavBarHeader } from '../../Components/Headers/NavBarHeader'
 export const SingleEvent = () => {
     return (
         <div className='divContainer'>
-        <NavBarHeader/>
-        
-        <EventDetails />
+            <NavBarHeader />
 
-        </div>    
+            <EventDetails />
+
+        </div>
     )
 }

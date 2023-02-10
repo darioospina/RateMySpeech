@@ -14,10 +14,12 @@
     float: left;
 }
 
-.delete {
+/* ListOfEvents.js */
+#deleteIcon {
     color: red;
 }
 
+/* UpcomingEvents.js */
 #EventTitle {
     font-weight: bold;
     margin-right: '10px';
@@ -44,6 +46,7 @@
     cursor: pointer;
 }
 
+/* MainMenu.js */
 .dashboardLink:link {
     color: blue;
     text-decoration: none;
@@ -70,34 +73,30 @@
     font-weight: bold;
 }
 
-#dashboard-body
-{
-    width:100%;
-    min-width:1000px;
-    height:auto;
+#dashboard-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
 }
 
-#dashboard-title
-{
+/* Dashboard.js */
+#dashboard-body {
+    width: 100%;
+    min-width: 1000px;
+    height: auto;
+}
+
+#dashboard-title {
     text-align: center;
 }
 
-#dashboard-container
-{
+#dashboard-container {
     padding: 20px;
 }
 
-#dashboard-widget
-{
+#dashboard-widget {
     width: 50%;
     float: left;
     text-align: center;
-}
-
-#dashboard-table
-{
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 150px;
 }

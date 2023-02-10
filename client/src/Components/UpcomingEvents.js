@@ -19,7 +19,7 @@ export const UpcomingEvents = () => {
         setShow(true);
     }
 
-
+    //Maps over the event data and displays the first three
     const NextThreeEvents = EventsData.slice(0, 3).map((event) =>
         <div>
             <ListGroup.Item>

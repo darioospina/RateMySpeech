@@ -5,9 +5,9 @@ import { ListOfEvents } from '../../Components/ListOfEvents'
 export const AllEvents = () => {
     return (
         <div className='divContainer'>
-        <NavBarHeader />
-        
-        <ListOfEvents />
-        </div>    
+            <NavBarHeader />
+
+            <ListOfEvents />
+        </div>
     )
 }
