@@ -3,3 +3,11 @@ ListOfEvents.js
 
 UpcomingEvents.js
 - events need to be sorted for the next three events by date
+
+Feb.10 - Check in
+    - Formated Dashboard.js page
+    - Created dummy data in seperate file and connected ListOfEvents.js and Dashboard.js 
+        page components to pull dynamically from dummy data
+    - Created EventDetials.js as a pop up within ListOfEvents.js and Dashboard.js page components
+    - Styled Everything as I worked
+    - Created NavBarHeader.js
