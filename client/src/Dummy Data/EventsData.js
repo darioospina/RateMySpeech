@@ -5,7 +5,7 @@ const EventsData = [
         eventName: "Birds",
         description: 
         "We'll be talking aboit birds! WOW!!!!",
-        audienceSize: "250",
+        auditoriumSize: "250",
         Location: "Calgary, AB"
     },
     {
@@ -14,7 +14,7 @@ const EventsData = [
         eventName: "Trees",
         description: 
         "We'll be talking aboit Trees! WOW!!!!",
-        audienceSize: "500",
+        auditoriumSize: "500",
         Location: "Austin, TX"
     },
     {
@@ -23,7 +23,7 @@ const EventsData = [
         eventName: "Plants",
         description: 
         "We'll be talking aboit plants! WOW!!!!",
-        audienceSize: "50120",
+        auditoriumSize: "50120",
         Location: "Texas, TX"
     },
     {
@@ -32,7 +32,7 @@ const EventsData = [
         eventName: "Space",
         description: 
         "We'll be talking aboit space! WOW!!!!",
-        audienceSize: "10",
+        auditoriumSize: "10",
         Location: "RiverDale, AR"
     }
 ]
