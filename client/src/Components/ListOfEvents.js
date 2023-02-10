@@ -14,13 +14,13 @@ import { FaSearchPlus } from 'react-icons/fa'
 import { AiFillDelete } from 'react-icons/ai'
 
 export const ListOfEvents = () => {
-  const [singleEventData, setsingleEventData] = useState(null);
+  //Handles the visibility of EventDetails Popup
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   //Assigns the designated SingleEvent Data depending on which event is clicked
+  const [singleEventData, setsingleEventData] = useState(null);
   const handleButtonClick = singleEventData_id => {
     setsingleEventData(EventsData[singleEventData_id]);
     setShow(true);
@@ -31,9 +31,10 @@ export const ListOfEvents = () => {
     <tr>
       <td>{event.speaker}</td>
       <td>{event.eventName}</td>
-      <td>{event.audienceSize}</td>
+      <td>{event.auditoriumSize}</td>
       <td>{event.Location}</td>
       <td>
+        {/* These are the clickable icons to open EventDetails popup and to Delete the entry */}
         <NavLink className='AllEvents-Actions'>
           <FaSearchPlus onClick={() => handleButtonClick(event.id)} />
         </NavLink>
@@ -52,7 +53,7 @@ export const ListOfEvents = () => {
           <tr>
             <th>Speaker</th>
             <th>Event Name</th>
-            <th>Expected Audience Size</th>
+            <th>Auditorium Size</th>
             <th>Location</th>
             <th>Actions</th>
           </tr>
@@ -73,8 +74,8 @@ export const ListOfEvents = () => {
             <p>{singleEventData.speaker}</p>
             <h2>Description</h2>
             <p>{singleEventData.description}</p>
-            <h2>Expected Attendance</h2>
-            <p>{singleEventData.audienceSize}</p>
+            <h2>Auditorium Size</h2>
+            <p>{singleEventData.auditoriumSize}</p>
             <h2>Location</h2>
             <p>{singleEventData.Location}</p>
           </Modal.Body>
