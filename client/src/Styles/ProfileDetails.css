@@ -16,8 +16,10 @@
   justify-content: center;
   align-items: center;
   height: 300px;
+  width: 300px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.2);
+  max-height: 300px;
 }
 
 .profile-picture {
@@ -32,6 +34,9 @@
   border-radius: 10px;
   box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.2);
   text-align: center;
+  height: 300px;
+  width: 300px;
+  max-height: 300px;
 }
 
 .about-me-section {
@@ -39,9 +44,11 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.2);
-  text-align: centre;
+  text-align: right;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  max-height: 200px;
+  height: 300px;
+  width: 300px;
+  max-height: 300px;
 }

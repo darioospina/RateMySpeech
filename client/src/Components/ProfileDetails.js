@@ -1,8 +1,7 @@
 import React from 'react'
 import '../Styles/ProfileDetails.css'
 import { Link } from 'react-router-dom'
-// import dummy1 from '..C:/Users/15874/Desktop/RateMySpeech/client/src/Images/dummy1.jpeg'
-
+//import dummy1 from './src/images/dummy1.jpeg'
 
 export const ProfileDetails = () => {
   const profile = {
