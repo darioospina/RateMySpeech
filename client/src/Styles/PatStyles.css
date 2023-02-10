@@ -33,8 +33,10 @@
 #allEventsLink {
     font-weight: bold;
     margin-right: '10px';
+    line-height: 60px;
 
     color: blue;
+    text-decoration: none;
 }
 
 #allEventsLink:hover {
@@ -66,5 +68,36 @@
     color: blue;
     text-decoration: none;
     font-weight: bold;
+}
 
+#dashboard-body
+{
+    width:100%;
+    min-width:1000px;
+    height:auto;
+}
+
+#dashboard-title
+{
+    text-align: center;
+}
+
+#dashboard-container
+{
+    padding: 20px;
+}
+
+#dashboard-widget
+{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+#dashboard-table
+{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
 }

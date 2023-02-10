@@ -5,9 +5,9 @@ import ListGroup from 'react-bootstrap/ListGroup';
 export const MainMenu = () => {
     return (
         <div>
-            <h1>Main Menu</h1>
-            <div style={{ width: 'max-content', paddingRight: "20px" }}>
-                <ListGroup as="ol">
+            <h2>Where Do You Want To Go?</h2>
+            <div id='dashboard-table' >
+                <ListGroup horizontal>
                     <ListGroup.Item>
                         <a className='dashboardLink' href='/profiledetails'>
                             My Profile</a>

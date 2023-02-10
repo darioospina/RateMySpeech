@@ -32,39 +32,38 @@ export const UpcomingEvents = () => {
 
     return (
         <div>
-            <h1>Your Upcoming Three Events</h1>
+            <h2>Your Upcoming Events!</h2>
             {/*Displays list of options and inserts respective data from DB */}
-            <div style={{ width: 'max-content', paddingRight: '20px' }}>
-                <ListGroup as="ol">
+            <div id='dashboard-table' >
+                <ListGroup horizontal>
                     {NextThreeEvents}
                     <ListGroup.Item>
                         <a id='allEventsLink' href="/AllEvents">
                             ~ All Events ~</a>
                     </ListGroup.Item>
                 </ListGroup>
-
-                <div>
-                    {/*Creates the popup that contains specific event details */}
-                    {singleEventData && (
-                        <Modal onShow={handleShow} show={show} onHide={handleClose}>
-                            <Modal.Header closeButton>
-                                <Modal.Title>{singleEventData.eventName}</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                <h2>Event Date</h2>
-                                <p>{singleEventData.date}</p>
-                                <h2>Speaker</h2>
-                                <p>{singleEventData.speaker}</p>
-                                <h2>Description</h2>
-                                <p>{singleEventData.description}</p>
-                                <h2>Auditorium Size</h2>
-                                <p>{singleEventData.auditoriumSize}</p>
-                                <h2>Location</h2>
-                                <p>{singleEventData.location}</p>
-                            </Modal.Body>
-                        </Modal>
-                    )}
-                </div>
+            </div>
+            <div>
+                {/*Creates the popup that contains specific event details */}
+                {singleEventData && (
+                    <Modal onShow={handleShow} show={show} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>{singleEventData.eventName}</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <h2>Event Date</h2>
+                            <p>{singleEventData.date}</p>
+                            <h2>Speaker</h2>
+                            <p>{singleEventData.speaker}</p>
+                            <h2>Description</h2>
+                            <p>{singleEventData.description}</p>
+                            <h2>Auditorium Size</h2>
+                            <p>{singleEventData.auditoriumSize}</p>
+                            <h2>Location</h2>
+                            <p>{singleEventData.location}</p>
+                        </Modal.Body>
+                    </Modal>
+                )}
             </div>
         </div>
 

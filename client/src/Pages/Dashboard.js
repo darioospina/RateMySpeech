@@ -6,12 +6,16 @@ import { UpcomingEvents } from '../Components/UpcomingEvents'
 
 export const Dashboard = () => {
     return (
-        <div>
-        <h1>Welcome!</h1>
-        <MainMenu />
-
-        <UpcomingEvents />
-
-        </div>    
+        <div id='dashboard-body'>
+            <h1 id='dashboard-title'>Welcome!</h1>
+            <div id='dashboard-container'>
+                <div id='dashboard-widget'>
+                    <MainMenu />
+                </div>
+                <div id='dashboard-widget'>
+                    <UpcomingEvents />
+                </div>
+            </div>
+        </div>
     )
 }
