@@ -6,8 +6,8 @@ import { UpcomingEvents } from '../Components/UpcomingEvents'
 
 export const Dashboard = () => {
     return (
-        <div className='divContainer'>
-        <p>Dashboard</p>
+        <div>
+        <h1>Welcome!</h1>
         <MainMenu />
 
         <UpcomingEvents />
