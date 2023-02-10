@@ -6,7 +6,8 @@ const EventsData = [
         description: 
         "We'll be talking aboit birds! WOW!!!!",
         auditoriumSize: "250",
-        Location: "Calgary, AB"
+        location: "Calgary, AB",
+        date: "Feb. 25th, 2023"
     },
     {
         id:"1",
@@ -15,7 +16,8 @@ const EventsData = [
         description: 
         "We'll be talking aboit Trees! WOW!!!!",
         auditoriumSize: "500",
-        Location: "Austin, TX"
+        location: "Austin, TX",
+        date: "Feb 29th, 2023"
     },
     {
         id:"2",
@@ -24,7 +26,8 @@ const EventsData = [
         description: 
         "We'll be talking aboit plants! WOW!!!!",
         auditoriumSize: "50120",
-        Location: "Texas, TX"
+        location: "Texas, TX",
+        date: "Mar. 1st, 2023"
     },
     {
         id:"3",
@@ -33,7 +36,8 @@ const EventsData = [
         description: 
         "We'll be talking aboit space! WOW!!!!",
         auditoriumSize: "10",
-        Location: "RiverDale, AR"
+        location: "RiverDale, AR",
+        date: "Mar. 25th, 2023"
     }
 ]
 
