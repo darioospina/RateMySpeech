@@ -5,29 +5,26 @@ import ListGroup from 'react-bootstrap/ListGroup';
 export const MainMenu = () => {
     return (
         <div>
-        <h1>Main Menu</h1>
-            <div style={{width:'max-content', paddingRight:"20px"}}>
-            <ListGroup as="ol">
-                <ListGroup.Item>
-                    <a style={{fontWeight:'bold'}} href='/Dashboard'>
-                        Dashboard</a>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    <a style={{fontWeight:'bold'}} href='/SingleEvent'>
-                        Update My Profile</a>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    <a style={{fontWeight:'bold'}} href='/Report'>
-                        My Scores
-                    </a>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    <a style={{fontWeight:'bold'}} href='/AllEvents'>
-                        Create a New Event
-                    </a>
-                </ListGroup.Item>
-            </ListGroup>
+            {/* Navigation Box on Dashboard.js */}
+            <h2>Where Do You Want To Go?</h2>
+            <div id='dashboard-table' >
+                <ListGroup horizontal>
+                    <ListGroup.Item>
+                        <a className='dashboardLink' href='/profiledetails'>
+                            My Profile</a>
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                        <a className='dashboardLink' href='/Report'>
+                            My Scores
+                        </a>
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                        <a className='dashboardLink' href='/NewEvent'>
+                            Create a New Event
+                        </a>
+                    </ListGroup.Item>
+                </ListGroup>
             </div>
-        </div>    
+        </div>
     )
 }
