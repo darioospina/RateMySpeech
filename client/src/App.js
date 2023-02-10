@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './Styles/App.css';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 // Components
 import { MainHeader } from './Components/Headers/MainHeader'
 import { Footer } from './Components/Footer'
@@ -47,7 +48,8 @@ function App() {
 
 
       </Routes>
-      <Footer />
+      <ProfileDetails/>
+      <Footer/>
     </Router>
   );
 }
