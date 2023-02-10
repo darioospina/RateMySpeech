@@ -3,5 +3,3 @@ ListOfEvents.js
 
 UpcomingEvents.js
 - events need to be sorted for the next three events by date
-
-- make dashboard look nice
