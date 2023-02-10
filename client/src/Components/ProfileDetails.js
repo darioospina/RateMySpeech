@@ -19,7 +19,7 @@ export const ProfileDetails = () => {
     <div className="profile-card">
       <div className="profile-picture-container">
         <img src={profile.picture} alt={profile.name} className="profile- picture" />
-        <Link to="/profileedit">
+        <Link to="/profileEdit">
     <button className="edit-button">Edit</button>
   </Link>
 </div>
