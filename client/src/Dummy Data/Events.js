@@ -14,11 +14,11 @@ const EventsData = [
         Location: "Austin, TX"
     },
     {
-        id:"1",
-        speaker: "John Johnson",
-        eventName: "Trees",
-        audienceSize: "500",
-        Location: "Austin, TX"
+        id:"2",
+        speaker: "Michal Smith",
+        eventName: "Plants",
+        audienceSize: "50120",
+        Location: "Texas, TX"
     }
 ]
 
