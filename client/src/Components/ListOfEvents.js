@@ -32,7 +32,7 @@ export const ListOfEvents = () => {
       <td>{event.speaker}</td>
       <td>{event.eventName}</td>
       <td>{event.auditoriumSize}</td>
-      <td>{event.Location}</td>
+      <td>{event.location}</td>
       <td>
         {/* These are the clickable icons to open EventDetails popup and to Delete the entry */}
         <NavLink className='AllEvents-Actions'>
@@ -47,6 +47,7 @@ export const ListOfEvents = () => {
 
   return (
     <div>
+      <h1>All Your Events</h1>
       {/*Creates Table header and then inserts Data from DB into Table body */}
       <Table striped>
         <thead>
@@ -70,6 +71,8 @@ export const ListOfEvents = () => {
             <Modal.Title>{singleEventData.eventName}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
+            <h2>Event Date</h2>
+            <p>{singleEventData.date}</p>
             <h2>Speaker</h2>
             <p>{singleEventData.speaker}</p>
             <h2>Description</h2>
@@ -77,7 +80,7 @@ export const ListOfEvents = () => {
             <h2>Auditorium Size</h2>
             <p>{singleEventData.auditoriumSize}</p>
             <h2>Location</h2>
-            <p>{singleEventData.Location}</p>
+            <p>{singleEventData.location}</p>
           </Modal.Body>
         </Modal>
       )}
