@@ -1,28 +1,41 @@
 import React from 'react'
+import { useState } from 'react'
 
 //Import Dummy Data
-import EventsData from '../Dummy Data/Events'
+import EventsData from '../Dummy Data/EventsData'
 
 //Import Table and Navigation properties
 import Table from 'react-bootstrap/Table'
 import NavLink from 'react-bootstrap/esm/NavLink'
+import { Modal } from "react-bootstrap";
 
 // Import Icons
 import { FaSearchPlus } from 'react-icons/fa'
 import { AiFillDelete } from 'react-icons/ai'
 
 export const ListOfEvents = () => {
+  const [singleEventData, setsingleEventData] = useState(null);
+  const [show, setShow] = useState(false);
 
-  //maps over data and inserts it into the body of table
-  const ListOfEvents = EventsData.map((element) =>
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  //Assigns the designated SingleEvent Data depending on which event is clicked
+  const handleButtonClick = singleEventData_id => {
+    setsingleEventData(EventsData[singleEventData_id]);
+    setShow(true);
+  }
+
+  //maps over all event data and inserts it into the body of table
+  const ListOfEvents = EventsData.map((event) =>
     <tr>
-      <td>{element.speaker}</td>
-      <td>{element.eventName}</td>
-      <td>{element.audienceSize}</td>
-      <td>{element.Location}</td>
+      <td>{event.speaker}</td>
+      <td>{event.eventName}</td>
+      <td>{event.audienceSize}</td>
+      <td>{event.Location}</td>
       <td>
         <NavLink className='AllEvents-Actions'>
-          <FaSearchPlus />
+          <FaSearchPlus onClick={() => handleButtonClick(event.id)} />
         </NavLink>
         <NavLink className='AllEvents-Actions'>
           <AiFillDelete className='delete' />
@@ -48,6 +61,25 @@ export const ListOfEvents = () => {
           {ListOfEvents}
         </tbody>
       </Table>
+
+      {/*Creates the popup that contains specific event details */}
+      {singleEventData && (
+        <Modal onShow={handleShow} show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>{singleEventData.eventName}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h2>Speaker</h2>
+            <p>{singleEventData.speaker}</p>
+            <h2>Description</h2>
+            <p>{singleEventData.description}</p>
+            <h2>Expected Attendance</h2>
+            <p>{singleEventData.audienceSize}</p>
+            <h2>Location</h2>
+            <p>{singleEventData.Location}</p>
+          </Modal.Body>
+        </Modal>
+      )}
     </div>
   )
 }
