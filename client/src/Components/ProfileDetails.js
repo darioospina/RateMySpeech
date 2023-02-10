@@ -33,8 +33,10 @@ export const ProfileDetails = () => {
         <p>Social Media: {profile.socialMedia}</p>
       </div>
       <div className="about-me-section">
-        <h3>About Me:</h3>
-        <p>Add your about me section here</p>
+        <h3>About Me: </h3>
+        <p>mollis dui, in so
+         Duis afacilisis e 
+         Aenean gravida nun</p>
       </div>
 
     </div>
