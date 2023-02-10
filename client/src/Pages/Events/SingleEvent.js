@@ -5,8 +5,8 @@ import { NavBarHeader } from '../../Components/Headers/NavBarHeader'
 export const SingleEvent = () => {
     return (
         <div className='divContainer'>
-            <NavBarHeader/>
-        <p>Single Event</p>
+        <NavBarHeader/>
+        
         <EventDetails />
 
         </div>    
