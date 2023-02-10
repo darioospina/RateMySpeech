@@ -10,6 +10,9 @@ Login.js
 - Login functionality
     - WAIT FOR JEFF: Login should pull from users
 
+JEFF
+- Update ListOfEvents.js, UpcomingEvents.js to pull from database
+
 Feb.10 - Check in
     - Formated Dashboard.js page
     - Created dummy data in seperate file and connected ListOfEvents.js and Dashboard.js 
