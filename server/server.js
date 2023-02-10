@@ -11,9 +11,7 @@ import Atendees from './Schemas/Atendees.js'
 import Events from './Schemas/Events.js'
 import Questions from './Schemas/Questions.js'
 import Users from './Schemas/Users.js'
-import dotenv from 'dotenv'
 
-dotenv.config();
 
 // Express app
 const app = express();
