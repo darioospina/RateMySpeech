@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import '../Styles/ProfileEdit.css'
 const initialProfile = {
     name: 'abc',
     age: 30,
