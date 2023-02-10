@@ -2,6 +2,8 @@ import express from 'express'
 import mongoose from 'mongoose'
 import bodyParser from "body-parser"
 import cors from 'cors'
+import dotenv from 'dotenv'
+dotenv.config();
 
 // Import Schemas
 import Answers from './Schemas/Answers.js'
@@ -40,7 +42,6 @@ mongoose.connect(MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
     })
 
 // Create New User
-
 
 
 // User Authentication
