@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-export function LoginComp() {
+function LoginComp() {
   return (
     <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -22,3 +22,5 @@ export function LoginComp() {
     </Form>
   );
 }
+
+export default LoginComp;

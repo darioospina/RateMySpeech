@@ -1,36 +1,72 @@
 import React from 'react'
+import { useState } from 'react';
 
+import EventsData from '../Dummy Data/EventsData';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-{/*NEEDS TO BE FINISHED WITH DB. List of events must be connected with database still */}
+import { Modal } from 'react-bootstrap';
 
 export const UpcomingEvents = () => {
+    //Handles the visibility of EventDetails Popup
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    //Assigns the designated SingleEvent Data depending on which event is clicked
+    const [singleEventData, setsingleEventData] = useState(null);
+    const handleButtonClick = singleEventData_id => {
+        setsingleEventData(EventsData[singleEventData_id]);
+        setShow(true);
+    }
+
+    //Maps over the event data and displays the first three
+    const NextThreeEvents = EventsData.slice(0, 3).map((event) =>
+        <div>
+            <ListGroup.Item>
+                <p id='EventTitle' onClick={() => handleButtonClick(event.id)}>
+                    {event.eventName}</p>
+                {event.date}
+            </ListGroup.Item>
+        </div>
+    );
+
     return (
         <div>
-            <h1>Your Upcoming Three Events</h1>
-            <div style={{width:'max-content', paddingRight:'20px'}}>
-            <ListGroup as="ol">
-                <ListGroup.Item id='EventDate'>
-                    <a id='EventTitle' style={{fontWeight:'bold', marginRight:'10px'}} href='/SingleEvent'>
-                        Birds</a>
-                    April 2, 2023
-                </ListGroup.Item>
-                <ListGroup.Item id='EventDate'>
-                    <a id='EventTitle' style={{fontWeight:'bold', marginRight:'10px'}} href='/SingleEvent'>
-                        Trees</a>
-                    March 3, 2023
-                </ListGroup.Item>
-                <ListGroup.Item id='EventDate'>
-                    <a id='EventTitle' style={{fontWeight:'bold', marginRight:'10px'}} href='/SingleEvent'>
-                        Event Title</a>
-                    Date
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    <a style={{fontWeight:'bold', marginRight:'10px'}} href='/AllEvents'>
-                         ~ All Events ~</a>
-                </ListGroup.Item>
-            </ListGroup>
+            <h2>Your Upcoming Events!</h2>
+            {/*Displays list of options and inserts respective data from DB */}
+            <div id='dashboard-table' >
+                <ListGroup horizontal>
+                    {NextThreeEvents}
+                    <ListGroup.Item>
+                        <a id='allEventsLink' href="/AllEvents">
+                            ~ All Events ~</a>
+                    </ListGroup.Item>
+                </ListGroup>
             </div>
-        </div>    
+            <div>
+                {/*Creates the popup that contains specific event details */}
+                {singleEventData && (
+                    <Modal onShow={handleShow} show={show} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>{singleEventData.eventName}</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <h2>Event Date</h2>
+                            <p>{singleEventData.date}</p>
+                            <h2>Speaker</h2>
+                            <p>{singleEventData.speaker}</p>
+                            <h2>Description</h2>
+                            <p>{singleEventData.description}</p>
+                            <h2>Auditorium Size</h2>
+                            <p>{singleEventData.auditoriumSize}</p>
+                            <h2>Location</h2>
+                            <p>{singleEventData.location}</p>
+                        </Modal.Body>
+                    </Modal>
+                )}
+            </div>
+        </div>
+
+
     )
 }
