@@ -41,3 +41,29 @@
     justify-content: space-around;
 }
 
+.questionChart {
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 50px;
+}
+
+.pieChartStyle {
+    font-size: 5px;
+}
+
+.reportSubtitle {
+    color: #FFC000;
+    text-shadow: -0.5px 0 grey, 0 0.5px grey, 0.5px 0 grey, 0 -0.5px grey;
+}
+
+@media only screen and (max-width: 700px) {
+    .questionChart {
+        width: 100%;
+    }
+    .pieChartStyle {
+        font-size: 6px;
+    }
+  }
+
+
