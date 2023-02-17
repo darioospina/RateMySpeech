@@ -23,13 +23,16 @@ body {
 
 .divHeader {
   padding: 50px;
+  background: linear-gradient(#FFF2CC, #fff);
 }
 
 
 /* FOOTER STYLES */
 .divFooter {
   text-align: center;
-  margin: 50px 0;
+  margin: 50px 0 0 0;
+  padding: 20px 0 20px 0;
+  background: linear-gradient(#fff, #FFF2CC);
 }
 
 /*@media (prefers-reduced-motion: no-preference) {
