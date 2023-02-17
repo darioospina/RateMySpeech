@@ -6,6 +6,7 @@ export const Profile = () => {
         <div className='divContainer'>
             <NavBarHeader/>
         <p>Profile</p>
+        <ProfileDetails/>
         </div>    
     )
 }
