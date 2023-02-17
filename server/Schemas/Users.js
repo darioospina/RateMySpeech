@@ -16,9 +16,11 @@ const userSchema = new Schema({
         required: true
     },
     role: {
-        type: Array,
-        items: { type: "string" },
-        default: []
+        // type: Array,
+        // items: { type: "string" },
+        // default: []
+        type: String,
+        required: true
     },
     phone: {
         type: String,

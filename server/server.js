@@ -6,12 +6,7 @@ import dotenv from 'dotenv'
 dotenv.config();
 
 // Import Schemas
-import Answers from './Schemas/Answers.js'
-import Atendees from './Schemas/Atendees.js'
-import Events from './Schemas/Events.js'
-import Questions from './Schemas/Questions.js'
-import Users from './Schemas/Users.js'
-
+import usersSchema from './models/usersModel'
 
 // Express app
 const app = express();
@@ -43,15 +38,15 @@ mongoose.connect(MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
 
 
 // User Authentication
-app.post("/api/authentication", (req, res) => {
-    const email = req.body.Email
-    const password = req.body.Password
+// app.post("/api/authentication", (req, res) => {
+//     const email = req.body.Email
+//     const password = req.body.Password
 
-    Users.find({email: email, password: password})
-        .then((result) => {
-            console.log(result)
-            res.send(result)
-        })
-        .catch((err) => 
-            console.log(err))
-})
+//     Users.find({email: email, password: password})
+//         .then((result) => {
+//             console.log(result)
+//             res.send(result)
+//         })
+//         .catch((err) => 
+//             console.log(err))
+// })

@@ -7,11 +7,8 @@ Output:                 None
 Date Started:           Feb 9, 2023
 Date Last Updated:      Feb 10, 2023
 */
-
-
-const mongoose = require('mongoose')
-
-const Schema = mongoose.Schema
+import mongoose from 'mongoose'
+const Schema = mongoose.Schema;
 
 const usersSchema = new Schema({
     name: {
@@ -39,15 +36,7 @@ const usersSchema = new Schema({
     avescore: {
       type: number,
       default: 0.00
-    },
-      createdAt: {
-         type: "date",
-          required: true
-      },
-      updatedAt: {
-         type: "date",
-          required: true
-      }
+    }
   })
 
-  module.exports = mongoose.model('Course', usersSchema)
+  export default mongoose.model('Users', usersSchema);
