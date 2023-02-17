@@ -17,26 +17,28 @@ const usersSchema = new Schema({
     },
     email: {
       type: String,
-      pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$",
+      //pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$",
       required: true
     },
     password: {
       type: String,
       required: true
     },
-    roles: {
-      type: array,
-      items: { type: "string" },
-      default: []
-    },
+    // roles: {
+    //   type: String,
+    //   required: true
+    //   // type: array,
+    //   // items: { type: "string" },
+    //   // default: []
+    // },
     phone: {
       type: String,
       required: false
-    },
-    avescore: {
-      type: number,
-      default: 0.00
     }
+    // avescore: {
+    //   type: Number,
+    //   default: 0.00
+    // }
   })
 
   export default mongoose.model('Users', usersSchema);
