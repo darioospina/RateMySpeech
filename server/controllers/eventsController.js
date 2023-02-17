@@ -1,15 +1,108 @@
 const Event = require('../models/eventsModel')
 const mongoose = require('mongoose')
 
-// get all event
+/*
+Module Name:            getEvents
+Module Description:     This module fetch all records in the events collection in mongoDB
+Author:                 Jeff Martin Abayon
+*/
+app.get("/getEvents", (req, res) => {
+    Event.find()
+    .then((result) => {
+        console.log(result)
+        res.send(result)
+    })
+    .catch((err) => 
+        console.log(err))
+})
 
-// get a single event
 
-// create new event
 
-// update a new event
+/*
+Module Name:            getEvent
+Module Description:     This module fetch a particular record using EventID in the events collection in mongoDB
+Author:                 Jeff Martin Abayon
+*/
+app.get("/getEvent/:id", (req, res) => {
+    const id = req.params.id
 
-// delete a event
+    Event.find({id: id})
+    .then((result) => {
+        console.log(result)
+        res.send(result)
+    })
+    .catch((err) => 
+        console.log(err))
+})
+
+
+
+/*
+Module Name:            createEvent
+Module Description:     This module inserts a record into events collection in mongoDB
+Author:                 Jeff Martin Abayon
+*/
+app.post("/createEvent", (req, res) => {
+    const newEvent = new Event({
+        eventname: req.body.eventname,
+        eventdesc: req.body.eventdesc,
+        eventdate: req.body.eventdate,
+        venue: req.body.venue,
+        eventcapacity: req.body.eventcapacity,
+        qrcode: req.body.qrcode,
+        speakerId: req.body.speakerId 
+    });
+    newEvent.save()
+        .then(myevent => {
+            console.log(myevent)
+            res.json(myevent)
+        })
+        .catch(err => console.log(err))
+})
+
+
+
+/*
+Module Name:            updateEvent
+Module Description:     This module updates a record in the events collection in mongoDB
+Author:                 Jeff Martin Abayon
+*/ 
+app.patch("/deleteEvent/:id", (req, res) => {
+    Event.findByIdAndUpdate(req.params._id, {
+        _id: req.body._id 
+    }, {
+        new: true
+    })
+    .then((result) => {
+        console.log(result)
+        res.send(result)
+    })
+    .catch((err) => 
+        console.log(err))
+})
+
+
+
+/*
+Module Name:            deleteEvent
+Module Description:     This module updates a record in the events collection in mongoDB
+Author:                 Jeff Martin Abayon
+*/ 
+app.delete("/updateEvent/:id", (req, res) => {
+    MyEvents.findOneAndRemove({
+       id: req.params.id,
+    })
+    .then((result) => {
+       console.log(result)
+       res.send({message: 'Event not found'})
+    })
+    .catch((err) => {
+       console.log(err)
+       res.send({message: 'Event not found'})
+    })
+})
+
+
 
 module.exports = {
     getEvents,

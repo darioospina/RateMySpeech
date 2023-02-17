@@ -1,11 +1,11 @@
 import React from 'react'
 import { NavBarHeader } from '../Components/Headers/NavBarHeader'
+import { MainReport } from '../Components/MainReport'
 
 export const Report = () => {
+
+
     return (
-        <div className='divContainer'>
-            <NavBarHeader/>
-        <p>Report</p>
-        </div>    
+        <MainReport/>
     )
 }
