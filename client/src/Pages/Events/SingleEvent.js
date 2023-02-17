@@ -1,9 +1,14 @@
 import React from 'react'
+import { EventDetails } from '../../Components/EventDetails'
+import { NavBarHeader } from '../../Components/Headers/NavBarHeader'
 
 export const SingleEvent = () => {
     return (
         <div className='divContainer'>
-        <p>Single Event</p>
-        </div>    
+            <NavBarHeader />
+
+            <EventDetails />
+
+        </div>
     )
 }
