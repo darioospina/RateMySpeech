@@ -31,6 +31,12 @@ function App() {
       {/* {window.location.pathname === "/" ? null : <Header1/>} */}
       <Routes>
 
+      <Route path="/details" element={<Details />} />
+      <Route path="/questions" element={<Questionary />} />
+
+      <Route path="/comments" element={<SurveyComments />} />
+ 
+
         {/* Audience Related Pages*/}
         <Route path='/qrcode' element={<QRCodeComp />} />
 

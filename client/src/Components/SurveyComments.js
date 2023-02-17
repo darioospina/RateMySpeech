@@ -8,7 +8,7 @@ export const SurveyComments = () => {
           {" "}
           <b>  Write your review here </b> 
         </label>
-        <textarea className="form-control" name="q3"></textarea>
+        <textarea className="form-control"  name="q3"></textarea>
       </div>
       <button
         type="button"
@@ -22,3 +22,4 @@ export const SurveyComments = () => {
       </>   
     )
 }
+
