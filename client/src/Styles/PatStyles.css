@@ -1,12 +1,27 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+/* LoginComp.js */
+#loginComp
+{
+    width: 50%;
+    display: inline-block;
+    text-align: left;
+}
+
+#LoginComp-Body
+{
+    text-align: center;
+}
+
+/* NavBarHeader.js */
+.me-auto {
+    padding-left: 79%;
+}
+
+/* ListOfEvents.js */
 .header2-logo {
     height: 50px;
     width: 200px;
-}
-
-.me-auto {
-    padding-left: 79%;
 }
 
 .AllEvents-Actions {
@@ -14,7 +29,6 @@
     float: left;
 }
 
-/* ListOfEvents.js */
 #deleteIcon {
     color: red;
 }
