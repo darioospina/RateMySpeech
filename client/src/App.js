@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Components
 import { MainHeader } from './Components/Headers/MainHeader'
+import { NavBarHeader } from './Components/Headers/NavBarHeader';
 import { Footer } from './Components/Footer'
 import { ProfileDetails } from './Components/ProfileDetails'
 import { ProfileEdit } from './Components/ProfileEdit'
@@ -25,6 +26,7 @@ import { SurveyComments } from './Components/SurveyComments';
 function App() {
   return (
     <Router>
+      <NavBarHeader />
       <MainHeader />
       {/* {window.location.pathname === "/" ? null : <Header1/>} */}
       <Routes>

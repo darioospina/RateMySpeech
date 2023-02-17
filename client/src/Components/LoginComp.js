@@ -35,6 +35,12 @@ function LoginComp() {
     Navigate("/Dashboard");
   }
 
+
+  // Added temporary just for testing
+  const authenticateUser = () => {
+    Navigate("/Dashboard")
+  }
+
   return (
     <Form id='loginComp' onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -49,7 +55,7 @@ function LoginComp() {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" onClick={authenticateUser()}>
         Submit
       </Button>
     </Form>

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import {useLocation} from 'react-router-dom'
 
 //Import StyleSheet and Logo
 import '../../Styles/PatStyles.css'
@@ -15,9 +16,22 @@ import { RiDashboardLine } from 'react-icons/ri'
 import { MdLogout } from 'react-icons/md'
 
 export const NavBarHeader = () => {
+    const [showHeader, setShowHeader] = useState(true);
+    const location = useLocation();
+  
+    useEffect(() => {
+        if (location.pathname !== '/') {
+            setShowHeader(true);
+        } else {
+            setShowHeader(false);
+        }
+    }, [location.pathname]);
+  
+    if (!showHeader) return null;
+
     return (
         <div className='divHeader'>
-            <Navbar bg="light" expand="lg">
+            <Navbar expand="lg">
                 <Container>
                     <Navbar.Brand href="/Dashboard">
                         <img src={Logo} className="header2-logo" alt="logo" />
