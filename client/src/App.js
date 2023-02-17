@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './Styles/App.css';
-//import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 // Components
@@ -30,7 +30,7 @@ function App() {
       <Routes>
 
         {/* Audience Related Pages*/}
-
+        <Route path='/qrcode' element={<QRCodeComp />} />
 
         {/* Profile Related Pages*/}
         <Route path="/profiledetails" element={<ProfileDetails />} />
@@ -48,7 +48,6 @@ function App() {
 
 
       </Routes>
-      <ProfileDetails/>
       <Footer/>
     </Router>
   );
