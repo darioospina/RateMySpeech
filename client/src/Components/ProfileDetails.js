@@ -19,8 +19,6 @@ export const ProfileDetails = () => {
       <div className="profile-picture-container">
         <img src='../Images/dummy1.jpeg' alt={profile.name} className="profile- picture" />
         <Link to="/profileedit">
-        <img src={profile.picture} alt={profile.name} className="profile- picture" />
-        <Link to="/profileEdit">
     <button className="edit-button">Edit</button>
   </Link>
 </div>
