@@ -1,3 +1,7 @@
+/*
+Author:                 Dario Ospina
+Description:            Configuration of the server, connection to the database and list of all the APIs
+*/
 import express from 'express'
 import mongoose from 'mongoose'
 import bodyParser from "body-parser"
@@ -5,13 +9,19 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 dotenv.config();
 
-// Import Schemas
-import Users from './models/usersModel.js'
-
+// Import User Routes
+import usersRoutes from './routes/users.js'
+// import questionsRoutes from './routes/questions.js'
+// import eventsRoutes from './routes/events.js'
+// import commentsRoutes from './routes/comments.js'
+// import attendeesRoutes from './routes/attendees.js'
+// import answersRoutes from './routes/answers.js'
+    
 // Express app
 const app = express();
 
-const PORT = process.env.PORT;
+//const PORT = process.env.PORT;
+const PORT = 4000;
 
 // Initial setup
 app.use(cors({
@@ -34,19 +44,11 @@ mongoose.connect(MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
         console.log(error)
     })
 
-// Create New User
-app.post("/api/newUser", (req, res) => {
-    const newUser = new Users({
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        //roles: req.body.roles,
-        phone: req.body.phone
-    })
-    newUser.save()
-        .then(user => {
-            console.log(user)
-            res.json(user)
-        })
-        .catch(err => console.log(err))
-})
+
+// Call to all the APIs
+app.use('/usersRoutes', usersRoutes);
+// app.use('/questionsRoutes', questionsRoutes);
+// app.use('/eventsRoutes', eventsRoutes);
+// app.use('/commentsRoutes', commentsRoutes);
+// app.use('/attendeesRoutes', attendeesRoutes);
+// app.use('/answersRoutes', answersRoutes);

@@ -1,47 +1,33 @@
+
 /*
-Module Name:            Create routes for users
-Module Description:     This will make the routes for API for users
-Author:                 Jeff Martin Abayon, Student ID: 424191
-Input:                  None
-Output:                 None
-Date Started:           Feb 9, 2023
-Date Last Updated:      Feb 10, 2023
+Description:            Routes for all the APIs related to the Users (admins and speakers)
+Author:                 Dario Ospina
 */
+import express from 'express'
+import Users from '../models/usersModel.js'
+import {createUser, authenticateUser, getUsers, getUserByID, getUserByEmail, deleteUserByID} from '../controllers/usersController.js'
 
-const express = require('express')
+const router = express.Router();
 
-const User = require('../models/usersModel')
+// AUTHENTICATE a User
+router.post('/authentication', authenticateUser)
 
-const {
-    getUsers,
-    getUser,
-    createUser,
-    updateUser,
-    deleteUser
-} = require('../controllers/usersController')
+// GET ALL Users - admin or speakers
+router.get('/getAllUsers', getUsers)
 
-// PENDING - authorization
-// const requireAuth = require('../middleware/requireAuth')
+// GET a single User By ID
+router.get('/getUserByID/:userId', getUserByID)
 
-const router = express.Router()
-
-// PENDING - require auth for all course routes
-// router.use(requireAuth)
-
-// GET all users - admin or speakers
-router.get('/', getUsers)
-
-// GEt a single User
-router.get('/:id', getUser)
+// GET a single User By Email
+router.get('/getUserByEmail/:email', getUserByEmail)
 
 // POST a new User
-router.post('/', createUser)
+router.post('/createUser', createUser)
 
-// UPDATE User
-router.delete('/:id', updateUser)
+// // UPDATE User
+// //router.delete('/:id', updateUser)
 
 // DELETE a User
-router.patch('/:id', deleteUser)
+router.delete('/deleteUserByID/:userId', deleteUserByID)
 
-
-module.exports = router
+export default router;
