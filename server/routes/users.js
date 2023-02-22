@@ -5,7 +5,7 @@ Author:                 Dario Ospina
 */
 import express from 'express'
 import Users from '../models/usersModel.js'
-import {createUser, authenticateUser, getUsers, getUserByID, getUserByEmail, deleteUserByID} from '../controllers/usersController.js'
+import {createUser, authenticateUser, getUsers, getUserByID, getUserByEmail, deleteUserByID, updateOneUser} from '../controllers/usersController.js'
 
 const router = express.Router();
 
@@ -24,8 +24,8 @@ router.get('/getUserByEmail/:email', getUserByEmail)
 // POST a new User
 router.post('/createUser', createUser)
 
-// // UPDATE User
-// //router.delete('/:id', updateUser)
+// UPDATE User
+router.patch('/updateOneUser/:userId', updateOneUser)
 
 // DELETE a User
 router.delete('/deleteUserByID/:userId', deleteUserByID)

@@ -18,9 +18,9 @@ export const getUsers = (req, res) => {
 
 // GET One Single User By ID
 export const getUserByID = (req, res) => {
-    const userId = req.params.userId
+    const UserId = req.params.userId
 
-    Users.find({"_id": mongoose.Types.ObjectId(userId)})
+    Users.find({"_id": mongoose.Types.ObjectId(UserId)})
     .then((result) => {
         console.log(result)
         res.send(result)
@@ -61,10 +61,10 @@ export const createUser = (req, res) => {
 
 // AUTHENTICATE A User When Login In
 export const authenticateUser = (req, res) => {
-    const email = req.body.email
-    const password = req.body.password
+    const Email = req.body.email
+    const Password = req.body.password
 
-    Users.find({email: email, password: password})
+    Users.find({email: Email, password: Password})
     .then((result) => {
         console.log(result)
         res.send(result)
@@ -73,7 +73,31 @@ export const authenticateUser = (req, res) => {
 }
 
 // UPDATE User
-// router.delete('/:id', updateUser)
+export const updateOneUser = (req, res) => {
+    const UserId = req.params.userId
+
+    const Name = req.body.name
+    const Email = req.body.email
+    const Password = req.body.password
+    const Phone = req.body.phone
+
+    Users.updateOne(
+        {"_id": mongoose.Types.ObjectId(UserId)},
+        {
+            $set: {
+                "name": Name,
+                "email": Email,
+                "password": Password,
+                "phone": Phone
+            }
+        }
+    )
+    .then((result) => {
+        console.log(result)
+        res.send(`User with ID ${UserId} successfully updated`)
+    })
+    .catch((err) => console.log(err))
+}
 
 // DELETE a User By ID
 export const deleteUserByID = (req, res) => {
