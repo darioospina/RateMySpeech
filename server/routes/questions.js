@@ -1,11 +1,7 @@
 /*
 Module Name:            Create routes for evaluation questions
 Module Description:     This will make the routes for API for evaluation questions
-Author:                 Jeff Martin Abayon, Student ID: 424191
-Input:                  None
-Output:                 None
-Date Started:           Feb 9, 2023
-Date Last Updated:      Feb 10, 2023
+Author:                 Jeff Martin Abayon
 */
 
 const express = require('express')
@@ -44,4 +40,4 @@ router.delete('/:id', updateQuestion)
 router.patch('/:id', deleteQuestion)
 
 
-module.exports = router
+export default router;

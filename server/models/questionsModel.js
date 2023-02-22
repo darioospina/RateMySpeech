@@ -19,7 +19,7 @@ const questionsSchema = new Schema({
 		required: true
 	},
 	eventId: {
-		type: objectId,
+		type: ObjectId,
 		required: true
 	},
 	createdAt: {

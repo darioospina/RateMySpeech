@@ -2,10 +2,6 @@
 Module Name:            Create a schema for users
 Module Description:     This will make the data model for users
 Author:                 Jeff Martin Abayon, Student ID: 424191
-Input:                  None
-Output:                 None
-Date Started:           Feb 9, 2023
-Date Last Updated:      Feb 10, 2023
 */
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema;
@@ -41,4 +37,4 @@ const usersSchema = new Schema({
     // }
   })
 
-  export default mongoose.model('Users', usersSchema);
+export default mongoose.model('Users', usersSchema);
