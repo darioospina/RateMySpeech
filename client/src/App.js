@@ -18,10 +18,8 @@ import { NewEvent } from './Pages/Events/NewEvent'
 import { SingleEvent } from './Pages/Events/SingleEvent'
 import { Dashboard } from './Pages/Dashboard'
 import { Report } from './Pages/Report'
-import {Details} from './Components/Details'
 import {QRCodeComp} from './Components/QRCodeComp'
 import {Questionary} from './Components/Questionary'
-import { SurveyComments } from './Components/SurveyComments';
 
 function App() {
   return (
@@ -31,10 +29,8 @@ function App() {
       {/* {window.location.pathname === "/" ? null : <Header1/>} */}
       <Routes>
 
-      <Route path="/details" element={<Details />} />
-      <Route path="/questions" element={<Questionary />} />
+      <Route path="/questionary" element={<Questionary />} />
 
-      <Route path="/comments" element={<SurveyComments />} />
  
 
         {/* Audience Related Pages*/}

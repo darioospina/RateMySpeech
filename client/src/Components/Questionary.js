@@ -1,290 +1,114 @@
-import React from "react";
+import {React, useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-export function Questionary
-() {
+import Carousel from 'react-bootstrap/Carousel';
+
+export const Questionary = () => {
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+
+  const disableReverse = (direction) => {
+    if (direction === 'prev' && index === 0) {
+      return true; // Disable reverse from first slide
+    } else if (direction === 'next' && index === 2) {
+      return true; // Disable next arrow on last slide
+    } else {
+      return false;
+    }
+  };
+
   return (
-    <>
-      <div className="container-fluid">
-        <div className="col-md-5 m-auto">
-          <div className="mt-3" >
-            <div className="card text-left">
-              <div
-                className="card-body"
-                
-              >
-                <form>
-                  <h1
-                    className=""
-                  
-                  >
-                    Your Feedback
-                  </h1>
-                  <h2>
-                    Please rate the aspects of the speech 
-                    
-                  </h2>
-                  <div className="form-group my-3">
-                    <label htmlFor="">
-                      {" "}
-                      <b>1.Length of speech</b> 
-                    </label>
-                    <div className="mx-2">
-                      {" "}
-                      <input
-                        type="radio"
-                        id="length"
-                        name="q1"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="Lenght">Poor</label>
-                    </div>
-                    <div className="mx-2">
-                      {" "}
-                      <input
-                        type="radio"
-                        id="good"
-                        name="q1"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="good">Good</label>
-                    </div>
-                    <div className="mx-2">
-                      {" "}
-                      <input
-                        type="radio"
-                        id="vg"
-                        name="q1"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="vg">Very Good</label>
-                    </div>
-                    <div className="mx-2">
-                      <input
-                        type="radio"
-                        id="excellent"
-                        name="q1"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="excellent">Excellent</label>
-                      <br />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="">
-                      {" "}
-                      <b>Content of the Speech</b>
-                    </label>
-                    <br />
-                    <div className="mx-2">
-                      {" "}
-                      <input
-                        type="radio"
-                        id="length"
-                        name="q2"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="Lenght">Poor</label>
-                    </div>
-                    <div className="mx-2">
-                      {" "}
-                      <input
-                        type="radio"
-                        id="good"
-                        name="q2"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="good">Good</label>
-                    </div>
-                    <div className="mx-2">
-                      {" "}
-                      <input
-                        type="radio"
-                        id="vg"
-                        name="q2"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="vg">Very Good</label>
-                    </div>
-                    <div className="mx-2">
-                      <input
-                        type="radio"
-                        id="excellent"
-                        name="q2"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="excellent">Excellent</label>
-                      <br />
-                    </div>
-                  </div>
-                  <div className="form-group my-3">
-                    <label htmlFor="">
-                      {" "}
-                      <b>Vocabulary of Speech ?</b> 
-                    </label>
-                    <br />
-                    <div className="mx-2">
-                      {" "}
-                      <input
-                        type="radio"
-                        id="length"
-                        name="q2"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="Lenght">Poor</label>
-                    </div>
-                    <div className="mx-2">
-                      {" "}
-                      <input
-                        type="radio"
-                        id="good"
-                        name="q1"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="good">Good</label>
-                    </div>
-                    <div className="mx-2">
-                      {" "}
-                      <input
-                        type="radio"
-                        id="vg"
-                        name="q1"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="vg">Very Good</label>
-                    </div>
-                    <div className="mx-2">
-                      <input
-                        type="radio"
-                        id="excellent"
-                        name="q1"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="excellent">Excellent</label>
-                      <br />
-                    </div>
-                  </div>
-                  <div className="form-group my-3">
-                    <label htmlFor="">
-                      {" "}
-                      <b>Pace of the speaker</b>
-                    </label>
-                    <br />
-                    <div className="mx-2">
-                      {" "}
-                      <input
-                        type="radio"
-                        id="length"
-                        name="q2"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="Lenght">Poor</label>
-                    </div>
-                    <div className="mx-2">
-                      {" "}
-                      <input
-                        type="radio"
-                        id="good"
-                        name="q2"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="good">Good</label>
-                    </div>
-                    <div className="mx-2">
-                      {" "}
-                      <input
-                        type="radio"
-                        id="vg"
-                        name="q2"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="vg">Very Good</label>
-                    </div>
-                    <div className="mx-2">
-                      <input
-                        type="radio"
-                        id="excellent"
-                        name="q2"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="excellent">Excellent</label>
-                      <br />
-                    </div>
-                  </div>
-                  <div className="form-group my-3">
-                    <label htmlFor="">
-                      {" "}
-                      <b>5.</b> Overall Speech
-                    </label>
-                    <br />
-                    <div className="mx-2">
-                      {" "}
-                      <input
-                        type="radio"
-                        id="length"
-                        name="q2"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="Lenght">Poor</label>
-                    </div>
-                    <div className="mx-2">
-                      {" "}
-                      <input
-                        type="radio"
-                        id="good"
-                        name="q1"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="good">Good</label>
-                    </div>
-                    <div className="mx-2">
-                      {" "}
-                      <input
-                        type="radio"
-                        id="vg"
-                        name="q1"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="vg">Very Good</label>
-                    </div>
-                    <div className="mx-2">
-                      <input
-                        type="radio"
-                        id="excellent"
-                        name="q1"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="excellent">Excellent</label>
-                      <br />
-                    </div>
-                  </div>
-                  <button
-                  type="next"
-                  className="btn btn-primary"
-                  style={{backgroundColor:"gold", textDecoration:"none"}}
-
-                >
-                  <Link
-                    className="nav-link active"
-                    aria-current="page"
-                    to="/comments"
-                    style={{color:"black"}}
-                  >
-                    Save
-                  </Link>
-                </button>
-                 
-
-
-                </form>
-                <center>
-                  <span className="badge badge-pill disabled"></span>
-                  <span className="badge badge-pill badge-primary"></span>
-                </center>
-              </div>
-            </div>
-          </div>
+    <Carousel
+      variant="dark"
+      style={{ margin: 'auto 50px', height: '100%' }}
+      activeIndex={index}
+      onSelect={handleSelect}
+      interval={null} // Disable automatic scrolling
+      nextIcon={
+        !disableReverse('next') ? (
+          <span aria-hidden="true" className="carousel-control-next-icon" />
+        ) : null
+      }
+      prevIcon={
+        !disableReverse('prev') ? (
+          <span aria-hidden="true" className="carousel-control-prev-icon" />
+        ) : null
+      }
+    >
+      <Carousel.Item>
+        <div
+          style={{
+            height: '100vh', // Set height to size of screen
+            background: 'url(./footer.js/800x400?text=First slide&bg=f5f5f5) no-repeat center center',
+            backgroundSize: 'cover',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            position: 'relative'
+          }}
+        >
+          <Carousel.Caption
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)'
+            }}
+          >
+            <h3>Content to be displayed in the middle</h3>
+          </Carousel.Caption>
         </div>
-      </div>
-    </>
-  );
+      </Carousel.Item>
+      <Carousel.Item>
+        <div
+          style={{
+            height: '100vh', // Set height to size of screen
+            background: 'url(./footer.js/800x400?text=Second slide&bg=eee) no-repeat center center',
+            backgroundSize: 'cover',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            position: 'relative'
+          }}
+        >
+          <Carousel.Caption
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)'
+            }}
+          >
+            <h3>Content to be displayed in the middle</h3>
+          </Carousel.Caption>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <div
+          style={{
+            height: '100vh', // Set height to size of screen
+            background: 'url(./footer.js/800x400?text=Third slide&bg=e5e5e5) no-repeat center center',
+            backgroundSize: 'cover',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            position: 'relative'
+          }}
+        >
+          <Carousel.Caption
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)'
+            }}
+          >
+            <h3>Content to be displayed in the middle</h3>
+          </Carousel.Caption>
+        </div>
+      </Carousel.Item>
+    </Carousel>
+  )
 }
