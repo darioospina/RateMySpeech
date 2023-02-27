@@ -1,114 +1,96 @@
 import {React, useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-import Carousel from 'react-bootstrap/Carousel';
+import {Carousel, Button, InputGroup} from 'react-bootstrap';
+import {BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill} from 'react-icons/bs'; 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../Styles/Questionary.css";
+import Form from 'react-bootstrap/Form';
+
+const questions = [
+  {
+    question: "On a scale of 1 to 5 with 5 as the highest and 1 as the lowest, how do you rate the Speaker?",
+    options: [1,2,3,4,5],
+  },
+  {
+    question: "On a scale of 1 to 5 with 5 as the highest and 1 as the lowest, how do you rate the Venue?",
+    options: [1,2,3,4,5],
+  },
+  {
+    question: "On a scale of 1 to 5 with 5 as the highest and 1 as the lowest, how do you rate the Speaker?",
+    options: [1,2,3,4,5],
+  },
+  {
+    question: "On a scale of 1 to 5 with 5 as the highest and 1 as the lowest, how do you rate the Duration?",
+    options: [1,2,3,4,5],
+  },
+  {
+    question: "On a scale of 1 to 5 with 5 as the highest and 1 as the lowest, how do you rate the Time of the Event?",
+    options: [1,2,3,4,5],
+  },
+];
 
 export const Questionary = () => {
   const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
+  
+  const handleSelect = (selectedIndex) => {
+      setIndex(selectedIndex);
   };
 
-  const disableReverse = (direction) => {
-    if (direction === 'prev' && index === 0) {
-      return true; // Disable reverse from first slide
-    } else if (direction === 'next' && index === 2) {
-      return true; // Disable next arrow on last slide
-    } else {
-      return false;
-    }
-  };
 
   return (
-    <Carousel
-      variant="dark"
-      style={{ margin: 'auto 50px', height: '100%' }}
-      activeIndex={index}
-      onSelect={handleSelect}
-      interval={null} // Disable automatic scrolling
-      nextIcon={
-        !disableReverse('next') ? (
-          <span aria-hidden="true" className="carousel-control-next-icon" />
-        ) : null
-      }
-      prevIcon={
-        !disableReverse('prev') ? (
-          <span aria-hidden="true" className="carousel-control-prev-icon" />
-        ) : null
-      }
-    >
-      <Carousel.Item>
-        <div
-          style={{
-            height: '100vh', // Set height to size of screen
-            background: 'url(./footer.js/800x400?text=First slide&bg=f5f5f5) no-repeat center center',
-            backgroundSize: 'cover',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            position: 'relative'
-          }}
-        >
-          <Carousel.Caption
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)'
-            }}
-          >
-            <h3>Content to be displayed in the middle</h3>
-          </Carousel.Caption>
-        </div>
-      </Carousel.Item>
-      <Carousel.Item>
-        <div
-          style={{
-            height: '100vh', // Set height to size of screen
-            background: 'url(./footer.js/800x400?text=Second slide&bg=eee) no-repeat center center',
-            backgroundSize: 'cover',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            position: 'relative'
-          }}
-        >
-          <Carousel.Caption
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)'
-            }}
-          >
-            <h3>Content to be displayed in the middle</h3>
-          </Carousel.Caption>
-        </div>
-      </Carousel.Item>
-      <Carousel.Item>
-        <div
-          style={{
-            height: '100vh', // Set height to size of screen
-            background: 'url(./footer.js/800x400?text=Third slide&bg=e5e5e5) no-repeat center center',
-            backgroundSize: 'cover',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            position: 'relative'
-          }}
-        >
-          <Carousel.Caption
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)'
-            }}
-          >
-            <h3>Content to be displayed in the middle</h3>
-          </Carousel.Caption>
-        </div>
-      </Carousel.Item>
-    </Carousel>
-  )
+    <div className="questionary">
+      <Form id='loginComp' style={{width: "100%", Height: "100%"}}> {/* onSubmit={handleSubmit} */}
+      <Carousel activeIndex={index} onSelect={handleSelect} interval={null} prevIcon={<BsFillArrowLeftCircleFill color="#FFC000" size={"50px"}/>} nextIcon={<BsFillArrowRightCircleFill color="#FFC000" size={"50px"}/>}>  
+
+          <Carousel.Item>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="email" placeholder="Enter email"  /> {/*onChange={}*/}
+            </Form.Group>
+            <Form.Label>Email</Form.Label>
+            <InputGroup className="mb-3">
+              <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+              <Form.Control
+                placeholder="Username"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </InputGroup>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email</Form.Label>
+              <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+              <Form.Control type="email" placeholder="Enter email"  /> {/*onChange={}*/}
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Phone</Form.Label>
+              <Form.Control type="password" placeholder="Password"/>
+            </Form.Group>
+          </Carousel.Item>
+          {questions.map(({ question, options }, i) => (
+            <Carousel.Item key={i} className="carousel-item">
+              <h2>{question}</h2>
+              <div className="options">
+                {options.map((option, j) => (
+                  <label key={j}>
+                    <input type="radio" name={`question-${i}`} value={option} />
+                    {option}
+                  </label>
+                ))}
+              </div>
+          </Carousel.Item>
+          ))}
+          <Carousel.Item>
+              <Form.Label>Comments</Form.Label>
+              <InputGroup>
+                <Form.Control as="textarea" aria-label="With textarea" />
+              </InputGroup>
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+          </Carousel.Item>
+        </Carousel>
+      </Form>
+
+    </div>
+  );
 }
