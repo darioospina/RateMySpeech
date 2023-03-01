@@ -12,8 +12,13 @@ import Form from 'react-bootstrap/Form';
 // Import Axios
 import Axios from 'axios'
 
+// Using Redux
+import { useDispatch } from 'react-redux';
+import { login } from '../Actions/sessionActions.js';
+
 function LoginComp() {
   const Navigate = useNavigate();
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -21,19 +26,15 @@ function LoginComp() {
   // Added temporary just for testing
   const authenticateUser = (e) => {
     e.preventDefault();
-    Axios.post(`${process.env.REACT_APP_API_URL}/usersRoutes/authentication`, {
-      email: email,
-      password: password,
-    }).then((res) => {
-      if(res.data.length != 0) {
-        console.log("User Authenticated")
-        Navigate("/Dashboard")
-      } else {
-        alert("User does not exist")
+    dispatch(login({ email, password }))
+    .then(action => {
+      if(action && action.type == 'NAVIGATE_TO_DASHBOARD') {
+        Navigate('./Dashboard')
+      } 
+      else if(action && action.type == 'USER_NOT_FOUND') {
+        alert("User not found. Please try again.")
       }
-    }).catch((err) => {
-      console.log(err)
-    })
+    });
   }
 
   return (

@@ -15,9 +15,18 @@ import { CgProfile } from 'react-icons/cg'
 import { RiDashboardLine } from 'react-icons/ri'
 import { MdLogout } from 'react-icons/md'
 
+// Using Redux
+import { useDispatch } from 'react-redux';
+import { logout } from '../../Actions/sessionActions.js';
+
 export const NavBarHeader = () => {
     const [showHeader, setShowHeader] = useState(true);
     const location = useLocation();
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        dispatch(logout())        
+    }
   
     useEffect(() => {
         if (location.pathname !== '/' && location.pathname !== '/questionary') {  
@@ -40,7 +49,7 @@ export const NavBarHeader = () => {
                         <Nav className="me-auto">
                             <Nav.Link href="/Dashboard">Dashboard <RiDashboardLine /> </Nav.Link>
                             <Nav.Link href="/profiledetails">My Profile <CgProfile /> </Nav.Link>
-                            <Nav.Link href="/"> Log-Out <MdLogout /></Nav.Link>
+                            <Nav.Link href="/" onClick={handleLogout}> Log-Out <MdLogout /></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
