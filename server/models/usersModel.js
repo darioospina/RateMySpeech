@@ -20,21 +20,14 @@ const usersSchema = new Schema({
       type: String,
       required: true
     },
-    // roles: {
-    //   type: String,
-    //   required: true
-    //   // type: array,
-    //   // items: { type: "string" },
-    //   // default: []
-    // },
+    role: {
+      type: String,
+      required: true
+    },
     phone: {
       type: String,
       required: false
     }
-    // avescore: {
-    //   type: Number,
-    //   default: 0.00
-    // }
   })
 
 export default mongoose.model('Users', usersSchema);

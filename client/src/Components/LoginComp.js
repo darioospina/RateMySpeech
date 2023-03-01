@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import { Navigate, useNavigate } from "react-router-dom";
 
-
 //Import Dummy Data
 import UserData from '../Dummy Data/UserData';
 
@@ -10,52 +9,42 @@ import UserData from '../Dummy Data/UserData';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
+// Import Axios
+import Axios from 'axios'
+
 function LoginComp() {
   const Navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    // Check if the user exists in the array
-    const user = UserData.find((user) => user.email == email);
-    if (!user) {
-      alert("User not found");
-      return;
-    }
-
-    // Check if the password is correct
-    if (user.password !== password) {
-      alert("Incorrect password");
-      return;
-    }
-
-    // Login successful
-    Navigate("/Dashboard");
-  }
-
 
   // Added temporary just for testing
-  const authenticateUser = () => {
-    Navigate("/Dashboard")
+  const authenticateUser = (e) => {
+    e.preventDefault();
+    Axios.post(`${process.env.REACT_APP_API_URL}/usersRoutes/authentication`, {
+      email: email,
+      password: password,
+    }).then((res) => {
+      console.log(res)
+      console.log("User Authenticated")
+      //Navigate("/Dashboard")
+    }).catch((err) => {
+      console.log(err)
+    })
   }
 
   return (
-    <Form id='loginComp' onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form id='loginComp'>
+      <Form.Group className="mb-3" controlId="formBasicEmail" onSubmit={authenticateUser}>
         <Form.Label>Email Address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" onChange={(event) => setEmail(event.target.value)} />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
+        <Form.Control type="text" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
+        <Form.Control type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
       </Form.Group>
-      <Button variant="primary" type="submit" onClick={() => authenticateUser()}>
+      <Button variant="warning" type="submit">
         Submit
       </Button>
     </Form>

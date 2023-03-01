@@ -1,47 +1,51 @@
 
-.questionary {
-    align-items: center;
-    height: 50vh;
-    margin: auto;
-    padding: auto;
-  }
-   
-  .carousel-item {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100%;
-    margin: auto;
-    padding: auto;
-  }
-/* 
-  .mb-3 {
-    width: 50%;
-    margin: auto;
-  } */
+.carousel {
+  margin: auto;
+  padding: 0 120px;
+}
+
+.carousel-item {
+  padding: 40px 0 0 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-indicators {
+  top: 0; 
+}
+
+.carousel-control-prev, .carousel-control-next {
+  z-index: 1;
+}
 
 
-  /*
-  .options {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .options label {
-    margin: 10px 0;
-  }
-  
-  .prev-button,
-  .next-button {
-    position: absolute;
-    bottom: 50px;
-  }
-  
-  .prev-button {
-    left: 50px;
-  }
-  
-  .next-button {
-    right: 50px;
-  } */
+.carousel-inner {
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  margin: auto
+}
+
+.options {
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.options label {
+  align-items: center;
+}
+
+
+.form-label {
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}

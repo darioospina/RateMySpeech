@@ -20,7 +20,7 @@ export const NavBarHeader = () => {
     const location = useLocation();
   
     useEffect(() => {
-        if (location.pathname !== '/' || location.pathname === '/questionary') {
+        if (location.pathname !== '/' && location.pathname !== '/questionary') {  
             setShowHeader(true);
         } else {
             setShowHeader(false);

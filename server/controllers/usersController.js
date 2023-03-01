@@ -48,7 +48,7 @@ export const createUser = (req, res) => {
         name: req.body.name,
         email: req.body.email,
         password: req.body.password,
-        //roles: req.body.roles,
+        role: req.body.role,
         phone: req.body.phone
     })
     newUser.save()

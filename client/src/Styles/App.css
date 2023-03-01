@@ -21,6 +21,13 @@ body {
   display: block;
 }
 
+.header3-logo {
+  height: 12vmin;
+  pointer-events: none;
+  margin: auto;
+  display: block;
+}
+
 .divHeader {
   padding: 50px;
   background: linear-gradient(#FFF2CC, #fff);

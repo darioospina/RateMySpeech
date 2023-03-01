@@ -40,7 +40,14 @@ export const Questionary = () => {
   return (
     <div className="questionary">
       <Form id='loginComp' style={{width: "100%", Height: "100%"}}> {/* onSubmit={handleSubmit} */}
-      <Carousel activeIndex={index} onSelect={handleSelect} interval={null} prevIcon={<BsFillArrowLeftCircleFill color="#FFC000" size={"50px"}/>} nextIcon={<BsFillArrowRightCircleFill color="#FFC000" size={"50px"}/>}>  
+      <Carousel 
+        activeIndex={index} 
+        onSelect={handleSelect} 
+        interval={null} 
+        prevIcon={<BsFillArrowLeftCircleFill color="#FFC000" size={"50px"}/>} 
+        nextIcon={<BsFillArrowRightCircleFill color="#FFC000" size={"50px"}/>}
+        variant={'dark'}
+      >  
 
           <Carousel.Item>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -51,40 +58,35 @@ export const Questionary = () => {
             <InputGroup className="mb-3">
               <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
               <Form.Control
-                placeholder="Username"
+                placeholder="youremail@emailprovider.com"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
               />
             </InputGroup>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email</Form.Label>
-              <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-              <Form.Control type="email" placeholder="Enter email"  /> {/*onChange={}*/}
-            </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Phone</Form.Label>
-              <Form.Control type="password" placeholder="Password"/>
+              <Form.Control type="phone" placeholder="Password"/>
             </Form.Group>
           </Carousel.Item>
           {questions.map(({ question, options }, i) => (
-            <Carousel.Item key={i} className="carousel-item">
-              <h2>{question}</h2>
+            <Carousel.Item key={i} className="carousel-item questions-item">
+              <div>{question}</div>
               <div className="options">
                 {options.map((option, j) => (
                   <label key={j}>
-                    <input type="radio" name={`question-${i}`} value={option} />
-                    {option}
+                  <input type="radio" name={`question-${i}`} value={option} style={{display:'inline-block'}}/>
+                  {option}
                   </label>
                 ))}
               </div>
-          </Carousel.Item>
+            </Carousel.Item>
           ))}
           <Carousel.Item>
               <Form.Label>Comments</Form.Label>
               <InputGroup>
                 <Form.Control as="textarea" aria-label="With textarea" />
               </InputGroup>
-              <Button variant="primary" type="submit">
+              <Button variant="warning" type="submit">
                 Submit
               </Button>
           </Carousel.Item>

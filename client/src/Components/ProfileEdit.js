@@ -1,62 +1,63 @@
-import React, { useState } from 'react'
-import '../Styles/ProfileEdit.css'
+import React from 'react';
+import { useState } from 'react';
+import { Navigate, useNavigate } from "react-router-dom";
 
-const initialProfile = {
-  name: 'abc',
-  age: 30,
-  location: 'San Francisco',
-  occupation: 'Software Engineer',
-  socialMedia: 'abc@gmail.com',
-};
+// Import button and form from bootstrap
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
+// Import Axios
+import Axios from 'axios'
 
 export const ProfileEdit = () => {
-  const [profile, setProfile] = useState(initialProfile);
 
-  const handleUpdate = () => {
-    setProfile({
-      name: document.getElementById("input-name").value,
-      age: document.getElementById("input-age").value,
-      location: document.getElementById("input-location").value,
-      occupation: document.getElementById("input-occupation").value
-    });
-  };
+  const Navigate = useNavigate();
+
+  const [role, setRole] = useState("speaker")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      Axios.post(`${process.env.REACT_APP_API_URL}/usersRoutes/createUser`, {
+        name: name,
+        email: email,
+        password: password,
+        phone: phone,
+        role: role
+      }).then((res) => {
+        console.log("New Speaker Created")
+        Navigate("../")
+      }).catch((err) => {
+        console.log(err)
+      })
+  }  
 
   return (
-    <div className="profile-edit-container">
-      <p className="section-header">Profile Edit</p>
-      <div className="form-container">
-        <div className="form-group">
-          <label htmlFor="input-name">Name:</label>
-          <input id="input-name" type="text" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="input-age">Age:</label>
-          <input id="input-age" type="text" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="input-location">Location:</label>
-          <input id="input-location" type="text" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="input-occupation">Occupation:</label>
-          <input id="input-occupation" type="text" />
-        </div>
-        <button id="update-button" onClick={handleUpdate}>Update</button>
-      </div>
-      <div className="profile-info-container">
-        <p>
-          Name: {profile.name}
-        </p>
-        <p>
-          Age: {profile.age}
-        </p>
-        <p>
-          Location: {profile.location}
-        </p>
-        <p>
-          Occupation: {profile.occupation}
-        </p>
-      </div>
+    <div style={{margin: 'auto', textAlign:'center'}}>
+    <Form id='loginComp'>
+        <Form.Group className="mb-3" controlId="formBasicName">
+          <Form.Label>Name</Form.Label>
+          <Form.Control type="text" placeholder="Enter your Full Name" onChange={(event) => setName(event.target.value)} />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email Address</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" onChange={(event) => setEmail(event.target.value)} />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPhone">
+          <Form.Label>Phone</Form.Label>
+          <Form.Control type="phone" placeholder="Phone" onChange={(event) => setPhone(event.target.value)} />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
+        </Form.Group>
+        <Button variant="warning" type="submit" onClick={handleSubmit}>
+          Submit
+        </Button>
+    </Form>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Components
 import { MainHeader } from './Components/Headers/MainHeader'
+import { AudienceHeader } from './Components/Headers/AudienceHeader';
 import { NavBarHeader } from './Components/Headers/NavBarHeader';
 import { Footer } from './Components/Footer'
 import { ProfileDetails } from './Components/ProfileDetails'
@@ -24,17 +25,13 @@ import {Questionary} from './Components/Questionary'
 function App() {
   return (
     <Router>
+      <AudienceHeader />
       <NavBarHeader />
       <MainHeader />
-      {/* {window.location.pathname === "/" ? null : <Header1/>} */}
-      <Routes>
-
-      <Route path="/questionary" element={<Questionary />} />
-
- 
-
+      <Routes>      
         {/* Audience Related Pages*/}
         <Route path='/qrcode' element={<QRCodeComp />} />
+        <Route path="/questionary" element={<Questionary />} />
 
         {/* Profile Related Pages*/}
         <Route path="/profiledetails" element={<ProfileDetails />} />
