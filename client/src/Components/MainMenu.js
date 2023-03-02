@@ -2,6 +2,8 @@ import React from 'react'
 
 import ListGroup from 'react-bootstrap/ListGroup';
 
+import { MdLogout } from 'react-icons/md'
+
 export const MainMenu = () => {
     return (
         <div>
@@ -21,6 +23,11 @@ export const MainMenu = () => {
                     <ListGroup.Item>
                         <a className='dashboardLink' href='/NewEvent'>
                             Create a New Event
+                        </a>
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                        <a className='dashboardLink' href='/'>
+                            Log Out <MdLogout/>
                         </a>
                     </ListGroup.Item>
                 </ListGroup>
