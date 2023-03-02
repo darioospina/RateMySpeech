@@ -1,5 +1,7 @@
 const EventsData = [
     {
+        //id is need to work with popups in ListOfEvents.js
+            //and UpcomingEvents.js
         id: "0",
         speaker: "Mark Otto",
         eventname: "Birds",
