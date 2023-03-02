@@ -1,4 +1,4 @@
-import Users from '../models/eventsModel.js'
+import Events from '../models/eventsModel.js'
 import mongoose from 'mongoose'
 
 /*
@@ -43,7 +43,7 @@ Module Description:     This module inserts a record into events collection in m
 Author:                 Dario Ospina
 */
 export const createEvent = (req, res) => {
-    const newEvent = new Event({
+    const newEvent = new Events({
         eventname: req.body.eventname,
         eventdesc: req.body.eventdesc,
         eventdate: req.body.eventdate,
@@ -57,7 +57,9 @@ export const createEvent = (req, res) => {
             console.log(myevent)
             res.json(myevent)
         })
-        .catch(err => console.log(err))
+        .catch((err) => {
+            console.log(err)
+        })
 }
 
 

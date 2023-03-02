@@ -30,7 +30,7 @@ const router = express.Router()
 //router.get('/:id', getEvent)
 
 // POST a new Event
-router.post('/', createEvent)
+router.post('/createEvent', createEvent)
 
 // UPDATE Event
 //router.delete('/:id', updateEvent)
