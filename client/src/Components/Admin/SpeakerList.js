@@ -4,19 +4,19 @@ import UserData from "../../Dummy Data/UserData";
 import Table from 'react-bootstrap/Table'
 
 export const SpeakerList = () => {
-  
+
   const ListOfSpeakers = UserData.map((event) =>
-  <tr>
-    <td>{event.name}</td>
-    <td>{event.role}</td>
-    <td>{event.email}</td>
-    <td>{event.avescore}</td>
-  </tr>
-);
+    <tr>
+      <td>{event.name}</td>
+      <td>{event.role}</td>
+      <td>{event.email}</td>
+      <td>{event.avescore}</td>
+    </tr>
+  );
 
   return (
     <div>
-        <h1>Registered Speakers</h1>
+      <h1>Registered Speakers</h1>
       {/*Creates Table header and then inserts Data from DB into Table body */}
       <Table striped>
         <thead>

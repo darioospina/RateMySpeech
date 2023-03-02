@@ -115,3 +115,10 @@
     float: left;
     text-align: center;
 }
+
+#speakerListTable
+{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
