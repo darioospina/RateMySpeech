@@ -24,8 +24,8 @@ export const UpcomingEvents = () => {
         <div>
             <ListGroup.Item>
                 <p id='EventTitle' onClick={() => handleButtonClick(event.id)}>
-                    {event.eventName}</p>
-                {event.date}
+                    {event.eventname}</p>
+                {event.eventdate}
             </ListGroup.Item>
         </div>
     );
@@ -52,15 +52,15 @@ export const UpcomingEvents = () => {
                         </Modal.Header>
                         <Modal.Body>
                             <h2>Event Date</h2>
-                            <p>{singleEventData.date}</p>
+                            <p>{singleEventData.eventdate}</p>
                             <h2>Speaker</h2>
                             <p>{singleEventData.speaker}</p>
                             <h2>Description</h2>
-                            <p>{singleEventData.description}</p>
+                            <p>{singleEventData.eventdesc}</p>
                             <h2>Auditorium Size</h2>
-                            <p>{singleEventData.auditoriumSize}</p>
+                            <p>{singleEventData.eventcapacity}</p>
                             <h2>Location</h2>
-                            <p>{singleEventData.location}</p>
+                            <p>{singleEventData.venue}</p>
                         </Modal.Body>
                     </Modal>
                 )}
