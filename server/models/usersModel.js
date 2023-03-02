@@ -1,7 +1,7 @@
 /*
 Module Name:            Create a schema for users
 Module Description:     This will make the data model for users
-Author:                 Jeff Martin Abayon, Student ID: 424191
+Author:                 Jeff Martin Abayon / Dario Ospina
 */
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema;

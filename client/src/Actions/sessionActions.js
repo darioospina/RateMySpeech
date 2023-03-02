@@ -13,6 +13,7 @@ export const login = credentials => dispatch => {
         if(res.data.length != 0) {
             const { token, user } = res.data[0];
             localStorage.setItem('id', res.data[0]._id);
+            localStorage.setItem('name', res.data[0].name);
             localStorage.setItem('email', res.data[0].email);
             localStorage.setItem('phone', res.data[0].phone);
             dispatch(setCurrentUser(user));
@@ -29,6 +30,7 @@ export const login = credentials => dispatch => {
 export const logout = () => dispatch => {
   console.log("Checking if the dispatch is working")
   localStorage.removeItem('id');
+  localStorage.removeItem('name');
   localStorage.removeItem('email');
   localStorage.removeItem('phone');
   dispatch(setCurrentUser(null));

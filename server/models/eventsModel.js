@@ -1,17 +1,10 @@
 /*
 Module Name:            Create a schema for events (Speaking engagements)
 Module Description:     This will make the data model for events
-Author:                 Jeff Martin Abayon, Student ID: 424191
-Input:                  None
-Output:                 None
-Date Started:           Feb 9, 2023
-Date Last Updated:      Feb 9, 2023
+Author:                 Jeff Martin Abayon / Dario Ospina
 */
-
-
-const mongoose = require('mongoose')
-
-const Schema = mongoose.Schema
+import mongoose from 'mongoose'
+const Schema = mongoose.Schema;
 
 const eventsSchema = new Schema({
 	eventname: {
@@ -35,22 +28,17 @@ const eventsSchema = new Schema({
 		required: true
 	},
 	qrcode: {
-		type: String,
-		required: true
+		type: String
 	},
 	speakerId: {
-		type: objectId,
+		type: Schema.Types.ObjectId,
+		ref: 'Users',
 		required: true
 	},
 	createdAt: {
-	   type: "date",
-		required: true
-	},
-	updatedAt: {
-	   type: "date",
-		required: true
+	   type: Date,
+	   default: Date.now
 	}
 })
 
-
-module.exports = mongoose.model('Course', eventsSchema)
+export default mongoose.model('Events', eventsSchema)

@@ -7,23 +7,10 @@ Output:                 None
 Date Started:           Feb 9, 2023
 Date Last Updated:      Feb 10, 2023
 */
+import express from 'express'
+import Events from '../models/eventsModel.js'
+import {createEvent} from '../controllers/eventsController.js'
 
-const express = require('express')
-
-const Event = require('../models/eventsModel')
-
-const {
-    getEvents,
-    getPastEvents,
-    getFutureEvents,
-    getEvent,
-    createEvent,
-    updateEvent,
-    deleteEvent
-} = require('../controllers/eventsController')
-
-// PENDING - authorization
-// const requireAuth = require('../middleware/requireAuth')
 
 const router = express.Router()
 
@@ -31,25 +18,24 @@ const router = express.Router()
 // router.use(requireAuth)
 
 // GET all Events 
-router.get('/', getEvents)
+//router.get('/', getEvents)
 
 // GET all Past Events 
-router.get('/', getPastEvents)
+//router.get('/', getPastEvents)
 
 // GET all FutureEvents 
-router.get('/', getFutureEvents)
+//router.get('/', getFutureEvents)
 
 // GEt a single Event
-router.get('/:id', getEvent)
+//router.get('/:id', getEvent)
 
 // POST a new Event
 router.post('/', createEvent)
 
 // UPDATE Event
-router.delete('/:id', updateEvent)
+//router.delete('/:id', updateEvent)
 
 // DELETE a Event
-router.patch('/:id', deleteEvent)
+//router.patch('/:id', deleteEvent)
 
-
-module.exports = router
+export default router;

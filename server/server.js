@@ -12,7 +12,7 @@ dotenv.config();
 // Import User Routes
 import usersRoutes from './routes/users.js'
 // import questionsRoutes from './routes/questions.js'
-// import eventsRoutes from './routes/events.js'
+import eventsRoutes from './routes/events.js'
 // import commentsRoutes from './routes/comments.js'
 // import attendeesRoutes from './routes/attendees.js'
 // import answersRoutes from './routes/answers.js'
@@ -48,7 +48,7 @@ mongoose.connect(MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
 // Call to all the APIs
 app.use('/usersRoutes', usersRoutes);
 // app.use('/questionsRoutes', questionsRoutes);
-// app.use('/eventsRoutes', eventsRoutes);
+app.use('/eventsRoutes', eventsRoutes);
 // app.use('/commentsRoutes', commentsRoutes);
 // app.use('/attendeesRoutes', attendeesRoutes);
 // app.use('/answersRoutes', answersRoutes);
