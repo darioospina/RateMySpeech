@@ -1,7 +1,17 @@
 import React, { useState } from "react";
+import { Navigate } from "react-router";
 
+//Import DummyData for users
 import UserData from "../../Dummy Data/UserData";
+
 import Table from 'react-bootstrap/Table'
+import { Button, Nav } from "react-bootstrap";
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  Navigate("/Login");
+}
 
 export const SpeakerList = () => {
 
@@ -31,6 +41,9 @@ export const SpeakerList = () => {
           {ListOfSpeakers}
         </tbody>
       </Table>
+      <Nav.Link href="/Login"> {/* CHANGE */}
+        <Button>Register New Speakers</Button>
+      </Nav.Link>
     </div>
   );
 };
