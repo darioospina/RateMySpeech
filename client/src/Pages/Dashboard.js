@@ -11,10 +11,10 @@ export const Dashboard = () => {
         <div id='dashboard-body'>
             <h1 id='dashboard-title'>Welcome {speakerName}!</h1>
             <div id='dashboard-container'>
-                <div id='dashboard-widget'>
+                <div class='dashboard-widget'>
                     <MainMenu />
                 </div>
-                <div id='dashboard-widget'>
+                <div class='dashboard-widget'>
                     <UpcomingEvents />
                 </div>
             </div>

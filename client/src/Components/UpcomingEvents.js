@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import '../Styles/App.css';
 
 import EventsData from '../Dummy Data/EventsData';
 import ListGroup from 'react-bootstrap/ListGroup';
@@ -34,7 +35,7 @@ export const UpcomingEvents = () => {
         <div>
             <h2>Your Upcoming Events!</h2>
             {/*Displays list of options and inserts respective data from DB */}
-            <div id='dashboard-table' >
+            <div class='dashboard-table' id="upcomingevents-widget">
                 <ListGroup horizontal>
                     {NextThreeEvents}
                     <ListGroup.Item>

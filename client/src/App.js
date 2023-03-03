@@ -11,6 +11,9 @@ import { NavBarHeader } from './Components/Headers/NavBarHeader';
 import { Footer } from './Components/Footer'
 import { ProfileDetails } from './Components/ProfileDetails'
 import { ProfileEdit } from './Components/ProfileEdit'
+import { EventDetails } from './Components/EventDetails'
+
+import { Details } from './Components/Details'
 
 // Pages
 import { Login } from './Pages/Login'
@@ -19,8 +22,8 @@ import { NewEvent } from './Pages/Events/NewEvent'
 import { SingleEvent } from './Pages/Events/SingleEvent'
 import { Dashboard } from './Pages/Dashboard'
 import { Report } from './Pages/Report'
-import {QRCodeComp} from './Components/QRCodeComp'
-import {Questionary} from './Components/Questionary'
+import { QRCodeComp } from './Components/QRCodeComp'
+import { Questionary } from './Components/Questionary'
 
 function App() {
   return (
@@ -29,6 +32,12 @@ function App() {
       <NavBarHeader />
       <MainHeader />
       <Routes>      
+
+
+
+      <Route path='/details' element={<Details />} />
+
+
         {/* Audience Related Pages*/}
         <Route path='/qrcode' element={<QRCodeComp />} />
         <Route path="/questionary" element={<Questionary />} />
@@ -41,6 +50,7 @@ function App() {
         <Route path='/AllEvents' index element={<AllEvents />} />
         <Route path='/NewEvent' index element={<NewEvent />} />
         <Route path='/SingleEvent' index element={<SingleEvent />} />
+        <Route path='/EventDetails' index element={<EventDetails />} />
 
         {/* General Pages*/}
         <Route path='/Dashboard' element={<Dashboard />} />
