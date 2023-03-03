@@ -1,4 +1,4 @@
-.profile-container {
+ .profile-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,6 +37,7 @@
   height: 300px;
   width: 300px;
   max-height: 300px;
+  font-family: "Berlin Sans FB", "Helvetica Neue", Arial, sans-serif;
 }
 
 .about-me-section {
@@ -51,4 +52,11 @@
   height: 300px;
   width: 300px;
   max-height: 300px;
+  font-family: "Berlin Sans FB", "Helvetica Neue", Arial, sans-serif;
 }
+@media screen and (max-width: 768px) {
+  .profile-edit-container {
+    flex-direction: column;
+  }} 
+
+  

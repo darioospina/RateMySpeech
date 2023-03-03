@@ -1,43 +1,68 @@
-/* #input-name, #input-age, #input-location, #input-occupation {
-    padding: 5px;
-    margin-right: 10px;
-  }
-  
-  #update-button {
-    background-color: green;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  #update-button:hover {
-    cursor: pointer;
-    background-color: lightgreen;
-  }
-  
-  p {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-   */
+.profile-edit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #FFF2CC;
+  margin-bottom: 40px;
+}
 
-   .profile-edit-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.2);
-  }
+.section-header {
+  font-size: 70px;
+  font-weight: 600;
+  color: #fdfdfe;
+  text-shadow: 0px 0px 5px #000000, 0px 0px 10px #000000, 0px 0px 10px #000000,
+    0px 0px 20px #000000;
   
-  .section-header {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  
-  
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: right;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction:row;
+  margin-bottom: 30px;
+  align-items: cemtre;
+}
+
+label {
+  margin-right: 40px;
+ 
+}
+
+input {
+  padding: 10px;
+  margin:10px 0;
+  width:100%;
+  border-radius: 10px;
+  border: 2px solid #FFC000;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+.rounded-input {
+  padding:10px;
+  border-radius:10px;
+}
+
+
+button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
