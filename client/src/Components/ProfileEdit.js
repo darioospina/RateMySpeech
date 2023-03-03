@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../Styles/ProfileEdit.css'
+import dummy1 from '../Images/dummy1.jpeg'
 
 const initialProfile = {
   name: 'abc',
@@ -57,6 +58,6 @@ export const ProfileEdit = () => {
           Occupation: {profile.occupation}
         </p>
       </div>
-    </div>
+      </div>
   );
 };

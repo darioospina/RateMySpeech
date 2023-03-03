@@ -183,6 +183,9 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import '../Styles/ProfileDetails.css';
 import { Link } from 'react-router-dom';
+import dummy1 from '../Images/dummy1.jpeg';
+import dummy2 from '../Images/dummy2.jpeg'
+import dummy3 from '../Images/dummy3.png'
 
 const profiles = [
   {
@@ -191,7 +194,7 @@ const profiles = [
     location: 'San Francisco',
     occupation: 'Software Engineer',
     socialMedia: 'abc@gmail.com',
-    picture: '../Images/dummy1.jpeg'
+    picture: dummy1
   },
   {
     name: 'martha ',
@@ -199,16 +202,19 @@ const profiles = [
     location: 'New York',
     occupation: 'Data Analyst',
     socialMedia: 'def@gmail.com',
-    picture: '../Images/dummy2.jpeg',
+    picture: dummy2
 
 
+    
+  },
+  {
     name: 'john doe',
     age: 25,
     location: 'New York',
     occupation: 'Data science',
     socialMedia: 'def@gmail.com',
-    picture: '../Images/dummy2.jpeg'
-  },
+    picture: dummy3
+  }
   // add more profiles here
 ];
 
@@ -224,14 +230,17 @@ const Profile = ({ profile }) => (
         <p>Location: {profile.location}</p>
         <p>Occupation: {profile.occupation}</p>
         <p>Social Media: {profile.socialMedia}</p>
-      </div>
-      <div className="edit-button-container">
+        <div className="edit-button-container">
         <Link to="/profileedit" target="_blank">
           <Button className="edit-button">Edit</Button>
         </Link>
       </div>
+      </div>
+    
     </div>
+    
   </Col>
+   
 );
 
 export const ProfileDetails = () => {
