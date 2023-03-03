@@ -9,7 +9,7 @@ export const MainMenu = () => {
         <div>
             {/* Navigation Box on Dashboard.js */}
             <h2>Where Do You Want To Go?</h2>
-            <div id='dashboard-table' >
+            <div class='dashboard-table' >
                 <ListGroup horizontal>
                     <ListGroup.Item>
                         <a className='dashboardLink' href='/profiledetails'>

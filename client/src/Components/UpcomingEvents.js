@@ -34,7 +34,7 @@ export const UpcomingEvents = () => {
         <div>
             <h2>Your Upcoming Events!</h2>
             {/*Displays list of options and inserts respective data from DB */}
-            <div id='dashboard-table' >
+            <div class='dashboard-table' id="upcomingevents-widget">
                 <ListGroup horizontal>
                     {NextThreeEvents}
                     <ListGroup.Item>
