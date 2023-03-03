@@ -18,7 +18,7 @@ export const NewEvent = () => {
   const [venue, setVenue] = useState("");
   const [eventcapacity, setEventcapacity] = useState("");
   const [qrcode, setQrcode] = useState("");
-  const [speakerId, setSpeakerId] = useState("");
+  const [speakerId, setSpeakerId] = useState(localStorage.getItem('id'));
   
   const handleSubmit = (e) => {
       e.preventDefault();
@@ -29,10 +29,10 @@ export const NewEvent = () => {
         venue: venue,
         eventcapacity: eventcapacity,
         qrcode: qrcode,
-        speakerId: setSpeakerId(localStorage.getItem('id'))
+        speakerId: speakerId
       }).then((res) => {
         console.log("New Event Created")
-        Navigate("../../Components/QRCodeComp")
+        Navigate("/qrcode")
       }).catch((err) => {
         console.log(err)
       })
