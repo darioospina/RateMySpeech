@@ -180,14 +180,14 @@
 
 
 import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import '../Styles/ProfileDetails.css';
-import { Link } from 'react-router-dom';
+import { Container, Row, Col, Button } from 'react-bootstrap'; // This line imports several components from the react-bootstrap library, which provides pre-built components for building responsive
+import '../Styles/ProfileDetails.css'; // importing styling rules from css file
+import { Link } from 'react-router-dom';// line imports the Link component from the react-router-dom library, which is used for creating links between pages in a React application
 import dummy1 from '../Images/dummy1.jpeg';
 import dummy2 from '../Images/dummy2.jpeg'
 import dummy3 from '../Images/dummy3.png'
 
-const profiles = [
+const profiles = [    //these are  profile objects
   {
     name: 'peter',
     age: 30,
@@ -219,7 +219,7 @@ const profiles = [
 ];
 
 const Profile = ({ profile }) => (
-  <Col xs={12} md={6} lg={4}>
+  <Col xs={12} md={6} lg={4}>  
     <div className="profile-container">
       <div className="profile-picture-container">
         <img src={profile.picture} alt={profile.name} className="profile-picture" />
