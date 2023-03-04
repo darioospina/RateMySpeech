@@ -1,11 +1,7 @@
 /*
 Module Name:            Create routes for answers to evaluation questions
 Module Description:     This will make the routes for API for answers to evaluation questions
-Author:                 Jeff Martin Abayon, Student ID: 424191
-Input:                  None
-Output:                 None
-Date Started:           Feb 9, 2023
-Date Last Updated:      Feb 10, 2023
+Author:                 Jeff Martin Abayon 
 */
 
 // this is pending, need to decide if audience can edit and update answers to evaluation questions. also, if audience can view a single answer

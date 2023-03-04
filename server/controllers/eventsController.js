@@ -1,5 +1,5 @@
-const Event = require('../models/eventsModel')
-const mongoose = require('mongoose')
+import Event from '../models/eventsModel.js'
+import mongoose from 'mongoose'
 
 /*
 Module Name:            getEvents

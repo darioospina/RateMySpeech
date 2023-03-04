@@ -1,11 +1,7 @@
 /*
 Module Name:            Create routes for audience comments and suggestions
 Module Description:     This will make the routes for API for audience comments and suggestions
-Author:                 Jeff Martin Abayon, Student ID: 424191
-Input:                  None
-Output:                 None
-Date Started:           Feb 9, 2023
-Date Last Updated:      Feb 10, 2023
+Author:                 Jeff Martin Abayon 
 */
 
 const express = require('express')

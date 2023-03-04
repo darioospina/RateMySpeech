@@ -1,5 +1,5 @@
-const Question = require('../models/questionsModel')
-const mongoose = require('mongoose')
+import Question from '../models/questionsModel.js'
+import mongoose from 'mongoose'
 
 
 /*

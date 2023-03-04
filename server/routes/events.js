@@ -1,11 +1,7 @@
 /*
 Module Name:            Create routes for events
 Module Description:     This will make the routes for API for events / speaking engagements
-Author:                 Jeff Martin Abayon, Student ID: 424191
-Input:                  None
-Output:                 None
-Date Started:           Feb 9, 2023
-Date Last Updated:      Feb 10, 2023
+Author:                 Jeff Martin Abayon 
 */
 
 const express = require('express')

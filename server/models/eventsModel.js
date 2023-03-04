@@ -1,11 +1,7 @@
 /*
 Module Name:            Create a schema for events (Speaking engagements)
 Module Description:     This will make the data model for events
-Author:                 Jeff Martin Abayon, Student ID: 424191
-Input:                  None
-Output:                 None
-Date Started:           Feb 9, 2023
-Date Last Updated:      Feb 9, 2023
+Author:                 Jeff Martin Abayon
 */
 
 
@@ -39,15 +35,15 @@ const eventsSchema = new Schema({
 		required: true
 	},
 	speakerId: {
-		type: objectId,
-		required: true
+		type: ObjectId,
+		required: false
 	},
 	createdAt: {
-	   type: "date",
+	   type: Date,
 		required: true
 	},
 	updatedAt: {
-	   type: "date",
+	   type: Date,
 		required: true
 	}
 })
