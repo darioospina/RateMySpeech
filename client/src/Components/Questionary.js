@@ -39,7 +39,7 @@ export const Questionary = () => {
 
   return (
     <div className="questionary">
-      <Form id='loginComp' style={{width: "100%", Height: "100%"}}> {/* onSubmit={handleSubmit} */}
+      <Form id='loginComp' style={{width: "100%", height: "50vh"}}> {/* onSubmit={handleSubmit} */}
       <Carousel 
         activeIndex={index} 
         onSelect={handleSelect} 

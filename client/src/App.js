@@ -24,6 +24,7 @@ import { Dashboard } from './Pages/Dashboard'
 import { Report } from './Pages/Report'
 import { QRCodeComp } from './Components/QRCodeComp'
 import { Questionary } from './Components/Questionary'
+import { LandingPage } from './Pages/LandingPage'
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
 
 
       <Route path='/details' element={<Details />} />
-
+      <Route path='/home' element={<LandingPage />} />
 
         {/* Audience Related Pages*/}
         <Route path='/qrcode' element={<QRCodeComp />} />

@@ -33,6 +33,11 @@ body {
   background: linear-gradient(#FFF2CC, #fff);
 }
 
+.slideImg {
+  filter: blur(5px);
+  -webkit-filter: blur(1px);
+  object-fit: fill;
+}
 
 /* FOOTER STYLES */
 .divFooter {
@@ -55,32 +60,6 @@ body {
       align-items: flex-start;
   }}
 
-/*@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
