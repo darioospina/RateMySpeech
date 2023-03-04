@@ -1,5 +1,5 @@
-const Answer = require('../models/answersModel')
-const mongoose = require('mongoose')
+import Answer from '../models/answersModel.js'
+import mongoose from 'mongoose'
 
 /*
 Module Name:            getAnswers
@@ -44,9 +44,21 @@ Author:                 Jeff Martin Abayon
 */
 app.post("/createAnswer", (req, res) => {
     const newAnswer = new Answer({
-        answer: req.body.answer,
         questionId: req.body.questionId,
-        attendeeId: req.body.attendeeId 
+        attendeeName: req.body.attendeeName,
+        attendeeEmail: req.body.attendeeEmail,
+        attendeePhone: req.body.attendeePhone,
+        answerOne: req.body.answerOne,
+        answerTwo: req.body.answerTwo,
+        answerThree: req.body.answerThree,
+        answerFour: req.body.answerFour,
+        answerFive: req.body.answerFive,
+        answerSix: req.body.answerSix,
+        answerSeven: req.body.answerSeven,
+        answerEight: req.body.answerEight,
+        answerNine: req.body.answerNine,
+        answerTen: req.body.answerTen,
+        comment: req.body.comment,
     });
     newAnswer.save()
         .then(myanswer => {
