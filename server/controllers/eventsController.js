@@ -1,3 +1,7 @@
+/*
+Description:            This file contains the controller for all the APIs related to the Events
+Author:                 Dario Ospina
+*/
 import Events from '../models/eventsModel.js'
 import mongoose from 'mongoose'
 

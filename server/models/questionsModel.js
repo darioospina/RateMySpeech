@@ -1,17 +1,15 @@
 /*
 Module Name:            Create a schema for questions for events 
 Module Description:     This will make the data model for questions given by the speaker
-Author:                 Jeff Martin Abayon
+Author:                 Dario Ospina / Jeff Martin Abayon 
 */
-
-
-const mongoose = require('mongoose')
-
+import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const questionsSchema = new Schema({
 	eventId: {
-		type: ObjectId,
+		type: Schema.Types.ObjectId,
+		ref: 'Events',
 		required: true
 	},
 	questionOne: {
@@ -56,12 +54,8 @@ const questionsSchema = new Schema({
 	},
 	createdAt: {
 	   type: Date,
-		required: true
-	},
-	updatedAt: {
-	   type: Date,
-		required: true
-	}
+	   default: Date.now
+   }
 })
 
-module.exports = mongoose.model('Course', questionsSchema)
+export default mongoose.model('Questions', questionsSchema);
