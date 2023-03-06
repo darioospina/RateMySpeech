@@ -5,6 +5,12 @@ import { Navigate, useNavigate } from "react-router-dom";
 // Import button, form and InputGroup from bootstrap
 import {Form, Button, InputGroup} from 'react-bootstrap';
 
+// Bootrstrap Tab Components
+import Col from 'react-bootstrap/Col';
+import Nav from 'react-bootstrap/Nav';
+import Row from 'react-bootstrap/Row';
+import Tab from 'react-bootstrap/Tab';
+
 // Import Axios
 import Axios from 'axios'
 
@@ -40,7 +46,24 @@ export const NewEvent = () => {
 
   return (
     <div style={{margin: 'auto', textAlign:'center'}}>
-    <Form id='loginComp'>
+        <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+      <Row>
+        <Col sm={3}>
+          <Nav variant="pills" className="flex-column">
+            <Nav.Item>
+              <Nav.Link eventKey="first">Step 1</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="second">Step 2</Nav.Link>
+            </Nav.Item>
+          </Nav>
+        </Col>
+        <Col sm={9}>
+          <Tab.Content>
+            <Tab.Pane eventKey="first">
+
+
+            <Form id='loginComp'>
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Event Name</Form.Label>
           <Form.Control type="text" placeholder="E.g. Dummy Event" onChange={(event) => setEventname(event.target.value)} />
@@ -65,6 +88,18 @@ export const NewEvent = () => {
           Submit
         </Button>
     </Form>
+
+
+
+            </Tab.Pane>
+            <Tab.Pane eventKey="second">
+             
+            </Tab.Pane>
+          </Tab.Content>
+        </Col>
+      </Row>
+    </Tab.Container>
+
     </div>
   );
 };

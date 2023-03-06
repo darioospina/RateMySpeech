@@ -7,49 +7,40 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const questionsSchema = new Schema({
-	eventId: {
-		type: Schema.Types.ObjectId,
-		ref: 'Events',
-		required: true
-	},
 	questionOne: {
 		type: String,
 		required: true
 	},
 	questionTwo: {
-		type: String,
-		required: true
+		type: String
 	},
 	questionThree: {
-		type: String,
-		required: true
+		type: String
 	},
 	questionFour: {
-		type: String,
-		required: true
+		type: String
 	},
 	questionFive: {
-		type: String,
-		required: true
+		type: String
 	},
 	questionSix: {
-		type: String,
-		required: true
+		type: String
 	},
 	questionSeven: {
-		type: String,
-		required: true
+		type: String
 	},
 	questionEight: {
-		type: String,
-		required: true
+		type: String
 	},
 	questionNine: {
-		type: String,
-		required: true
+		type: String
 	},
 	questionTen: {
-		type: String,
+		type: String
+	},
+	eventId: {
+		type: Schema.Types.ObjectId,
+		ref: 'Events',
 		required: true
 	},
 	createdAt: {

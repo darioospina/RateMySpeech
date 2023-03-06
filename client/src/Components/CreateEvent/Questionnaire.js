@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {Carousel, Button, InputGroup} from 'react-bootstrap';
 import {BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill} from 'react-icons/bs'; 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../Styles/Questionary.css";
+import "../../Styles/Questionnaire.css";
 import Form from 'react-bootstrap/Form';
 
 const questions = [
@@ -29,7 +29,7 @@ const questions = [
   },
 ];
 
-export const Questionary = () => {
+export const Questionnaire = () => {
   const [index, setIndex] = useState(0);
   
   const handleSelect = (selectedIndex) => {
@@ -38,7 +38,7 @@ export const Questionary = () => {
 
 
   return (
-    <div className="questionary">
+    <div className="Questionnaire">
       <Form id='loginComp' style={{width: "100%", height: "50vh"}}> {/* onSubmit={handleSubmit} */}
       <Carousel 
         activeIndex={index} 

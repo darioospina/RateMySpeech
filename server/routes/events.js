@@ -1,12 +1,10 @@
 /*
-Module Name:            Create routes for events
 Module Description:     This will make the routes for API for events / speaking engagements
-Author:                 Jeff Martin Abayon 
+Author:                 Dario Ospina / Jeff Martin Abayon 
 */
 import express from 'express'
 import Events from '../models/eventsModel.js'
-import {createEvent} from '../controllers/eventsController.js'
-
+import {createEvent, getEvents} from '../controllers/eventsController.js'
 
 const router = express.Router()
 
@@ -14,7 +12,7 @@ const router = express.Router()
 // router.use(requireAuth)
 
 // GET all Events 
-//router.get('/', getEvents)
+router.get('/getEvents', getEvents)
 
 // GET all Past Events 
 //router.get('/', getPastEvents)

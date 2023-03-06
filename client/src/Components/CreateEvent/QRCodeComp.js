@@ -2,10 +2,9 @@ import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 
 // CSS Style Sheet
-import '../Styles/DOStyles.css'
+import '../../Styles/DOStyles.css'
 
-// Images
-import qrcodeimg from '../Images/qrcode_example.png'
+
 // Import QR Component from qrcode library
 import { QRCodeCanvas } from "qrcode.react";
 

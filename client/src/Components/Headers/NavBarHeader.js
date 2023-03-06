@@ -29,7 +29,7 @@ export const NavBarHeader = () => {
     }
   
     useEffect(() => {
-        if (location.pathname !== '/' && location.pathname !== '/questionary') {  
+        if (location.pathname !== '/' && location.pathname !== '/Questionnaire') {  
             setShowHeader(true);
         } else {
             setShowHeader(false);

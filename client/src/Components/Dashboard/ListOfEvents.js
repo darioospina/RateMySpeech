@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 
 //Import Dummy Data
-import EventsData from '../Dummy Data/EventsData'
+import EventsData from '../../Dummy Data/EventsData'
 
 //Import Table and Navigation properties
 import Table from 'react-bootstrap/Table'

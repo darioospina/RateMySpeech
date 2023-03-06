@@ -14,7 +14,7 @@ export const AudienceHeader = () => {
     const location = useLocation();
   
     useEffect(() => {
-        if (location.pathname === '/questionary') {
+        if (location.pathname === '/Questionnaire') {
             setShowHeader(true);
         } else {
             setShowHeader(false);

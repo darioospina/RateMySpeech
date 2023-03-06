@@ -5,16 +5,16 @@ Author:                 Dario Ospina / Jeff Martin Abayon
 import Questions from '../models/questionsModel.js'
 import mongoose from 'mongoose'
 
-// // Module Description:     This module fetch all questions for an event inside events collection in mongoDB
-// app.get("/getQuestions/:id", (req, res) => {
-//     Question.find()
-//     .then((result) => {
-//         console.log(result)
-//         res.send(result)
-//     })
-//     .catch((err) => 
-//         console.log(err))
-// })
+// Module Description:     This module fetch all questions for an event inside events collection in mongoDB
+export const getQuestionaries = (req, res) => {
+    Questions.find()
+    .then((result) => {
+        console.log(result)
+        res.send(result)
+    })
+    .catch((err) => 
+        console.log(err))
+}
 
 // // Module Description:     This module fetch a particular question in the questions collection in mongoDB
 // app.get("/getQuestion/:id", (req, res) => {
@@ -29,22 +29,29 @@ import mongoose from 'mongoose'
 //         console.log(err))
 // })
 
-//Module Description:     This module inserts a record into questions collection in mongoDB
-export const createQuestionary = (req,res) => {
-
-}
-app.post("/createQuestion", (req, res) => {
-    const newQuestion = new Questions({
-        question: req.body.question,
-        eventId: req.body.eventId,
-    });
-    newQuestion.save()
-        .then(myquestion => {
-            console.log(myquestion)
-            res.json(myquestion)
+// This module inserts a record into questions collection in mongoDB
+export const createQuestionnaire = (req, res) => {
+    const newQuestionnaire = new Questions({
+        questionOne: req.body.questionOne,
+        questionTwo: req.body.questionTwo,
+        questionThree: req.body.questionThree,
+        questionFour: req.body.questionFour,
+        questionFive: req.body.questionFive,
+        questionSix: req.body.questionSix,
+        questionSeven: req.body.questionSeven,
+        questionEight: req.body.questionEight,
+        questionNine: req.body.questionNine,
+        questionTen: req.body.questionTen,
+        eventId: req.body.eventId
+    })
+    newQuestionnaire.save()
+        .then(Questionnaire => {
+            console.log(Questionnaire)
+            res.json(Questionnaire)
         })
         .catch(err => console.log(err))
-})
+}
+
 
 // //Module Description:     This module updates a record in the questions collection in mongoDB
 // app.patch("/updateQuestion/:id", (req, res) => {

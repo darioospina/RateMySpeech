@@ -1,43 +1,28 @@
 /*
-Module Name:            Create routes for evaluation questions
-Module Description:     This will make the routes for API for evaluation questions
-Author:                 Jeff Martin Abayon
+Description:            This will make the routes for API for evaluation questions
+Author:                 Dario Ospina / Jeff Martin Abayon
 */
-
-const express = require('express')
-
-const Question = require('../models/questionsModel')
-
-const {
-    getQuestions,
-    getQuestion,
-    createQuestion,
-    updateQuestion,
-    deleteQuestion
-} = require('../controllers/questionsController')
-
-// PENDING - authorization
-// const requireAuth = require('../middleware/requireAuth')
+import express from 'express'
+import Questions from '../models/questionsModel.js'
+import { createQuestionnaire, getQuestionaries } from '../controllers/questionsController.js'
+//getQuestions, getQuestion,updateQuestion, deleteQuestion
 
 const router = express.Router()
 
-// PENDING - require auth for all course routes
-// router.use(requireAuth)
-
 // GET all Questions 
-router.get('/', getQuestions)
+router.get('/getQuestionaries', getQuestionaries)
 
-// GEt a single Question
-router.get('/:id', getQuestion)
+// // GEt a single Question
+// router.get('/:id', getQuestion)
 
 // POST a new Question
-router.post('/', createQuestion)
+router.post('/createQuestionnaire', createQuestionnaire)
 
-// UPDATE Question
-router.delete('/:id', updateQuestion)
+// // UPDATE Question
+// router.delete('/:id', updateQuestion)
 
-// DELETE a Question
-router.patch('/:id', deleteQuestion)
+// // DELETE a Question
+// router.patch('/:id', deleteQuestion)
 
 
 export default router;
