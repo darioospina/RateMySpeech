@@ -19,7 +19,7 @@ import { NewEvent } from './Pages/NewEvent'
 import { Dashboard } from './Pages/Dashboard'
 import { Report } from './Pages/Report'
 import { QRCodeComp } from './Components/CreateEvent/QRCodeComp'
-import { Questionnaire } from './Components/CreateEvent/Questionnaire'
+import { Questionnaire } from './Components/Questionnaire'
 import { LandingPage } from './Pages/LandingPage'
 
 function App() {
