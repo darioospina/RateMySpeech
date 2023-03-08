@@ -7,6 +7,9 @@ import "../Styles/Questionnaire.css";
 import Form from 'react-bootstrap/Form';
 import { useParams } from 'react-router-dom';
 
+import Axios from 'axios'
+
+
 
 const questions = [
   {
@@ -34,7 +37,22 @@ const questions = [
 export const Questionnaire = () => {
   const [index, setIndex] = useState(0);
   const { questionnaireId } = useParams();
-  
+  const [Aquestions, AsetQuestions] = useState(null)
+
+useEffect = (() => {
+  // WORK IN PROGRESS
+  Axios.get(`${process.env.REACT_APP_API_URL}/questionsRoutes/getQuestionaries/:questionnaireId`)
+  .then((res) => {
+    setEventId(res.data._id)
+    console.log("New Event Created")
+    localStorage.setItem('EventID',res.data._id)
+  }).catch((err) => {
+    console.log(err)
+  })
+}, Aquestions)
+
+
+
   const handleSelect = (selectedIndex) => {
       setIndex(selectedIndex);
   };
@@ -42,7 +60,7 @@ export const Questionnaire = () => {
 
   return (
     <div className="Questionnaire">
-      <h1>Questionnaire ID: {questionnaireId}</h1>
+      <h3 style={{textAlign:'center'}}>Questionnaire ID: {questionnaireId}</h3>
       <Form id='loginComp' style={{width: "100%", height: "50vh"}}> {/* onSubmit={handleSubmit} */}
       <Carousel 
         activeIndex={index} 
