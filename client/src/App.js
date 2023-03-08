@@ -35,7 +35,7 @@ function App() {
         {/* Audience Related Pages*/}
         <Route path='/qrcode' element={<QRCodeComp />} />
         <Route path="/newevent" element={<NewEvent />} />
-        <Route path="/Questionnaire" element={<Questionnaire />} />
+        <Route path="/Questionnaire/:questionnaireId" element={<Questionnaire />} />
 
         {/* Profile Related Pages*/}
         <Route path="/profiledetails" element={<ProfileDetails />} />

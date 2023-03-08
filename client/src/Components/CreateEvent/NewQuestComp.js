@@ -7,7 +7,7 @@ import {Form, Button, InputGroup} from 'react-bootstrap';
 // Import Axios
 import Axios from 'axios'
 
-export const NewQuestComp = () => {
+export const NewQuestComp = ({setQuestionnaireId}) => {
   const [questionOne, setQuestionOne] = useState("");
   const [questionTwo, setQuestionTwo] = useState("");
   const [questionThree, setQuestionThree] = useState("");
@@ -36,6 +36,7 @@ export const NewQuestComp = () => {
         eventId: eventId
       }).then((res) => {
         console.log(res)
+        setQuestionnaireId(res.data._id)
         console.log("New Questionary Created")
       }).catch((err) => {
         console.log(err)

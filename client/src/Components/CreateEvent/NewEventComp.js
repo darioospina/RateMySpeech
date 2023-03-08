@@ -7,7 +7,7 @@ import {Form, Button, InputGroup} from 'react-bootstrap';
 // Import Axios
 import Axios from 'axios'
 
-export const NewEventComp = () => {
+export const NewEventComp = ({setEventId}) => {
 
   const [eventname, setEventname] = useState("")
   const [eventdesc, setEventdesc] = useState("");
@@ -28,7 +28,9 @@ export const NewEventComp = () => {
         qrcode: qrcode,
         speakerId: speakerId
       }).then((res) => {
+        setEventId(res.data._id)
         console.log("New Event Created")
+        localStorage.setItem('EventID',res.data._id)
       }).catch((err) => {
         console.log(err)
       })

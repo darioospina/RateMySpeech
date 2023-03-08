@@ -13,18 +13,9 @@ import Card from 'react-bootstrap/Card';
 import {TiArrowRightThick} from 'react-icons/ti'
 import {AiFillPrinter, AiFillFilePdf, AiOutlineWhatsApp} from 'react-icons/ai'
 
-export const QRCodeComp = () => {
+export const QRCodeComp = ({eventId, questionnaireId}) => {
 
-  const [url, setUrl] = useState("");
-
-  const downloadQRCode = (e) => {
-    e.preventDefault();
-    setUrl("");
-  };
-
-  const qrCodeEncoder = (e) => {
-    setUrl(e.target.value);
-  };
+  const [url, setUrl] = useState("http://www.google.com");
 
   const qrcode = (
     <QRCodeCanvas
@@ -38,7 +29,6 @@ export const QRCodeComp = () => {
 
     return (
       <>  
-      <div className="recommend-page">Recommend this Page to a Friend <TiArrowRightThick style={{ color: "#ffc000", fontSize: "25px" }}/> <a href="#">Click here</a></div>
       <Card style={{ width: '80%', margin: 'auto' }}>
       <Card.Body className="cardContainer">
         <Card.Title className="cardTitle">
@@ -49,23 +39,9 @@ export const QRCodeComp = () => {
             <AiOutlineWhatsApp style={{ color: "#696969", fontSize: "60px", margin: "0 5px" }}/>
         </Card.Title>
         <div>
-        
             <div style={{margin: 'auto', textAlign: 'center'}}>{qrcode}</div>
-            <p className="card-event-id event-id-text">Event ID </p>
-            <p className="card-event-id">XAHFKAD</p>
-
-                  
-                  <form onSubmit={downloadQRCode}>
-                    <label>Enter URL</label>
-                    <input
-                      type="text"
-                      value={url}
-                      onChange={qrCodeEncoder}
-                      placeholder="https://hackernoon.com"
-                    />
-                  </form>
-
-
+            <p className="card-event-id event-id-text">Questionnaire ID: </p>
+            <p className="card-event-id">{questionnaireId}</p>
         </div>
       </Card.Body>
     </Card>

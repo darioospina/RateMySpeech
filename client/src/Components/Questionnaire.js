@@ -5,6 +5,8 @@ import {BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill} from 'react-icons
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/Questionnaire.css";
 import Form from 'react-bootstrap/Form';
+import { useParams } from 'react-router-dom';
+
 
 const questions = [
   {
@@ -31,6 +33,7 @@ const questions = [
 
 export const Questionnaire = () => {
   const [index, setIndex] = useState(0);
+  const { questionnaireId } = useParams();
   
   const handleSelect = (selectedIndex) => {
       setIndex(selectedIndex);
@@ -39,6 +42,7 @@ export const Questionnaire = () => {
 
   return (
     <div className="Questionnaire">
+      <h1>Questionnaire ID: {questionnaireId}</h1>
       <Form id='loginComp' style={{width: "100%", height: "50vh"}}> {/* onSubmit={handleSubmit} */}
       <Carousel 
         activeIndex={index} 
