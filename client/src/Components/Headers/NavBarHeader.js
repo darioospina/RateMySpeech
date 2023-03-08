@@ -42,7 +42,7 @@ export const NavBarHeader = () => {
         <div className='divHeader'>
             <Navbar expand="lg">
                 <Container>
-                    <Navbar.Brand href="/Dashboard">
+                    <Navbar.Brand href="/home">
                         <img src={Logo} className="header2-logo" alt="logo" />
                     </Navbar.Brand>
                     <Navbar.Collapse id="basic-navbar-nav">
