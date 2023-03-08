@@ -2,6 +2,7 @@ import React from 'react'
 
 import { MainMenu } from '../Components/Dashboard/MainMenu'
 import { UpcomingEvents } from '../Components/Dashboard/UpcomingEvents'
+import { SpeakerList } from '../Components/SpeakerList'
 
 
 export const Dashboard = () => {
@@ -17,6 +18,9 @@ export const Dashboard = () => {
                 <div class='dashboard-widget'>
                     <UpcomingEvents />
                 </div>
+            </div>
+            <div id='speakerListTable'>
+                <SpeakerList />
             </div>
         </div>
     )

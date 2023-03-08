@@ -120,6 +120,13 @@
     text-align: center;
 }
 
+#speakerListTable
+{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
