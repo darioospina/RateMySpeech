@@ -1,48 +1,59 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Form } from "react-bootstrap";
 
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
+import {Link} from 'react-router-dom'
 
 export const ProfileDetails = () => {
-  const profile = {
-    name: 'Simranjit Singh',
-    age: 30,
-    location: 'San Francisco',
-    occupation: 'Software Engineer',
-    about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.',
-    languages: ['English', 'Spanish', 'French'],
-    picture: ''
-  };
+
+const UserData = {
+  name: "Bob Smith",
+  email: "bobS@gmail.com",
+  password: "1234",
+  role: "admin",
+  phone: "111-111-1111",
+  avescore: "2.5",
+  src: "https://reactjs.org/logo-og.png"
+}
 
   return (
-    <Form className="profile-container">
-      <Form className="profile-card">
-        <Form className="profile-picture-container">
-          <Form className="profile-picture-wrapper">
-            <img src={''} className="profilePicture" alt={profile.name}/>
-            <Link to="/profileedit">
-              <button className="edit-button">Edit</button>
-            </Link>
-          </Form>
-        <Form className="profile-info">
-          <h2>{profile.name}</h2>
-          <p> <b>Age</b>: {profile.age}</p>
-          <p><b>Location</b>: {profile.location}</p>
-          <p><b>Occupation</b>: {profile.occupation}</p>
-          <b>About Me:</b>
-          <p>{profile.about}</p>
-        </Form>
-        </Form>
-
-        <Form className="languages-section">
-          <h5> Languages:</h5>
-          <ul className="languages-list">
-            {profile.languages.map((language) => (
-              <li key={language}>{language}</li>
-            ))}
-          </ul>
-        </Form>
-      </Form>
-    </Form>
+    <div>
+      <Container id='profileInfo'>
+        <Row>
+          <Col><img id='profileImage' src={UserData.src} alt="Profile Image" /></Col>
+        </Row>
+        <Row>
+          <Col className="title">Name:</Col>
+          <Col className='data'>{UserData.name}</Col>
+        </Row>
+        <Row>
+          <Col className="title">Email:</Col>
+          <Col className='data'>{UserData.email}</Col>
+        </Row>
+        <Row>
+          <Col className="title">Role:</Col>
+          <Col className='data'>{UserData.role}</Col>
+        </Row>
+        <Row>
+          <Col className="title">Phone-Number:</Col>
+          <Col className='data'>{UserData.phone}</Col>
+        </Row>
+        <Row>
+          <Col className="title">Average Speaker Score:</Col>
+          <Col className='data'>{UserData.avescore}</Col>
+        </Row>
+        <Row>
+          <Col></Col>
+          <Col>
+          <Link to="/profileedit"><Button>Edit Your Info</Button></Link>
+          
+          
+          </Col>
+          <Col></Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
