@@ -127,6 +127,8 @@
     margin: auto;
 }
 
+/* ProfileDetails.js */
+
 nav {
     display: flex;
     justify-content: space-between;
