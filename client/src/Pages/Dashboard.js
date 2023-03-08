@@ -2,7 +2,7 @@ import React from 'react'
 
 import { MainMenu } from '../Components/Dashboard/MainMenu'
 import { UpcomingEvents } from '../Components/Dashboard/UpcomingEvents'
-import { SpeakerList } from '../Components/SpeakerList'
+import { SpeakerList } from '../Components/AdminSpeakerList'
 
 
 export const Dashboard = () => {
