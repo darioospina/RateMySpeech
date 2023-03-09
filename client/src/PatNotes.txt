@@ -6,6 +6,11 @@ ListOfEvents.js
 UpcomingEvents.js
     - events need to be sorted for the next three events by date
 
+GENERAL OOPSIE NOTES
+- "Edit Your Info" in ProfileDetails.js takes you to a page that creates new user
+- ProfileEdit.js just creates a new user
+- SignUp button in LandingPage.js redirects to ProfileEdit.js
+
 COMPLETED
 Mar.10 - Check in
     - ProfileDetails.js updated and styled
