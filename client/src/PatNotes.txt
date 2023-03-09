@@ -1,11 +1,13 @@
 #1 Dashboard
     - styling
-    - prop for speaker "Create new event"
+    - ADMIN
+        - Registerd speaker list appears, remove Create a new event from MainMenu.js widget. 
+        - Link Register New Speakers button to somewhere
+    - SPEAKER 
+        - Create New Event option remains in MainMenu.js widget, remove Registered Speaker list
 
 #3 Landing Page
-    - nice page for users to see when visitng sight
-    -option for Sign up
-    - option for sign in
+    - Fix SignUp button
 
 UpcomingEvents.js
     - events need to be sorted for the next three events by date
@@ -16,14 +18,13 @@ UpcomingEvents.js
 
 After DB Completion
     - Update ListOfEvents.js, UpcomingEvents.js to pull from database
-    - Login functionality
-    - WAIT FOR DB: Login should pull from DB
+    - WAIT FOR DB: Login should pull from DB (Mayeb already does?)
 ListOfEvents.js
     - make delete button work
 
 Mar.10 - Check in
-    - ProfileDetails.js created and formatted
-    - 
+    - ProfileDetails.js created and styled
+    - LandingPage.js created and styled
 
 Mar.3 - Check in
     - Formated Login page
