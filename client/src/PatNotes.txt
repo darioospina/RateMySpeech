@@ -1,21 +1,21 @@
+- Update ListOfEvents.js, UpcomingEvents.js to pull from database
+
+ListOfEvents.js
+    - make delete button work
 
 UpcomingEvents.js
     - events need to be sorted for the next three events by date
 
--Dashboard.js
-    - Make boxes level with eachother, maybe match with wireframe style
-    - Have SpeakerList.js appear with ADMIN login
-
-After DB Completion
-    - Update ListOfEvents.js, UpcomingEvents.js to pull from database
-    - WAIT FOR DB: Login should pull from DB (Mayeb already does?)
-ListOfEvents.js
-    - make delete button work
-
+COMPLETED
 Mar.10 - Check in
-    - ProfileDetails.js created and styled
+    - ProfileDetails.js updated and styled
     - LandingPage.js created and styled
+    - Redirection between LandingPage, Login, and Dashboard flows better
     - Dashboard.js now accurately represents if user is ADMIN or Speaker
+        - ADMIN
+            - Registerd speakers list appears, Create new event button dissapears
+        - SPEAKER 
+            - Registerd speakers list dissapears, create new event button appears
 
 Mar.3 - Check in
     - Formated Login page
