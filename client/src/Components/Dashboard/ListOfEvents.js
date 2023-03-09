@@ -47,7 +47,7 @@ export const ListOfEvents = () => {
   );
 
   return (
-    <div>
+    <div id='title-table-block'>
       <h1>All Your Events</h1>
       {/*Creates Table header and then inserts Data from DB into Table body */}
       <Table striped>
