@@ -6,11 +6,13 @@ import { SpeakerList } from '../Components/AdminSpeakerList'
 
 
 export const Dashboard = () => {
-    const speakerName = localStorage.getItem('name')
+    const user_Name = localStorage.getItem('name')
+    const user_Role = localStorage.getItem("role")
 
     return (
         <div id='dashboard-body'>
-            <h1 id='dashboard-title'>Welcome {speakerName}!</h1>
+            <h1 id='dashboard-title'>Welcome {user_Name}!</h1>
+            <h3 id='dashboard-title'>Your Role: <b>{user_Role}</b> </h3>
             <div id='dashboard-container'>
                 <div class='dashboard-widget'>
                     <MainMenu />
@@ -19,9 +21,12 @@ export const Dashboard = () => {
                     <UpcomingEvents />
                 </div>
             </div>
-            <div id='speakerListTable'>
-                <SpeakerList />
-            </div>
+
+            {(user_Role == 'admin') && (
+                <div id='speakerListTable'>
+                    <SpeakerList />
+                </div>
+            )}
         </div>
     )
 }
