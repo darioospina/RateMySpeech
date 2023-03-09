@@ -69,12 +69,12 @@ export const LandingPage = () => {
 
       <Stack id="buttons-block" direction="horizontal" gap={5}>
         <div id="signUp-button">
-          <Nav.Link href="/Login"> {/* CHANGE */}
+          <Nav.Link href="/profileedit">
             <Button>Sign Up</Button>
           </Nav.Link>
         </div>
         <div id="logIn-button">
-          <Nav.Link href="/"> {/* CHANGE */}
+          <Nav.Link href="/">
             <Button>Log In</Button>
           </Nav.Link>
         </div>
