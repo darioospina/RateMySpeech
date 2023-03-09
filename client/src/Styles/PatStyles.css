@@ -1,21 +1,19 @@
 /* @import 'bootstrap/dist/css/bootstrap.min.css'; */
 
 /* LoginComp.js */
-#loginComp
-{
+#loginComp {
     width: 50%;
     display: inline-block;
     text-align: left;
 }
 
-#LoginComp-Body
-{
+#LoginComp-Body {
     text-align: center;
 }
 
 /* NavBarHeader.js */
 .me-auto {
-    
+
     padding-left: 60%;
 }
 
@@ -56,7 +54,7 @@
     text-decoration: none;
 }
 
-#upcomingevents-widget{
+#upcomingevents-widget {
     padding-top: 50px;
 }
 
@@ -120,27 +118,23 @@
     text-align: center;
 }
 
-#speakerListTable
-{
+#speakerListTable {
     width: 80%;
     text-align: center;
     margin: auto;
 }
 
 /* ProfileDetails.js */
-#profileInfo
-{
+#profileInfo {
     text-align: center;
 }
 
-#profileImage
-{
+#profileImage {
     height: 270px;
     width: 270px;
 }
 
-.title
-{
+.title {
     font-size: x-large;
     font-weight: bold;
     padding-right: 0px;
@@ -148,9 +142,37 @@
     color: #FFC000;
 }
 
-.data{
+.data {
     font-size: large;
     padding-left: 0px;
+}
+
+/* LandingPage.js */
+#pageTitle {
+    text-align: center;
+}
+
+#pageSubTitle {
+    text-align: center;
+}
+
+.carousel-caption {
+    background-color: rgb(0, 0, 0, 0.75);
+    padding: 5px;
+}
+
+#buttons-block {
+    margin: auto;
+    width: 15%;
+    margin-top: 100px;
+}
+
+#signUp-button {
+    padding: 10px;
+}
+
+#logIn-button {
+    padding: 10px;
 }
 
 nav {
@@ -158,23 +180,23 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-  }
+}
 
-  .logo img {
+.logo img {
     height: 50px;
-  }
+}
 
-  @media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-  .logo {
-    margin-bottom: 10px;
-  }
+    .logo {
+        margin-bottom: 10px;
+    }
 
-  .logo img {
-    height: 40px;
-  }
+    .logo img {
+        height: 40px;
+    }
 }
