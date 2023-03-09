@@ -4,52 +4,41 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export const ProfileDetails = () => {
 
-const UserData = {
-  name: "Bob Smith",
-  email: "bobS@gmail.com",
-  password: "1234",
-  role: "admin",
-  phone: "111-111-1111",
-  avescore: "2.5",
-  src: "https://reactjs.org/logo-og.png"
-}
+  const user_Name = localStorage.getItem('name')
+  const user_Email = localStorage.getItem('email')
+  const user_Role = localStorage.getItem("role")
+  const user_Phone = localStorage.getItem('phone')
 
   return (
     <div>
       <Container id='profileInfo'>
         <Row>
-          <Col><img id='profileImage' src={UserData.src} alt="Profile Image" /></Col>
+          <Col><img id='profileImage' alt="Profile Image" /></Col> {/*ADD IMAGE*/}
         </Row>
         <Row>
           <Col className="title">Name:</Col>
-          <Col className='data'>{UserData.name}</Col>
+          <Col className='data'>{user_Name}</Col>
         </Row>
         <Row>
           <Col className="title">Email:</Col>
-          <Col className='data'>{UserData.email}</Col>
+          <Col className='data'>{user_Email}</Col>
         </Row>
         <Row>
           <Col className="title">Role:</Col>
-          <Col className='data'>{UserData.role}</Col>
+          <Col className='data'>{user_Role}</Col>
         </Row>
         <Row>
           <Col className="title">Phone-Number:</Col>
-          <Col className='data'>{UserData.phone}</Col>
-        </Row>
-        <Row>
-          <Col className="title">Average Speaker Score:</Col>
-          <Col className='data'>{UserData.avescore}</Col>
+          <Col className='data'>{user_Phone}</Col>
         </Row>
         <Row>
           <Col></Col>
           <Col>
-          <Link to="/profileedit"><Button>Edit Your Info</Button></Link>
-          
-          
+            <Link to="/profileedit"><Button>Edit Your Info</Button></Link>
           </Col>
           <Col></Col>
         </Row>
