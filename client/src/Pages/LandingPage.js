@@ -74,7 +74,7 @@ export const LandingPage = () => {
           </Nav.Link>
         </div>
         <div id="logIn-button">
-          <Nav.Link href="/">
+          <Nav.Link href="/Login">
             <Button>Log In</Button>
           </Nav.Link>
         </div>
