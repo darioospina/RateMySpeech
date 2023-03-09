@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import {useLocation} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 //Import StyleSheet and Logo
 import '../../Styles/PatStyles.css'
@@ -25,17 +25,17 @@ export const NavBarHeader = () => {
     const dispatch = useDispatch();
 
     const handleLogout = () => {
-        dispatch(logout())        
+        dispatch(logout())
     }
-  
+
     useEffect(() => {
-        if (location.pathname !== '/' && location.pathname !== '/Questionnaire') {  
+        if (location.pathname !== '/' && location.pathname !== '/Questionnaire') {
             setShowHeader(true);
         } else {
             setShowHeader(false);
         }
     }, [location.pathname]);
-  
+
     if (!showHeader) return null;
 
     return (

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Navigate } from "react-router";
+import React from "react";
 
 //Import DummyData for users
 import UserData from "../Dummy Data/UserData";

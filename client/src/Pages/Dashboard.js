@@ -1,11 +1,13 @@
 import React from 'react'
 
+//Import Components
 import { MainMenu } from '../Components/Dashboard/MainMenu'
 import { UpcomingEvents } from '../Components/Dashboard/UpcomingEvents'
 import { SpeakerList } from '../Components/AdminSpeakerList'
 
 
 export const Dashboard = () => {
+    //Grabs info on current logged in user
     const user_Name = localStorage.getItem('name')
     const user_Role = localStorage.getItem("role")
 

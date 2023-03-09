@@ -1,21 +1,16 @@
-import { React, useState } from 'react'
-import { Carousel, Button, InputGroup } from 'react-bootstrap';
+import { React } from 'react'
+import { Carousel, Button } from 'react-bootstrap';
 
+//Import react-bootstrap components
 import Stack from 'react-bootstrap/Stack';
 import Nav from 'react-bootstrap/Nav';
 
+//Import Images
 import Lecture from "../Images/lecture.png"
 import CompanyLogo from "../Images/parents2partners_logo.jpg"
 import Chart from "../Images/pieChart.jpg"
 
 export const LandingPage = () => {
-
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  };
-
 
   return (
 
@@ -23,13 +18,16 @@ export const LandingPage = () => {
       <h1 id='pageTitle'>RateMySpeech</h1>
       <h3 id='pageSubTitle'>A tool for educational speakers to use before, during, and after
         their presentations.</h3>
+
+      {/* Carousel - Switches between three slides, with image and text on each slide */}
       <div style={{ height: "100vh", margin: "0" }}>
         <Carousel>
+          {/* First Slide */}
           <Carousel.Item>
             <img
               className="d-block w-100"
               src={Lecture}
-              alt="Second slide"
+              alt="First slide"
             />
             <Carousel.Caption className='carousel-caption'>
               <h3>RateMySpeech Welcomes You!</h3>
@@ -38,7 +36,7 @@ export const LandingPage = () => {
               </p>
             </Carousel.Caption>
           </Carousel.Item>
-
+          {/* Second Slide */}
           <Carousel.Item>
             <img
               className="d-block w-100"
@@ -52,7 +50,7 @@ export const LandingPage = () => {
               </p>
             </Carousel.Caption>
           </Carousel.Item>
-
+          {/* Third Slide */}
           <Carousel.Item>
             <img
               className="d-block w-100"
@@ -66,7 +64,7 @@ export const LandingPage = () => {
           </Carousel.Item>
         </Carousel>
       </div>
-
+      {/* Buttons for "Sign Up" and "Log In" */}
       <Stack id="buttons-block" direction="horizontal" gap={5}>
         <div id="signUp-button">
           <Nav.Link href="/profileedit">

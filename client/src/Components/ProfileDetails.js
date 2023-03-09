@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 
 export const ProfileDetails = () => {
-
+  //Get data on current user
   const user_Name = localStorage.getItem('name')
   const user_Email = localStorage.getItem('email')
   const user_Role = localStorage.getItem("role")

@@ -20,7 +20,7 @@ export const MainMenu = () => {
                             My Scores
                         </a>
                     </ListGroup.Item>
-                    
+
                     {/* If user is a speaker, display another button */}
                     {(user_Role == 'speaker') && (
                         <ListGroup.Item>
