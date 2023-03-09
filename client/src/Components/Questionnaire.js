@@ -38,6 +38,7 @@ export const Questionnaire = () => {
   const [index, setIndex] = useState(0);
   const { questionnaireId } = useParams();
   const [Aquestions, AsetQuestions] = useState(null)
+  const [eventId, setEventId] = useState(null)
 
 useEffect = (() => {
   // WORK IN PROGRESS
