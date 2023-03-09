@@ -1,13 +1,3 @@
-#1 Dashboard
-    - styling
-    - ADMIN
-        - Registerd speaker list appears, remove Create a new event from MainMenu.js widget. 
-        - Link Register New Speakers button to somewhere
-    - SPEAKER 
-        - Create New Event option remains in MainMenu.js widget, remove Registered Speaker list
-
-#3 Landing Page
-    - Fix SignUp button
 
 UpcomingEvents.js
     - events need to be sorted for the next three events by date
@@ -25,6 +15,7 @@ ListOfEvents.js
 Mar.10 - Check in
     - ProfileDetails.js created and styled
     - LandingPage.js created and styled
+    - Dashboard.js now accurately represents if user is ADMIN or Speaker
 
 Mar.3 - Check in
     - Formated Login page
