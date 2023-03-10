@@ -7,7 +7,7 @@ export const MainHeader = () => {
     const location = useLocation();
   
     useEffect(() => {
-        if (location.pathname === '/') {
+        if (location.pathname === '/' || location.pathname === '/thank-you') {
             setShowHeader(true);
         } else {
             setShowHeader(false);
