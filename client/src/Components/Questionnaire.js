@@ -5,8 +5,13 @@ import {BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill} from 'react-icons
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/Questionnaire.css";
 import Form from 'react-bootstrap/Form';
+import { useParams } from 'react-router-dom';
 
-const questions = [
+import Axios from 'axios'
+
+
+
+const Aquestions = [
   {
     question: "On a scale of 1 to 5 with 5 as the highest and 1 as the lowest, how do you rate the Speaker?",
     options: [1,2,3,4,5],
@@ -31,7 +36,26 @@ const questions = [
 
 export const Questionnaire = () => {
   const [index, setIndex] = useState(0);
-  
+  const {questionnaireId} = useParams();
+  const [questions, setQuestions] = useState("")
+  //const [eventId, setEventId] = useState(null)
+
+  useEffect(() => {
+    // WORK IN PROGRESS
+    Axios.get(`${process.env.REACT_APP_API_URL}/questionsRoutes/getQuestionsFromOneEvent/${questionnaireId}`)
+    .then((res) => {
+      //setEventId(res.data._id)
+      console.log(res.data)
+      setQuestions(res.data)
+    }).catch((err) => {
+      console.log(err)
+    })
+  }, [])
+
+
+
+
+
   const handleSelect = (selectedIndex) => {
       setIndex(selectedIndex);
   };
@@ -39,6 +63,7 @@ export const Questionnaire = () => {
 
   return (
     <div className="Questionnaire">
+      <h3 style={{textAlign:'center'}}>Questionnaire ID: {questionnaireId}</h3>
       <Form id='loginComp' style={{width: "100%", height: "50vh"}}> {/* onSubmit={handleSubmit} */}
       <Carousel 
         activeIndex={index} 
@@ -68,7 +93,22 @@ export const Questionnaire = () => {
               <Form.Control type="phone" placeholder="Password"/>
             </Form.Group>
           </Carousel.Item>
-          {questions.map(({ question, options }, i) => (
+          {questions.questionOne != ""? 
+          <Carousel.Item>
+            <div>On a scale of 1 to 5 with 5 as the highest and 1 as the lowest, how do you rate <b>{questions.questionOne}</b></div>
+          </Carousel.Item> : null}
+          {questions.questionTwo != ""? 
+          <Carousel.Item>
+            <div>On a scale of 1 to 5 with 5 as the highest and 1 as the lowest, how do you rate <b>{questions.questionTwo}</b></div>
+          </Carousel.Item> : null}
+          {/* {
+            questions.map((quest) => {
+              quest !== null ? (
+                console.log(quest)
+              ) : null
+            })
+          } */}
+          {/* {Aquestions.map(({ question, options }, i) => (
             <Carousel.Item key={i} className="carousel-item questions-item">
               <div>{question}</div>
               <div className="options">
@@ -80,7 +120,7 @@ export const Questionnaire = () => {
                 ))}
               </div>
             </Carousel.Item>
-          ))}
+          ))} */}
           <Carousel.Item>
               <Form.Label>Comments</Form.Label>
               <InputGroup>

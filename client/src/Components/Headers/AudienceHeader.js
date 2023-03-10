@@ -12,9 +12,10 @@ import ListGroup from 'react-bootstrap/ListGroup';
 export const AudienceHeader = () => {
     const [showHeader, setShowHeader] = useState(true);
     const location = useLocation();
+    const getPathName = location.pathname.split('/')
   
     useEffect(() => {
-        if (location.pathname === '/Questionnaire') {
+        if (getPathName.includes('questionnaire')) {
             setShowHeader(true);
         } else {
             setShowHeader(false);

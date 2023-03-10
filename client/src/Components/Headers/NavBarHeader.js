@@ -21,6 +21,7 @@ import { logout } from '../../Actions/sessionActions.js';
 
 export const NavBarHeader = () => {
     const [showHeader, setShowHeader] = useState(true);
+    const [questionnaireId, setQuestionnaireId] = useState(null)
     const location = useLocation();
     const dispatch = useDispatch();
 
@@ -28,8 +29,12 @@ export const NavBarHeader = () => {
         dispatch(logout())
     }
 
+    const getPath = location.pathname
+
+  
     useEffect(() => {
-        if (location.pathname !== '/' && location.pathname !== '/Questionnaire') {
+        setQuestionnaireId(getPath.split('/')[getPath.split('/').length - 1])
+        if (location.pathname !== '/' && location.pathname !== '/Questionnaire' && !getPath.split('/').includes('questionnaire')) {  
             setShowHeader(true);
         } else {
             setShowHeader(false);
@@ -45,13 +50,13 @@ export const NavBarHeader = () => {
                     <Navbar.Brand href="/home">
                         <img src={Logo} className="header2-logo" alt="logo" />
                     </Navbar.Brand>
-                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Navbar id="basic-navbar-nav" >
                         <Nav className="me-auto">
                             <Nav.Link href="/Dashboard">Dashboard <RiDashboardLine /> </Nav.Link>
                             <Nav.Link href="/profiledetails">My Profile <CgProfile /> </Nav.Link>
-                            <Nav.Link href="/Login" onClick={handleLogout}> Log-Out <MdLogout /></Nav.Link>
+                            <Nav.Link href="/"> Log-Out <MdLogout /></Nav.Link>
                         </Nav>
-                    </Navbar.Collapse>
+                    </Navbar>
                 </Container>
             </Navbar>
         </div>

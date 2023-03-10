@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './Styles/App.css';
+import './Styles/PatStyles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -35,7 +36,7 @@ function App() {
         {/* Audience Related Pages*/}
         <Route path='/qrcode' element={<QRCodeComp />} />
         <Route path="/newevent" element={<NewEvent />} />
-        <Route path="/Questionnaire" element={<Questionnaire />} />
+        <Route path="/Questionnaire/:questionnaireId" element={<Questionnaire />} />
 
         {/* Profile Related Pages*/}
         <Route path="/profiledetails" element={<ProfileDetails />} />
