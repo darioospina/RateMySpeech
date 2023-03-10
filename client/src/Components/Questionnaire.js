@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {Carousel, Button, InputGroup} from 'react-bootstrap';
 import {BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill} from 'react-icons/bs'; 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../../Styles/Questionnaire.css";
+import "../Styles/Questionnaire.css";
 import Form from 'react-bootstrap/Form';
 
 const questions = [
