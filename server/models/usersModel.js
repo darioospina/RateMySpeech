@@ -1,6 +1,7 @@
 /*
-Description:            This will make the data model for users
-Author:                 Dario Ospina / Jeff Martin Abayon 
+Module Name:            Create a schema for users
+Module Description:     This will make the data model for users
+Author:                 Jeff Martin Abayon / Dario Ospina
 */
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema;
@@ -12,6 +13,7 @@ const usersSchema = new Schema({
     },
     email: {
       type: String,
+      //pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$",
       required: true
     },
     password: {

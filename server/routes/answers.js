@@ -1,26 +1,45 @@
 /*
+Module Name:            Create routes for answers to evaluation questions
 Module Description:     This will make the routes for API for answers to evaluation questions
-Author:                 Dario Ospina / Jeff Martin Abayon 
+Author:                 Jeff Martin Abayon 
 */
-import express from 'express'
-import Answers from '../models/answersModel.js'
-import { getAnswers, createAnswer } from '../controllers/answersController.js'
+
+// this is pending, need to decide if audience can edit and update answers to evaluation questions. also, if audience can view a single answer
+
+const express = require('express')
+
+const Answer = require('../models/answersModel')
+
+const {
+    getAnswers,
+    getAnswer,
+    createAnswer,
+    updateAnswer,
+    deleteAnswer
+} = require('../controllers/answersController')
+
+// PENDING - authorization
+// const requireAuth = require('../middleware/requireAuth')
 
 const router = express.Router()
 
+// PENDING - require auth for all course routes
+// router.use(requireAuth)
+
 // GET all Answers 
-router.get('/getAnswers', getAnswers)
+router.get('/', getAnswers)
+
+// GEt a single Answer
+router.get('/:id', getAnswer)
 
 // POST a new Answer
-router.post('/createAnswer', createAnswer)
+router.post('/', createAnswer)
 
-// // GET a single Answer
-// router.get('/:id', getAnswer)
+// UPDATE Answer
+router.delete('/:id', updateAnswer)
 
-// // UPDATE Answer
-// router.delete('/:id', updateAnswer)
+// DELETE a Answer
+router.patch('/:id', deleteAnswer)
 
-// // DELETE a Answer
-// router.patch('/:id', deleteAnswer)
 
-export default router;
+module.exports = router

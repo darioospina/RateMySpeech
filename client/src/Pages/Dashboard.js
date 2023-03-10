@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { MainMenu } from '../Components/Dashboard/MainMenu'
-import { UpcomingEvents } from '../Components/Dashboard/UpcomingEvents'
+import { MainMenu } from '../Components/MainMenu'
+import { UpcomingEvents } from '../Components/UpcomingEvents'
 
 
 export const Dashboard = () => {

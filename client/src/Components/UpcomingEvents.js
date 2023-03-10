@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
-import '../../Styles/App.css';
+import '../Styles/App.css';
 
-import EventsData from '../../Dummy Data/EventsData';
+import EventsData from '../Dummy Data/EventsData';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 import { Modal } from 'react-bootstrap';

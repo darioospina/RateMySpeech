@@ -1,137 +1,141 @@
 /* @import 'bootstrap/dist/css/bootstrap.min.css'; */
 
 /* LoginComp.js */
-#loginComp
-{
-    width: 50%;
-    display: inline-block;
-    text-align: left;
+#loginComp {
+  width: 40%;
+  margin: 0 auto;
 }
 
-#LoginComp-Body
-{
-    text-align: center;
+#LoginComp-Body {
+  min-height: calc(100vh - 420.52px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
-/* NavBarHeader.js */
-.me-auto {
-    
-    padding-left: 60%;
+NavBarHeader.js .me-auto {
+  padding-left: 60%;
 }
 
 /* ListOfEvents.js */
 .header2-logo {
-    height: 50px;
-    width: 200px;
+  height: 50px;
+  width: 150px;
 }
 
 .AllEvents-Actions {
-    padding: 0px 10px;
-    float: left;
+  padding: 0px 10px;
+  float: left;
 }
 
 #deleteIcon {
-    color: red;
+  color: red;
 }
 
 /* UpcomingEvents.js */
 #EventTitle {
-    font-weight: bold;
-    margin-right: '10px';
+  font-weight: bold;
+  margin-right: "10px";
 
-    color: blue;
+  color: blue;
 }
 
 #EventTitle:hover {
-    color: aqua;
-    cursor: pointer;
+  color: aqua;
+  cursor: pointer;
 }
 
 #allEventsLink {
-    font-weight: bold;
-    margin-right: '10px';
-    line-height: 60px;
-
-    color: blue;
-    text-decoration: none;
+  font-weight: bold;
+  margin-right: "10px";
+  line-height: 1.2;
+  color: blue;
+  text-decoration: none;
 }
 
-#upcomingevents-widget{
-    padding-top: 50px;
+#upcomingevents-widget {
+  padding-top: 50px;
 }
 
 #allEventsLink:hover {
-    color: aqua;
-    cursor: pointer;
+  color: aqua;
+  cursor: pointer;
 }
 
 /* MainMenu.js */
 .dashboardLink:link {
-    color: blue;
-    text-decoration: none;
-    font-weight: bold;
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .dashboardLink:visited {
-    color: blue;
-    text-decoration: none;
-    font-weight: bold;
-
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .dashboardLink:hover {
-    color: aqua;
-    text-decoration: none;
-    font-weight: bold;
-
+  color: aqua;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .dashboardLink:active {
-    color: blue;
-    text-decoration: none;
-    font-weight: bold;
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .dashboard-table {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
 }
 
 /* Dashboard.js */
 #dashboard-body {
-    width: 100%;
-    min-width: 1000px;
-    height: auto;
+  width: 100%;
+  min-height: calc(100vh - 397.8px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;  
 }
 
 #dashboard-title {
-    text-align: center;
+  text-align: center;
 }
 
 #dashboard-container {
-    padding: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
 }
 
 .dashboard-widget {
-    width: 50%;
-    float: left;
-    text-align: center;
+  width: 50%;
+  text-align: center;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
 
-  .logo img {
-    height: 50px;
-  }
+.logo img {
+  height: 50px;
+}
 
-  @media (max-width: 768px) {
+@media (min-width: 280px) and (max-width: 768px) {
   nav {
     flex-direction: column;
     align-items: flex-start;
@@ -144,4 +148,63 @@ nav {
   .logo img {
     height: 40px;
   }
+  #loginComp {
+    width: 100%;
+    padding: 0 20px;
+  }
+  #LoginComp-Body {
+    min-height: calc(100vh - 368.83px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  #dashboard-container {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dashboard-widget {
+    width: 100%;
+    text-align: center;
+  }
+  .dashboard-table .list-group-horizontal {
+    flex-direction: column;
+  }
+  .dashboard-table .list-group-horizontal>.list-group-item:first-child:not(:last-child){
+    border-radius: 6px;
+  }
+  .dashboard-table .list-group-horizontal>.list-group-item+.list-group-item{
+    border: 1px solid #00000020;
+    border-radius: 6px;
+  }
+  .dashboard-table .list-group-item{
+    margin: 5px 0;
+
+  }
+}
+@media (min-width: 769px) and (max-width: 1023px) {
+  #dashboard-container {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #loginComp {
+    width: 70%;
+  }
+  .dashboard-widget{
+    width: 100%;
+  }
+  #dashboard-body {
+    min-height: calc(100vh - 397.8px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;  }
 }

@@ -1,0 +1,114 @@
+.carousel {
+  margin: auto;
+  padding: 0 120px;
+}
+
+.carousel-item {
+  padding: 40px 0 0 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .carousel-indicators {
+  top: 0; 
+} */
+.main-img {
+  width: 100%;
+  height: 600px;
+}
+.img-cr {
+  width: 70%;
+  margin: 0 auto;
+  height: 400px;
+}
+.carousel-inner {
+  top: 10%;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 1;
+}
+
+.carousel-inner {
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  margin: auto;
+}
+
+.options {
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.options label {
+  align-items: center;
+  margin-right: 8px;
+}
+.options input {
+  margin-right: 4px;
+}
+
+.form-label {
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+.questionary {
+  min-height: calc(100vh - 627.8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.questionary .carousel-indicators {
+  margin-bottom: 0;
+  bottom: -8%;
+}
+.questionary .questionary-carousel {
+  height: 400px;
+}
+
+@media (min-width: 280px) and (max-width: 768px) {
+  .main-img {
+    width: 100%;
+    height: 600px;
+  }
+  .carousel {
+    padding: 0 16px;
+  }
+  .img-cr {
+    width: 100%;
+    margin: 0 auto;
+    height: 280px;
+  }
+  .carousel-inner {
+    top: 20%;
+  }
+  .questionary .carousel-indicators {
+  }
+}
+@media (min-width: 769px) and (max-width: 1023px) {
+  .main-img {
+    width: 100%;
+    height: 800px;
+  }
+  .carousel {
+    padding: 0 40px;
+  }
+  .img-cr {
+    width: 100%;
+    margin: 0 auto;
+    height: 400px;
+  }
+  .carousel-inner {
+    top: 25%;
+  }
+}

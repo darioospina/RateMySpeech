@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 
 //Import Dummy Data
-import EventsData from '../../Dummy Data/EventsData'
+import EventsData from '../Dummy Data/EventsData'
 
 //Import Table and Navigation properties
 import Table from 'react-bootstrap/Table'
@@ -33,7 +33,7 @@ export const ListOfEvents = () => {
       <td>{event.eventName}</td>
       <td>{event.auditoriumSize}</td>
       <td>{event.location}</td>
-      <td>
+      <td style={{display: 'flex', alignItems: 'center'}}>
         {/* These are the clickable icons to open popup with detials of a single event
              and to Delete the entry */}
         <NavLink className='AllEvents-Actions'>
@@ -47,10 +47,10 @@ export const ListOfEvents = () => {
   );
 
   return (
-    <div>
+    <div >
       <h1>All Your Events</h1>
       {/*Creates Table header and then inserts Data from DB into Table body */}
-      <Table striped>
+      <Table striped responsive>
         <thead>
           <tr>
             <th>Speaker</th>

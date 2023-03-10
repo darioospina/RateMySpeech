@@ -1,52 +1,67 @@
 /*
 Module Name:            Create a schema for questions for events 
 Module Description:     This will make the data model for questions given by the speaker
-Author:                 Dario Ospina / Jeff Martin Abayon 
+Author:                 Jeff Martin Abayon
 */
-import mongoose from 'mongoose'
+
+
+const mongoose = require('mongoose')
+
 const Schema = mongoose.Schema
 
 const questionsSchema = new Schema({
+	eventId: {
+		type: ObjectId,
+		required: true
+	},
 	questionOne: {
 		type: String,
 		required: true
 	},
 	questionTwo: {
-		type: String
+		type: String,
+		required: true
 	},
 	questionThree: {
-		type: String
+		type: String,
+		required: true
 	},
 	questionFour: {
-		type: String
+		type: String,
+		required: true
 	},
 	questionFive: {
-		type: String
+		type: String,
+		required: true
 	},
 	questionSix: {
-		type: String
+		type: String,
+		required: true
 	},
 	questionSeven: {
-		type: String
+		type: String,
+		required: true
 	},
 	questionEight: {
-		type: String
+		type: String,
+		required: true
 	},
 	questionNine: {
-		type: String
+		type: String,
+		required: true
 	},
 	questionTen: {
-		type: String
-	},
-	eventId: {
-		type: Schema.Types.ObjectId,
-		ref: 'Events',
+		type: String,
 		required: true
 	},
 	createdAt: {
 	   type: Date,
-	   default: Date.now
-   }
+		required: true
+	},
+	updatedAt: {
+	   type: Date,
+		required: true
+	}
 })
 
-export default mongoose.model('Questions', questionsSchema);
+module.exports = mongoose.model('Course', questionsSchema)

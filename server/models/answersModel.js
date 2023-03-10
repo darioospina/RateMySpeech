@@ -1,66 +1,83 @@
 /*
 Module Name:            Create a schema for audiences' answers to evaluation questions
 Module Description:     This will make the data model for audiences' answers to evaluation questions together with their comments/suggestions
-Author:                 Dario Ospina / Jeff Martin Abayon 
+Author:                 Jeff Martin Abayon
 */
 
-import mongoose from 'mongoose' 
+//dd
+const mongoose = require('mongoose') 
+
 const Schema = mongoose.Schema
 
 const answersSchema = new Schema({
+	questionId: {
+		type: objectId,
+		required: true
+	},
 	attendeeName: {
 		type: String,
 		required: true
 	},
 	attendeeEmail: {
-		type: String
+		type: String,
+		required: true
 	},
 	attendeePhone: {
-		type: String
+		type: String,
+		required: true
 	},
 	answerOne: {
-		type: Number,
+		type: number,
 		required: true
 	},
 	answerTwo: {
-		type: Number
+		type: number,
+		required: false
 	},
 	answerThree: {
-		type: Number
+		type: number,
+		required: false
 	},
 	answerFour: {
-		type: Number
+		type: number,
+		required: false
 	},
 	answerFive: {
-		type: Number
+		type: number,
+		required: false
 	},
 	answerSix: {
-		type: Number
+		type: number,
+		required: false
 	},
 	answerSeven: {
-		type: Number
+		type: number,
+		required: false
 	},
 	answerEight: {
-		type: Number
+		type: number,
+		required: false
 	},
 	answerNine: {
-		type: Number
+		type: number,
+		required: false
 	},
 	answerTen: {
-		type: Number
+		type: number,
+		required: false
 	},
-	comments: {
-		type: String
-	},
-	questionsId: {
-		type: Schema.Types.ObjectId,
-		ref: 'Questions',
-		required: true
+	comment: {
+		type: String,
+		required: false
 	},
 	createdAt: {
-		type: Date,
-		default: Date.now
+	   type: Date,
+		required: true
+	},
+	updatedAt: {
+	   type: Date,
+		required: true
 	}
 })
 
-export default mongoose.model('Answers', answersSchema)
+module.exports = mongoose.model('Course', answersSchema)

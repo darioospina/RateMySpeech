@@ -56,14 +56,123 @@
     color: #FFC000;
     text-shadow: -0.5px 0 grey, 0 0.5px grey, 0.5px 0 grey, 0 -0.5px grey;
 }
-
-@media only screen and (max-width: 700px) {
+.card-label {
+    margin-right: 10px;
+}
+.card-qr {
+    width: 80%;
+    margin: 0 auto;
+}
+.svg-icons {
+    color: "#696969";
+    font-size: 60px;
+    margin: 0 5px ;
+}
+.icons {
+    display: flex;
+    justify-content: center;
+}
+.card-qr input{
+    border: 1px solid lightgray;
+}
+.qrcode-section{
+    padding: 20px;
+    min-height: calc(100vh - 397.8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@media (min-width: 280px) and (max-width: 575px) {
     .questionChart {
         width: 100%;
     }
     .pieChartStyle {
         font-size: 6px;
     }
+    .card-qr {
+        width: 100%;
+    }
+    .qrcode-section{
+        padding: 20px;
+        min-height: calc(100vh - 397.8px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .cardContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .cardTitle p{
+        font-size: 18px;
+    }
+    .svg-icons {
+        color: "#696969";
+        font-size: 40px;
+        margin: 0 5px ;
+    }
+    .icons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    .card-qr input{
+        margin: 11px 0;
+        width: 100%;
+    }
+  }
+  @media (min-width: 676px) and (max-width: 768px) {
+    .card-qr {
+        width: 100%;
+    }
+    .qrcode-section{
+        padding: 20px;
+        min-height: calc(100vh - 397.8px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .cardContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .cardTitle p{
+        font-size: 18px;
+    }
+    .svg-icons {
+        color: "#696969";
+        font-size: 40px;
+        margin: 0 5px ;
+    }
+    .icons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    .card-qr form {
+        width: 60%;
+        margin: 0 auto;
+    }
+    .card-qr input{
+        margin: 11px 5px;
+    }
   }
 
-
+  @media (min-width: 769px) and (max-width: 1023px) {
+    .card-qr{
+        width: 90%;
+    }
+    .qrcode-section{
+        min-height: calc(100vh - 397.8px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .card-qr input{
+        margin: 6px 0;
+    }
+  }

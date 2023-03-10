@@ -1,7 +1,9 @@
 import React from 'react';
+import '../Styles/ProfileDetails.css';
 import { Link } from 'react-router-dom';
 import { Form } from "react-bootstrap";
 
+import dummy1 from '../Images/dummy1.jpeg';
 
 export const ProfileDetails = () => {
   const profile = {
@@ -11,7 +13,7 @@ export const ProfileDetails = () => {
     occupation: 'Software Engineer',
     about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.',
     languages: ['English', 'Spanish', 'French'],
-    picture: ''
+    picture: '../Images/dummy1.jpeg'
   };
 
   return (
@@ -19,7 +21,7 @@ export const ProfileDetails = () => {
       <Form className="profile-card">
         <Form className="profile-picture-container">
           <Form className="profile-picture-wrapper">
-            <img src={''} className="profilePicture" alt={profile.name}/>
+            <img src={dummy1} className="profilePicture" alt={profile.name}/>
             <Link to="/profileedit">
               <button className="edit-button">Edit</button>
             </Link>

@@ -9,11 +9,13 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 dotenv.config();
 
-// Import Routes
+// Import User Routes
 import usersRoutes from './routes/users.js'
-import questionsRoutes from './routes/questions.js'
+// import questionsRoutes from './routes/questions.js'
 import eventsRoutes from './routes/events.js'
-import answersRoutes from './routes/answers.js'
+// import commentsRoutes from './routes/comments.js'
+// import attendeesRoutes from './routes/attendees.js'
+// import answersRoutes from './routes/answers.js'
     
 // Express app
 const app = express();
@@ -45,6 +47,8 @@ mongoose.connect(MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
 
 // Call to all the APIs
 app.use('/usersRoutes', usersRoutes);
-app.use('/questionsRoutes', questionsRoutes);
+// app.use('/questionsRoutes', questionsRoutes);
 app.use('/eventsRoutes', eventsRoutes);
-app.use('/answersRoutes', answersRoutes);
+// app.use('/commentsRoutes', commentsRoutes);
+// app.use('/attendeesRoutes', attendeesRoutes);
+// app.use('/answersRoutes', answersRoutes);

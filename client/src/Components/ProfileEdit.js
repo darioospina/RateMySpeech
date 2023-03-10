@@ -5,6 +5,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 // Import button and form from bootstrap
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import '../Styles/ProfileEdit.css';
 
 // Import Axios
 import Axios from 'axios'
@@ -36,7 +37,7 @@ export const ProfileEdit = () => {
   }  
 
   return (
-    <div style={{margin: 'auto', textAlign:'center'}}>
+    <div style={{margin: 'auto', textAlign:'center'}} className="profileedit-section">
     <Form id='loginComp'>
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Name</Form.Label>
