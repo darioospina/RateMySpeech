@@ -1,0 +1,43 @@
+- Update ListOfEvents.js, UpcomingEvents.js to pull from database
+
+ListOfEvents.js
+    - make delete button work
+
+UpcomingEvents.js
+    - events need to be sorted for the next three events by date
+
+GENERAL OOPSIE NOTES
+- "Edit Your Info" in ProfileDetails.js takes you to a page that creates new user
+- ProfileEdit.js just creates a new user
+- SignUp button in LandingPage.js redirects to ProfileEdit.js
+
+COMPLETED
+Mar.10 - Check in
+    - ProfileDetails.js updated and styled
+    - LandingPage.js created and styled
+    - Redirection between LandingPage, Login, and Dashboard flows better
+    - Dashboard.js now accurately represents if user is ADMIN or Speaker
+        - ADMIN
+            - Registerd speakers list appears, Create new event button dissapears
+        - SPEAKER 
+            - Registerd speakers list dissapears, create new event button appears
+
+Mar.3 - Check in
+    - Formated Login page
+    - Created login functionality based on dummy data
+    - Updated NavBar to include Log Out option
+    - Renamed fields in the dummy data to match DB, ready for merger
+    - created Registerd list of speakers and link to register speakers 
+        for ADMINS in Dashboard.js
+    - Formatted Dashboard.js
+
+Feb.17 - Check in
+    - SICK
+
+Feb.10 - Check in
+    - Formated Dashboard.js page
+    - Created dummy data in seperate file and connected ListOfEvents.js and Dashboard.js 
+        page components to pull dynamically from dummy data
+    - Created EventDetials.js as a pop up within ListOfEvents.js and Dashboard.js page components
+    - Styled Everything as I worked
+    - Created NavBarHeader.js

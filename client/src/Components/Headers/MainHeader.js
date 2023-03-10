@@ -18,7 +18,7 @@ export const MainHeader = () => {
 
     return (
         <div className='divHeader'>
-        <img src={Logo} className="header1-logo" alt="logo"/>
+        <img src={Logo} href="/home" className="header1-logo" alt="logo"/>
         </div>    
     )
 }

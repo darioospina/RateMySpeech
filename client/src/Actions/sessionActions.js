@@ -16,6 +16,7 @@ export const login = credentials => dispatch => {
             localStorage.setItem('name', res.data[0].name);
             localStorage.setItem('email', res.data[0].email);
             localStorage.setItem('phone', res.data[0].phone);
+            localStorage.setItem('role', res.data[0].role);
             dispatch(setCurrentUser(user));
             return { type: 'NAVIGATE_TO_DASHBOARD' };
         } else {

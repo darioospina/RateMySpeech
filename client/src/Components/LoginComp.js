@@ -29,7 +29,7 @@ function LoginComp() {
     dispatch(login({ email, password }))
     .then(action => {
       if(action && action.type == 'NAVIGATE_TO_DASHBOARD') {
-        Navigate('./Dashboard')
+        Navigate('/Dashboard')
       } 
       else if(action && action.type == 'USER_NOT_FOUND') {
         alert("User not found. Please try again.")

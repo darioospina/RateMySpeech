@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import {useLocation} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 //Import StyleSheet and Logo
 import '../../Styles/PatStyles.css'
@@ -26,7 +26,7 @@ export const NavBarHeader = () => {
     const dispatch = useDispatch();
 
     const handleLogout = () => {
-        dispatch(logout())        
+        dispatch(logout())
     }
 
     const getPath = location.pathname
@@ -40,14 +40,14 @@ export const NavBarHeader = () => {
             setShowHeader(false);
         }
     }, [location.pathname]);
-  
+
     if (!showHeader) return null;
 
     return (
         <div className='divHeader'>
             <Navbar expand="lg">
                 <Container>
-                    <Navbar.Brand href="/Dashboard">
+                    <Navbar.Brand href="/home">
                         <img src={Logo} className="header2-logo" alt="logo" />
                     </Navbar.Brand>
                     <Navbar id="basic-navbar-nav" >

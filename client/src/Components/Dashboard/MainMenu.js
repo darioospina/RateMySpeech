@@ -3,6 +3,8 @@ import React from 'react'
 import ListGroup from 'react-bootstrap/ListGroup';
 
 export const MainMenu = () => {
+    const user_Role = localStorage.getItem("role")
+
     return (
         <div>
             {/* Navigation Box on Dashboard.js */}
@@ -18,11 +20,15 @@ export const MainMenu = () => {
                             My Scores
                         </a>
                     </ListGroup.Item>
-                    <ListGroup.Item>
-                        <a className='dashboardLink' href='/NewEvent'>
-                            Create a New Event
-                        </a>
-                    </ListGroup.Item>
+
+                    {/* If user is a speaker, display another button */}
+                    {(user_Role == 'speaker') && (
+                        <ListGroup.Item>
+                            <a className='dashboardLink' href='/NewEvent'>
+                                Create a New Event
+                            </a>
+                        </ListGroup.Item>
+                    )}
                 </ListGroup>
             </div>
         </div>
