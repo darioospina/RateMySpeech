@@ -47,7 +47,7 @@ export const NavBarHeader = () => {
         <div className='divHeader'>
             <Navbar expand="lg">
                 <Container>
-                    <Navbar.Brand href="/home">
+                    <Navbar.Brand href="/">
                         <img src={Logo} className="header2-logo" alt="logo" />
                     </Navbar.Brand>
                     <Navbar id="basic-navbar-nav" >

@@ -13,9 +13,12 @@ import { Modal } from "react-bootstrap";
 import { FaSearchPlus } from 'react-icons/fa'
 import { AiFillDelete } from 'react-icons/ai'
 
+import Axios from 'axios'
+
 export const ListOfEvents = () => {
   //Handles the visibility of EventDetails Popup
   const [show, setShow] = useState(false);
+  const [listOfEvents, setListOfEvents] = useState("")
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -25,6 +28,16 @@ export const ListOfEvents = () => {
     setsingleEventData(EventsData[singleEventData_id]);
     setShow(true);
   }
+
+  // useEffect(() => {
+  //   Axios.get(`${process.env.REACT_APP_API_URL}/eventsRoutes/getEvents`)
+  //   .then((res) => {
+  //     console.log(res.data)
+  //     setListOfEvents(res.data)
+  //   }).catch((err) => {
+  //     console.log(err)
+  //   })
+  // }, [])
 
   //Maps over all the event data and inserts it into the body of the table
   const ListOfEvents = EventsData.map((event) =>
