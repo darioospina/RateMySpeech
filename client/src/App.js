@@ -31,7 +31,7 @@ function App() {
       <MainHeader />
       <Routes>      
 
-        <Route path='/home' element={<LandingPage />} /> {/*Website Startup Location */}
+        <Route path='/' element={<LandingPage />} /> {/*Website Startup Location */}
 
         {/* Audience Related Pages*/}
         <Route path='/qrcode' element={<QRCodeComp />} />

@@ -15,13 +15,24 @@ export const LandingPage = () => {
   return (
 
     <div>
-      <h1 id='pageTitle'>RateMySpeech</h1>
       <h3 id='pageSubTitle'>A tool for educational speakers to use before, during, and after
         their presentations.</h3>
-
+      {/* Buttons for "Sign Up" and "Log In" */}
+      <Stack id="buttons-block" direction="horizontal" gap={5}>
+        <div id="signUp-button">
+          <Nav.Link href="/profileedit">
+            <Button variant='warning'>Sign Up</Button>
+          </Nav.Link>
+        </div>
+        <div id="logIn-button">
+          <Nav.Link href="/Login">
+            <Button variant='warning'>Log In</Button>
+          </Nav.Link>
+        </div>
+      </Stack>
       {/* Carousel - Switches between three slides, with image and text on each slide */}
       <div style={{ height: "100vh", margin: "0" }}>
-        <Carousel>
+        <Carousel variant="dark" interval={3000}>
           {/* First Slide */}
           <Carousel.Item>
             <img
@@ -64,19 +75,7 @@ export const LandingPage = () => {
           </Carousel.Item>
         </Carousel>
       </div>
-      {/* Buttons for "Sign Up" and "Log In" */}
-      <Stack id="buttons-block" direction="horizontal" gap={5}>
-        <div id="signUp-button">
-          <Nav.Link href="/profileedit">
-            <Button>Sign Up</Button>
-          </Nav.Link>
-        </div>
-        <div id="logIn-button">
-          <Nav.Link href="/Login">
-            <Button>Log In</Button>
-          </Nav.Link>
-        </div>
-      </Stack>
+
     </div>
   )
 }

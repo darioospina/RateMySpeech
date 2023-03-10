@@ -163,20 +163,22 @@
 .carousel-caption {
     background-color: rgb(0, 0, 0, 0.75);
     padding: 5px;
+    color: white !important
 }
 
 #buttons-block {
     margin: auto;
-    width: 15%;
-    margin-top: 100px;
+    margin-top: 0px;
 }
 
 #signUp-button {
     padding: 10px;
+    margin: auto
 }
 
 #logIn-button {
     padding: 10px;
+    margin: auto
 }
 
 nav {
