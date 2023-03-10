@@ -5,7 +5,10 @@ Author:                 Dario Ospina
 import Events from '../models/eventsModel.js'
 import mongoose from 'mongoose'
 
-//Module Description:     This module fetch all records in the events collection in mongoDB
+/*
+Description:            This module fetch all records in the events collection in mongoDB
+Author:                 Dario Ospina
+*/
 export const getEvents = (req, res) => {
     Events.find()
     .then((result) => {
@@ -16,32 +19,37 @@ export const getEvents = (req, res) => {
         console.log(err))
 }
 
+/*
+Name:                   GetEvent
+Description:            Get event by Id
+Author:                 Jeff Abayon
+*/
+export const getEventByID = (req, res) => {
+    const EventId = req.params.EventId
+
+    Events.find({"_id": mongoose.Types.ObjectId(EventId)})
+    .then((result) => {
+        console.log(result)
+        res.send(result)
+    })
+    .catch((err) => 
+        console.log(err))
+}
 
 
-//Module Description:     This module fetch a particular record using EventID in the events collection in mongoDB
-// app.get("/getEvent/:id", (req, res) => {
-//     const id = req.params.id
-
-//     Event.find({id: id})
-//     .then((result) => {
-//         console.log(result)
-//         res.send(result)
-//     })
-//     .catch((err) => 
-//         console.log(err))
-// })
-
-
-
-//Module Description:     This module inserts a record into events collection in mongoDB
+/*
+Name:                   createEvent
+Description:            insert a record into database
+Author:                 Jeff Abayon
+*/
 export const createEvent = (req, res) => {
     const newEvent = new Events({
         eventname: req.body.eventname,
         eventdesc: req.body.eventdesc,
         eventdate: req.body.eventdate,
         venue: req.body.venue,
+        state: req.body.state,
         eventcapacity: req.body.eventcapacity,
-        qrcode: req.body.qrcode,
         speakerId: req.body.speakerId 
     });
     newEvent.save()
@@ -55,41 +63,54 @@ export const createEvent = (req, res) => {
 }
 
 
-// Module Description:     This module updates a record in the events collection in mongoDB
-// app.patch("/deleteEvent/:id", (req, res) => {
-//     Event.findByIdAndUpdate(req.params._id, {
-//         _id: req.body._id 
-//     }, {
-//         new: true
-//     })
-//     .then((result) => {
-//         console.log(result)
-//         res.send(result)
-//     })
-//     .catch((err) => 
-//         console.log(err))
-// })
+/*
+Name:                   updateEventById
+Description:            update an event in the database
+Author:                 Jeff Abayon
+*/
+export const updateEventById = (req, res) => {
+    const EventId = req.params.EventId
 
+    const eventName = req.body.eventName
+    const eventDesc = req.body.eventDesc
+    const eventDate = req.body.eventDate
+    const Venue = req.body.Venue
+    const State = req.body.State
+    const eventCapacity = req.body.eventCapacity
+
+    Events.updateOne(
+        {"_id": mongoose.Types.ObjectId(EventId)},
+        {
+            $set: {
+                "eventname": eventName,
+                "eventdesc": eventDesc,
+                "eventdate": eventDate,
+                "venue": Venue,
+                "state": State,
+                "eventcapacity": eventCapacity
+            }
+        }
+    )
+    .then((result) => {
+        console.log(result)
+        res.send(`Event with ID ${EventId} successfully updated`)
+    })
+    .catch((err) => console.log(err))
+}
 
 
 /*
-Module Name:            deleteEvent
-Module Description:     This module updates a record in the events collection in mongoDB
-Author:                 Jeff Martin Abayon
-*/ 
-// app.delete("/updateEvent/:id", (req, res) => {
-//     MyEvents.findOneAndRemove({
-//        id: req.params.id,
-//     })
-//     .then((result) => {
-//        console.log(result)
-//        res.send({message: 'Event not found'})
-//     })
-//     .catch((err) => {
-//        console.log(err)
-//        res.send({message: 'Event not found'})
-//     })
-// })
+Name:                   deleteEventById
+Description:            delete an event in the database
+Author:                 Jeff Abayon
+*/
+export const deleteEventById = (req, res) => {
+    const EventId = req.params.EventId
 
-
-
+    Events.deleteOne({"_id": mongoose.Types.ObjectId(EventId)})
+    .then((result) => {
+        console.log(result)
+        res.send(`Event with ID ${EventId} successfully deleted`)
+    })
+    .catch((err) => console.log(err))
+}

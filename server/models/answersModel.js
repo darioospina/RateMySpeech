@@ -52,7 +52,7 @@ const answersSchema = new Schema({
 	comments: {
 		type: String
 	},
-	questionsId: {
+	questionId: {
 		type: Schema.Types.ObjectId,
 		ref: 'Questions',
 		required: true

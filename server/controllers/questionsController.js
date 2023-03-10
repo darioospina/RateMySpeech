@@ -5,9 +5,15 @@ Author:                 Dario Ospina / Jeff Martin Abayon
 import Questions from '../models/questionsModel.js'
 import mongoose from 'mongoose'
 
-// Module Description:     This module fetch all questions for an event inside events collection in mongoDB
-export const getQuestionaries = (req, res) => {
-    Questions.find()
+/*
+Name:                   getQuestionnaireById
+Description:            get questionaire by event id
+Author:                 Jeff Abayon
+*/
+export const getQuestionnaireById = (req, res) => {
+    const EventId = req.params.EventId
+
+    Questions.find({"_id": mongoose.Types.ObjectId(EventId)})
     .then((result) => {
         console.log(result)
         res.send(result)
@@ -16,20 +22,12 @@ export const getQuestionaries = (req, res) => {
         console.log(err))
 }
 
-// // Module Description:     This module fetch a particular question in the questions collection in mongoDB
-// app.get("/getQuestion/:id", (req, res) => {
-//     const id = req.params.id
 
-//     Question.find({id: id})
-//     .then((result) => {
-//         console.log(result)
-//         res.send(result)
-//     })
-//     .catch((err) => 
-//         console.log(err))
-// })
-
-// This module inserts a record into questions collection in mongoDB
+/*
+Name:                   createQuestionnaire
+Description:            update an event in the database
+Author:                 Jeff Abayon
+*/
 export const createQuestionnaire = (req, res) => {
     const newQuestionnaire = new Questions({
         questionOne: req.body.questionOne,
@@ -53,32 +51,61 @@ export const createQuestionnaire = (req, res) => {
 }
 
 
-// //Module Description:     This module updates a record in the questions collection in mongoDB
-// app.patch("/updateQuestion/:id", (req, res) => {
-//     Question.findByIdAndUpdate(req.params._id, {
-//         _id: req.body._id 
-//     }, {
-//         new: true
-//     })
-//     .then((result) => {
-//         console.log(result)
-//         res.send(result)
-//     })
-//     .catch((err) => 
-//         console.log(err))
-// })
+/*
+Name:                   UpdateQuestionnaireById
+Description:            update an event in the database
+Author:                 Jeff Abayon
+*/
+export const UpdateQuestionnaireById = (req, res) => {
+    const QuestionId = req.params.QuestionId
 
-// //Module Description:     This module updates a record in the questions collection in mongoDB
-// app.delete("/deleteQuestion/:id", (req, res) => {
-//     MyQuestions.findOneAndRemove({
-//        id: req.params.id,
-//     })
-//     .then((result) => {
-//        console.log(result)
-//        res.send({message: 'Question not found'})
-//     })
-//     .catch((err) => {
-//        console.log(err)
-//        res.send({message: 'Question not found'})
-//     })
-// })
+    const questionOne = req.body.questionOne
+    const questionTwo = req.body.questionTwo
+    const questionThree = req.body.questionThree
+    const questionFour = req.body.questionFour
+    const questionFive = req.body.questionFive
+    const questionSix = req.body.questionSix
+    const questionSeven = req.body.questionSeven
+    const questionEight = req.body.questionEight
+    const questionNine = req.body.questionNine
+    const questionTen = req.body.questionTen
+
+    Questions.updateOne(
+        {"_id": mongoose.Types.ObjectId(QuestionId)},
+        {
+            $set: {
+                "questionOne": questionOne,
+                "questionTwo": questionTwo,
+                "questionThree": questionThree,
+                "questionFour": questionFour,
+                "questionFive": questionFive,
+                "questionSix": questionSix,
+                "questionSeven": questionSeven,
+                "questionEight": questionEight,
+                "questionNine": questionNine,
+                "questionTen": questionTen,
+            }
+        }
+    )
+    .then((result) => {
+        console.log(result)
+        res.send(`User with ID ${UserId} successfully updated`)
+    })
+    .catch((err) => console.log(err))
+}
+
+/*
+Name:                   deleteQuestionaireById
+Description:            delete a questionaire in the database
+Author:                 Jeff Abayon
+*/
+export const deleteQuestionaireById = (req, res) => {
+    const QuestionId = req.params.QuestionId
+
+    Questions.deleteOne({"_id": mongoose.Types.ObjectId(QuestionId)})
+    .then((result) => {
+        console.log(result)
+        res.send(`Questionaire with ID ${QuestionId} successfully deleted`)
+    })
+    .catch((err) => console.log(err))
+}

@@ -23,6 +23,10 @@ const eventsSchema = new Schema({
 		type: String,
 		required: true
 	},
+	state: {
+		type: String,
+		required: true
+	},
 	eventcapacity: {
 		type: Number,
 		required: true

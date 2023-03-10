@@ -1,9 +1,15 @@
 import Answers from '../models/answersModel.js'
 import mongoose from 'mongoose'
 
-// Module Description:     This module fetch all records in the answers collection in mongoDB
-export const getAnswers = (req, res) => {
-    Answers.find()
+/*
+Name:                   getAllAnswersByQuestionId
+Description:            get answers by question id
+Author:                 Jeff Abayon
+*/
+export const getAllAnswersByQuestionId = (req, res) => {
+    const QuestionId = req.params.QuestionId
+
+    Answers.find({"_id": mongoose.Types.ObjectId(QuestionId)})
     .then((result) => {
         console.log(result)
         res.send(result)
@@ -12,8 +18,30 @@ export const getAnswers = (req, res) => {
         console.log(err))
 }
 
-// Module Description:     This module inserts a record into answers collection in mongoDB
-export const createAnswer = (req, res) => {
+/*
+Name:                   getAnswersByAnswerId
+Description:            get answers by answer id
+Author:                 Jeff Abayon
+*/
+export const getAnswersByAnswerId = (req, res) => {
+    const AnswerId = req.params.AnswerId
+
+    Answers.find({"_id": mongoose.Types.ObjectId(AnswerId)})
+    .then((result) => {
+        console.log(result)
+        res.send(result)
+    })
+    .catch((err) => 
+        console.log(err))
+}
+
+
+
+/*
+Name:                   createAnswer
+Description:            insert answers into the database
+Author:                 Jeff Abayon
+*/export const createAnswer = (req, res) => {
     const newAnswer = new Answers({
         attendeeName: req.body.attendeeName,
         attendeeEmail: req.body.attendeeEmail,
@@ -40,49 +68,19 @@ export const createAnswer = (req, res) => {
 }
 
 
-// //Module Description:     This module fetch a particular record using AnswerID in the answers collection in mongoDB
-// app.get("/getAnswer/:id", (req, res) => {
-//     const id = req.params.id
+/*
+Name:                   deleteAnswersById
+Description:            delete a answers in the database
+Author:                 Jeff Abayon
+*/
+export const deleteAnswersById = (req, res) => {
+    const AnswerId = req.params.AnswerId
 
-//     Answer.find({id: id})
-//     .then((result) => {
-//         console.log(result)
-//         res.send(result)
-//     })
-//     .catch((err) => 
-//         console.log(err))
-// })
-
-
-// // Module Description:     This module updates a record in the answers collection in mongoDB
-// app.patch("/updateAnswer/:id", (req, res) => {
-//     Answers.findByIdAndUpdate(req.params._id, {
-//         _id: req.body._id 
-//     }, {
-//         new: true
-//     })
-//     .then((result) => {
-//         console.log(result)
-//         res.send(result)
-//     })
-//     .catch((err) => 
-//         console.log(err))
-// })
-
-// // Module Description:     This module deletes a record in the answers collection in mongoDB
-// app.delete("/deleteAnswer/:id", (req, res) => {
-//     MyAnswers.findOneAndRemove({
-//        id: req.params.id,
-//     })
-//     .then((result) => {
-//        console.log(result)
-//        res.send({message: 'Answer not found'})
-//     })
-//     .catch((err) => {
-//        console.log(err)
-//        res.send({message: 'Answer not found'})
-//     })
-// })
-
-
+    Answers.deleteOne({"_id": mongoose.Types.ObjectId(AnswerId)})
+    .then((result) => {
+        console.log(result)
+        res.send(`Answers with ID ${AnswerId} successfully deleted`)
+    })
+    .catch((err) => console.log(err))
+}
 
