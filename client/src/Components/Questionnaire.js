@@ -11,7 +11,7 @@ import Axios from 'axios'
 
 
 
-const questions = [
+const Aquestions = [
   {
     question: "On a scale of 1 to 5 with 5 as the highest and 1 as the lowest, how do you rate the Speaker?",
     options: [1,2,3,4,5],
@@ -36,21 +36,23 @@ const questions = [
 
 export const Questionnaire = () => {
   const [index, setIndex] = useState(0);
-  const { questionnaireId } = useParams();
-  const [Aquestions, AsetQuestions] = useState(null)
-  const [eventId, setEventId] = useState(null)
+  const {questionnaireId} = useParams();
+  const [questions, setQuestions] = useState("")
+  //const [eventId, setEventId] = useState(null)
 
-useEffect = (() => {
-  // WORK IN PROGRESS
-  Axios.get(`${process.env.REACT_APP_API_URL}/questionsRoutes/getQuestionaries/:questionnaireId`)
-  .then((res) => {
-    setEventId(res.data._id)
-    console.log("New Event Created")
-    localStorage.setItem('EventID',res.data._id)
-  }).catch((err) => {
-    console.log(err)
-  })
-}, Aquestions)
+  useEffect(() => {
+    // WORK IN PROGRESS
+    Axios.get(`${process.env.REACT_APP_API_URL}/questionsRoutes/getQuestionsFromOneEvent/${questionnaireId}`)
+    .then((res) => {
+      //setEventId(res.data._id)
+      console.log(res.data)
+      setQuestions(res.data)
+    }).catch((err) => {
+      console.log(err)
+    })
+  }, [])
+
+
 
 
 
@@ -91,7 +93,22 @@ useEffect = (() => {
               <Form.Control type="phone" placeholder="Password"/>
             </Form.Group>
           </Carousel.Item>
-          {questions.map(({ question, options }, i) => (
+          {questions.questionOne != ""? 
+          <Carousel.Item>
+            <div>On a scale of 1 to 5 with 5 as the highest and 1 as the lowest, how do you rate <b>{questions.questionOne}</b></div>
+          </Carousel.Item> : null}
+          {questions.questionTwo != ""? 
+          <Carousel.Item>
+            <div>On a scale of 1 to 5 with 5 as the highest and 1 as the lowest, how do you rate <b>{questions.questionTwo}</b></div>
+          </Carousel.Item> : null}
+          {/* {
+            questions.map((quest) => {
+              quest !== null ? (
+                console.log(quest)
+              ) : null
+            })
+          } */}
+          {/* {Aquestions.map(({ question, options }, i) => (
             <Carousel.Item key={i} className="carousel-item questions-item">
               <div>{question}</div>
               <div className="options">
@@ -103,7 +120,7 @@ useEffect = (() => {
                 ))}
               </div>
             </Carousel.Item>
-          ))}
+          ))} */}
           <Carousel.Item>
               <Form.Label>Comments</Form.Label>
               <InputGroup>

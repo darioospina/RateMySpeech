@@ -5,7 +5,7 @@ Author:                 Dario Ospina / Jeff Martin Abayon
 import Questions from '../models/questionsModel.js'
 import mongoose from 'mongoose'
 
-// Module Description:     This module fetch all questions for an event inside events collection in mongoDB
+// This module fetch all questions for an event inside events collection in mongoDB
 export const getQuestionaries = (req, res) => {
     Questions.find()
     .then((result) => {
@@ -15,6 +15,19 @@ export const getQuestionaries = (req, res) => {
     .catch((err) => 
         console.log(err))
 }
+
+// This module gets all the questions from an specific event
+export const getQuestionsFromOneEvent = (req, res) => {
+    const questionsId = req.params.questionsId
+
+    Questions.findOne({_id: questionsId})
+    .then((result) => {
+        console.log(result)
+        res.send(result)
+    })
+    .catch((err) => console.log(err))
+}
+
 
 // // Module Description:     This module fetch a particular question in the questions collection in mongoDB
 // app.get("/getQuestion/:id", (req, res) => {

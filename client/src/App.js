@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './Styles/App.css';
+import './Styles/PatStyles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

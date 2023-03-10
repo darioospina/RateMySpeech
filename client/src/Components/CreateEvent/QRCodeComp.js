@@ -42,6 +42,7 @@ export const QRCodeComp = ({eventId, questionnaireId}) => {
             <div style={{margin: 'auto', textAlign: 'center'}}>{qrcode}</div>
             <p className="card-event-id event-id-text">Questionnaire ID: </p>
             <p className="card-event-id">{questionnaireId}</p>
+            <p>Scan the QR code or <Link to={`/questionnaire/${questionnaireId}`}>Click here</Link></p>
         </div>
       </Card.Body>
     </Card>

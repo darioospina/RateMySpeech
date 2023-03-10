@@ -4,13 +4,16 @@ Author:                 Dario Ospina / Jeff Martin Abayon
 */
 import express from 'express'
 import Questions from '../models/questionsModel.js'
-import { createQuestionnaire, getQuestionaries } from '../controllers/questionsController.js'
+import { createQuestionnaire, getQuestionaries, getQuestionsFromOneEvent} from '../controllers/questionsController.js'
 //getQuestions, getQuestion,updateQuestion, deleteQuestion
 
 const router = express.Router()
 
 // GET all Questions 
 router.get('/getQuestionaries', getQuestionaries)
+
+// GET all Questions from One Event
+router.get('/getQuestionsFromOneEvent/:questionsId', getQuestionsFromOneEvent)
 
 // // GEt a single Question
 // router.get('/:id', getQuestion)
