@@ -1,9 +1,11 @@
 import { React } from 'react'
 import { Carousel, Button } from 'react-bootstrap';
+import {BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill} from 'react-icons/bs'; 
 
 //Import react-bootstrap components
 import Stack from 'react-bootstrap/Stack';
 import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom'
 
 //Import Images
 import Lecture from "../Images/lecture.png"
@@ -15,24 +17,12 @@ export const LandingPage = () => {
   return (
 
     <div>
-      <h3 id='pageSubTitle'>A tool for educational speakers to use before, during, and after
-        their presentations.</h3>
-      {/* Buttons for "Sign Up" and "Log In" */}
-      <Stack id="buttons-block" direction="horizontal" gap={5}>
-        <div id="signUp-button">
-          <Nav.Link href="/profileedit">
-            <Button variant='warning'>Sign Up</Button>
-          </Nav.Link>
-        </div>
-        <div id="logIn-button">
-          <Nav.Link href="/Login">
-            <Button variant='warning'>Log In</Button>
-          </Nav.Link>
-        </div>
-      </Stack>
-      {/* Carousel - Switches between three slides, with image and text on each slide */}
-      <div style={{ height: "100vh", margin: "0" }}>
-        <Carousel variant="dark" interval={3000}>
+        <Carousel 
+          variant="dark" 
+          interval={3000} 
+          style={{ padding: '0' }}
+          prevIcon={<BsFillArrowLeftCircleFill color="#FFC000" size={"50px"}/>} 
+          nextIcon={<BsFillArrowRightCircleFill color="#FFC000" size={"50px"}/>}>
           {/* First Slide */}
           <Carousel.Item>
             <img
@@ -45,6 +35,8 @@ export const LandingPage = () => {
               <p>An amazing tool for educational speakers! You can create and view all your events,
                 as well as create questionnaires for your audiences to take post presentation.
               </p>
+              <Link to={'/profileedit'}><Button variant='warning' style={{fontSize: 'large', margin: '10px'}}>Sign-up</Button></Link>
+              <Link to={'/Login'}><Button variant='warning' style={{fontSize: 'large', margin: '10px'}}>Login</Button></Link>
             </Carousel.Caption>
           </Carousel.Item>
           {/* Second Slide */}
@@ -59,6 +51,8 @@ export const LandingPage = () => {
               <p>We offer charts and stats based on compiled reviews from all your presentations.
                 View single event stats, or your overall "SpeakerScore". You can see it all here!
               </p>
+              <Link to={'/profileedit'}><Button variant='warning' style={{fontSize: 'large', margin: '10px'}}>Sign-up</Button></Link>
+              <Link to={'/Login'}><Button variant='warning' style={{fontSize: 'large', margin: '10px'}}>Login</Button></Link>
             </Carousel.Caption>
           </Carousel.Item>
           {/* Third Slide */}
@@ -74,7 +68,7 @@ export const LandingPage = () => {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-      </div>
+      {/* </div> */}
 
     </div>
   )

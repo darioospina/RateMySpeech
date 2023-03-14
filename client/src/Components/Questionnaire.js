@@ -6,10 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/Questionnaire.css";
 import Form from 'react-bootstrap/Form';
 import { useParams } from 'react-router-dom';
-
 import Axios from 'axios'
-
-
 
 export const Questionnaire = () => {
   const [index, setIndex] = useState(0);

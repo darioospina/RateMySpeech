@@ -16,9 +16,20 @@ export const getEvents = (req, res) => {
         console.log(err))
 }
 
-
-
 //Module Description:     This module fetch a particular record using EventID in the events collection in mongoDB
+export const getEventsBySpeaker = (req, res) => {
+    const SpeakerId = req.params.speakerId
+
+    Events.find({ speakerId: SpeakerId })
+    .then((result) => {
+        console.log(result)
+        res.send(result)
+    })
+    .catch((err) => 
+        console.log(err))
+}
+
+
 // app.get("/getEvent/:id", (req, res) => {
 //     const id = req.params.id
 
