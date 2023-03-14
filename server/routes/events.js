@@ -4,7 +4,7 @@ Author:                 Dario Ospina / Jeff Martin Abayon
 */
 import express from 'express'
 import Events from '../models/eventsModel.js'
-import {createEvent, getEvents} from '../controllers/eventsController.js'
+import {createEvent, getEvents, getEventsBySpeaker} from '../controllers/eventsController.js'
 
 const router = express.Router()
 
@@ -20,8 +20,8 @@ router.get('/getEvents', getEvents)
 // GET all FutureEvents 
 //router.get('/', getFutureEvents)
 
-// GEt a single Event
-//router.get('/:id', getEvent)
+// GET a single Event
+router.get('/getEventsBySpeaker/:speakerId', getEventsBySpeaker)
 
 // POST a new Event
 router.post('/createEvent', createEvent)
