@@ -7,7 +7,9 @@ import EventsData from '../../Dummy Data/EventsData'
 //Import Table and Navigation properties
 import Table from 'react-bootstrap/Table'
 import NavLink from 'react-bootstrap/esm/NavLink'
-import { Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap"
+import { Nav } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 // Import Icons
 import { FaSearchPlus } from 'react-icons/fa'
@@ -68,6 +70,9 @@ export const ListOfEvents = () => {
           {ListOfEvents}
         </tbody>
       </Table>
+      <Nav.Link className='list-button' href="/NewEvent">
+        <Button >Create a New Event</Button>
+      </Nav.Link>
 
       {/* Creates the popup that contains specific event details */}
       {singleEventData && (
