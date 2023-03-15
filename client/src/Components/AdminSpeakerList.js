@@ -19,7 +19,7 @@ export const SpeakerList = () => {
   );
 
   return (
-    <div>
+    <div id="title-table-block">
       <h1>Registered Speakers</h1>
       {/*Creates Table header and then inserts Data from DB into Table body */}
       <Table striped>
@@ -35,8 +35,8 @@ export const SpeakerList = () => {
           {ListOfSpeakers}
         </tbody>
       </Table>
-      <Nav.Link href="/profileedit">
-        <Button>Register New Speakers</Button>
+      <Nav.Link className="list-button" href="/profileedit">
+        <Button >Register a New Speaker</Button>
       </Nav.Link>
     </div>
   );
