@@ -12,6 +12,7 @@ import { Modal } from "react-bootstrap";
 // Import Icons
 import { FaSearchPlus } from 'react-icons/fa'
 import { AiFillDelete } from 'react-icons/ai'
+import { MdOutlineDataSaverOff } from 'react-icons/md'
 
 export const ListOfEvents = () => {
   //Handles the visibility of EventDetails Popup
@@ -29,10 +30,10 @@ export const ListOfEvents = () => {
   //Maps over all the event data and inserts it into the body of the table
   const ListOfEvents = EventsData.map((event) =>
     <tr>
-      <td>{event.speaker}</td>
-      <td>{event.eventName}</td>
-      <td>{event.auditoriumSize}</td>
-      <td>{event.location}</td>
+      <td className='eventList-item'>{event.speaker}</td>
+      <td className='eventList-item'>{event.eventName}</td>
+      <td className='eventList-item'>{event.auditoriumSize}</td>
+      <td className='eventList-item'>{event.location}</td>
       <td>
         {/* These are the clickable icons to open popup with detials of a single event
              and to Delete the entry */}
@@ -41,6 +42,9 @@ export const ListOfEvents = () => {
         </NavLink>
         <NavLink className='AllEvents-Actions'>
           <AiFillDelete id='deleteIcon' />
+        </NavLink>
+        <NavLink href='/Report'>
+          <MdOutlineDataSaverOff id='reportIcon' />
         </NavLink>
       </td>
     </tr>
