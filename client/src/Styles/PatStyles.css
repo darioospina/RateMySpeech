@@ -29,9 +29,23 @@
     width: 80%;
 }
 
+#moreInfoIcon
+{
+    color: #FFC000;
+}
+
 #deleteIcon {
     color: red;
+}
 
+#reportIcon
+{
+    color: green;
+}
+
+.eventList-item
+{
+    vertical-align: middle;
 }
 
 /* UpcomingEvents.js */
