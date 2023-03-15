@@ -15,11 +15,6 @@ export const MainMenu = () => {
                         <a className='dashboardLink' href='/profiledetails'>
                             My Profile</a>
                     </ListGroup.Item>
-                    <ListGroup.Item>
-                        <a className='dashboardLink' href='/Report'>
-                            My Scores
-                        </a>
-                    </ListGroup.Item>
 
                     {/* If user is a speaker, display another button */}
                     {(user_Role == 'speaker') && (
