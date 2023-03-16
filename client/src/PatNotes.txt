@@ -1,8 +1,11 @@
 
 - Update ListOfEvents.js, UpcomingEvents.js to pull from database
-- About Us page 
 
-- remove my scores button from main memu
+AboutUs page
+    - Insert Jeff Info
+    - insert simranjit Info
+
+
 
 ListOfEvents.js
     - make delete button work
@@ -15,8 +18,10 @@ GENERAL OOPSIE NOTES
 
 COMPLETED
 Mar.17 - Check in
-    - add event list straight to Dashboard
-    - Add reports button to each event listing
+    Reformatted Dashboard.js
+        - add event list straight to Dashboard
+        - Add reports button to each event listing
+        - removed MainMenu widget
 
 Mar.10 - Check in
     - ProfileDetails.js updated and styled
