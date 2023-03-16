@@ -153,16 +153,8 @@
 }
 
 /* LandingPage.js */
-#pageTitle {
-    text-align: center;
-}
-
-#pageSubTitle {
-    text-align: center;
-}
-
 .carousel-caption {
-    background-color: rgba(60, 60, 60, 0.4);
+    background-color: rgba(60, 60, 60, 0.8);
     color: rgb(237, 237, 237) !important;
     position: absolute;
     top: 50%;
