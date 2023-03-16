@@ -71,7 +71,6 @@ export const Questionnaire = () => {
 
   return (
     <div className="Questionnaire">
-      <h3 style={{textAlign:'center'}}>Questionnaire ID: {questionnaireId}</h3>
       <Form id='loginComp' style={{width: "100%", height: "50vh"}}>
       <Carousel 
         activeIndex={index} 

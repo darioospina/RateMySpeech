@@ -1,3 +1,7 @@
+/*
+Description:            This file contains the controller for all the APIs related to the Answers
+Author:                 Dario Ospina
+*/
 import Answers from '../models/answersModel.js'
 import mongoose from 'mongoose'
 
@@ -12,6 +16,7 @@ export const getAnswers = (req, res) => {
         console.log(err))
 }
 
+// This module gets all the Answers for One Questionnaire
 export const getAnswersByQuestionnaire = (req, res) => {
     const QuestionnaireId = req.params.questionnaireId 
 
