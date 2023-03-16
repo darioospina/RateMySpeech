@@ -23,8 +23,7 @@
     width: 200px;
 }
 
-.list-button
-{
+.list-button {
     text-align: center;
 }
 
@@ -34,8 +33,7 @@
     width: 90%;
 }
 
-#moreInfoIcon
-{
+#moreInfoIcon {
     color: #FFC000;
 }
 
@@ -43,13 +41,11 @@
     color: red;
 }
 
-#reportIcon
-{
+#reportIcon {
     color: green;
 }
 
-.eventList-item
-{
+.eventList-item {
     vertical-align: middle;
 }
 
@@ -182,6 +178,38 @@
 
 #logIn-button {
     padding: 10px;
+}
+
+/* AboutUs.js */
+#titleText {
+    text-align: center;
+}
+
+#titleSubText {
+    text-align: center;
+}
+
+.memberCard {
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+.cardPair {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.cardName {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.cardDesc {
+    font-size: 20px;
 }
 
 nav {
