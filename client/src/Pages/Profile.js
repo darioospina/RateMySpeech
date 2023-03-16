@@ -14,7 +14,7 @@ export const Profile = () => {
     const user_Phone = localStorage.getItem('phone')
     return (
         <div className='divContainer'>
-        <p>Profile</p>
+        <h1 style={{textAlign:"center", padding:"15px"}}>Your Profile</h1>
             <Container id='profileInfo'>
             <Row>
             <Col><img id='profileImage' alt="Profile Image" /></Col> {/*ADD IMAGE*/}
