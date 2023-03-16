@@ -2,9 +2,9 @@ import React from "react";
 
 //Import Images
 import DarioPic from "../Images/AboutUs Images/Picture_Dario.jpg"
-// import JeffPic from ""
+// import JeffPic from "../Images/AboutUs Images/Picture_Jeff.jpg"
 import PatPic from "../Images/AboutUs Images/Picture_Patryk.jpg"
-// import SimranjitPic from ""
+import SimranjitPic from "../Images/AboutUs Images/Picture_Simranjit.jpg"
 import MohitaPic from "../Images/AboutUs Images/Picture_Mohita.jpg"
 
 export const AboutUs = () => {
@@ -51,12 +51,14 @@ export const AboutUs = () => {
 
                 {/* Simranjit S. */}
                 <div className="memberCard" style={{ float: "right" }}>
-                    <img src={DarioPic} alt="simranjit pic" style={{ height:"450px", width:"450px"}} />
+                    <img src={SimranjitPic} alt="simranjit pic" style={{ height:"450px", width:"500px"}} />
                     <p className="cardName">Simranjit S</p>
-                    <p className="cardDesc">Software developer with a strong foundation in HTML, CSS, JavaScript, ReactJS,
-                        C# / .NET, SQL, MongoDB, WordPress, and Shopify. My prior experience as a finance
-                        professional has given me valuable insights, but my passion for software development
-                        is what drives me.</p>
+                    <p className="cardDesc">My name is Simranjit Singh, I am from Punjab. 
+                    My love Listening music and reading books specifically novels. I am currently 
+                    working as a DM at Walmart. I completed my high school from Punjab and then came 
+                    to Canada for my graduation. It was a great turn in my life as I left the place 
+                    where I lived for 18 years but It was an unimaginable experience for me. 
+                    Now its been two years since I've moved and I love being here.</p>
                 </div>
             </div>
 
