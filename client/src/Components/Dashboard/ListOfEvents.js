@@ -17,9 +17,9 @@ import { MdOutlineDataSaverOff } from 'react-icons/md'
 export const ListOfEvents = () => {
   //Info on Logged in User
   const user_ID = localStorage.getItem("id")
-  const [singleSpeakerData, setSingleSpeakerData] = useState([]);
-
+  
   //Import event data based on logged in user
+  const [singleSpeakerData, setSingleSpeakerData] = useState([]);
   useEffect(() => {
     //Uses ID of current user (user_ID) to pull events associated to them
     Axios.get(`${process.env.REACT_APP_API_URL}/eventsRoutes/getEventsBySpeaker/` + user_ID)
@@ -49,6 +49,18 @@ export const ListOfEvents = () => {
     setShow(true);
   }
 
+  //Deletes event listing
+  // const handleDelete = eventID => {
+  //   Axios.delete(`${process.env.REACT_APP_API_URL}eventsRoutes/deleteEventByID/` + eventID)
+  //     .then((res) => {
+  //       
+  //       }
+
+  //     }).catch((err) => {
+  //       console.log(err)
+  //     })
+  // }
+
   //Maps over all the event data and inserts it into the body of the table
   const ListOfEvents = singleSpeakerData.map((event) =>
     <tr>
@@ -61,7 +73,7 @@ export const ListOfEvents = () => {
         <NavLink className='AllEvents-Actions'>
           <FaSearchPlus id='moreInfoIcon' onClick={() => handleButtonClick(event.index)} />
         </NavLink>
-        <NavLink className='AllEvents-Actions'>
+        <NavLink className='AllEvents-Actions' onClick={() => handleDelete(event._id)}>
           <AiFillDelete id='deleteIcon' />
         </NavLink>
         <NavLink href='/Report'>
