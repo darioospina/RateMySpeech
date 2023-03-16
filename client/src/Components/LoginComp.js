@@ -2,15 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import { Navigate, useNavigate } from "react-router-dom";
 
-//Import Dummy Data
-import UserData from '../Dummy Data/UserData';
-
 // Import button and form from bootstrap
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-
-// Import Axios
-import Axios from 'axios'
 
 // Using Redux
 import { useDispatch } from 'react-redux';
