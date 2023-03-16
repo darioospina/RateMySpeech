@@ -16,19 +16,20 @@ export const Dashboard = () => {
             <h1 id='dashboard-title'>Welcome {user_Name}!</h1>
             <h3 id='dashboard-title'>Your Role: <b>{user_Role}</b> </h3>
             <div id='dashboard-container'>
-                <div class='dashboard-widget'>
-                    <MainMenu />
-                </div>
-                <div class='dashboard-widget'>
-                    <ListOfEvents />
-                </div>
-            </div>
 
-            {(user_Role == 'admin') && (
-                <div id='speakerListTable'>
-                    <SpeakerList />
-                </div>
-            )}
+                {/* If user is an admin, show SpeakerList */}
+                {(user_Role == 'admin') && (
+                    <div>
+                        <SpeakerList />
+                    </div>
+                )}
+                {/* If user is a speaker, show ListOfEvents */}
+                {(user_Role == 'speaker') && (
+                    <div>
+                        <ListOfEvents />
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
