@@ -1,12 +1,5 @@
-
-- Update ListOfEvents.js, SpeakerList.js to pull from database
-    - fix listofevents key names
-        - table
-        - popup
-
 AboutUs page
     - Insert Jeff Info
-    - insert simranjit Info
 
 ListOfEvents.js
     - make delete button work
@@ -14,8 +7,12 @@ ListOfEvents.js
 GENERAL OOPSIE NOTES
 - "Edit Your Info" in ProfileDetails.js takes you to a page that creates new user, instead 
     of update user
-- ProfileEdit.js just creates a new user
-- SignUp button in LandingPage.js redirects to ProfileEdit.js
+- ProfileEdit.js just creates a new user, maybe just rename
+- SignUp button in LandingPage.js redirects to ProfileEdit.js, instead of a seperate Register page
+- dates in database are weird format
+- need a way to promote speakers to admin
+- cleanse DB, only have a couple proper examples
+- you can create a new user with email in wrong format, but login wont work without proper format
 
 COMPLETED
 Mar.17 - Check in
@@ -23,7 +20,7 @@ Mar.17 - Check in
         - add event list straight to Dashboard
         - Add reports button to each event listing
         - removed MainMenu widget
-    - About Us page in progress
+    - Everything pulls from DB now
 
 Mar.10 - Check in
     - ProfileDetails.js updated and styled
