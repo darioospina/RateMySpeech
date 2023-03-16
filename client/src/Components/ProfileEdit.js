@@ -18,26 +18,26 @@ export const ProfileEdit = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
-  
+
   const handleSubmit = (e) => {
-      e.preventDefault();
-      Axios.post(`${process.env.REACT_APP_API_URL}/usersRoutes/createUser`, {
-        name: name,
-        email: email,
-        password: password,
-        phone: phone,
-        role: role
-      }).then((res) => {
-        console.log("New Speaker Created")
-        Navigate("/Dashboard")
-      }).catch((err) => {
-        console.log(err)
-      })
-  }  
+    e.preventDefault();
+    Axios.post(`${process.env.REACT_APP_API_URL}/usersRoutes/createUser`, {
+      name: name,
+      email: email,
+      password: password,
+      phone: phone,
+      role: role
+    }).then((res) => {
+      console.log("New Speaker Created")
+      Navigate("/Dashboard")
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
 
   return (
-    <div style={{margin: 'auto', textAlign:'center'}}>
-    <Form id='loginComp'>
+    <div style={{ margin: 'auto', textAlign: 'center' }}>
+      <Form id='loginComp'>
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" placeholder="Enter your Full Name" onChange={(event) => setName(event.target.value)} />
@@ -57,7 +57,7 @@ export const ProfileEdit = () => {
         <Button variant="warning" type="submit" onClick={handleSubmit}>
           Submit
         </Button>
-    </Form>
+      </Form>
     </div>
   );
 };

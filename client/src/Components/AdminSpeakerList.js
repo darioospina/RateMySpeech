@@ -9,7 +9,7 @@ export const SpeakerList = () => {
   const [users, setUsers] = useState([]);
 
   // Import user data from DB
-  useEffect(() =>  {
+  useEffect(() => {
     Axios.get(`${process.env.REACT_APP_API_URL}/usersRoutes/getAllUsers`)
       .then((res) => {
         if (res.data.length != 0) {
@@ -19,9 +19,9 @@ export const SpeakerList = () => {
       }).catch((err) => {
         console.log(err)
       })
-   })
+  })
 
-   //Map over data and render onto table
+  //Map over data and render onto table
   const ListOfSpeakers = users.map((event) =>
     <tr>
       <td>{event.name}</td>

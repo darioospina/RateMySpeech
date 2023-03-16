@@ -20,14 +20,13 @@ export const ListOfEvents = () => {
   const [singleSpeakerData, setSingleSpeakerData] = useState([]);
 
   //Import event data based on logged in user
-  useEffect(() =>  {
+  useEffect(() => {
     //Uses ID of current user (user_ID) to pull events associated to them
     Axios.get(`${process.env.REACT_APP_API_URL}/eventsRoutes/getEventsBySpeaker/` + user_ID)
       .then((res) => {
         if (res.data.length != 0) {
           //Added index to event entry, needed for Line 49 to operate
-          for (var i = 0; i < res.data.length; i++)
-          {
+          for (var i = 0; i < res.data.length; i++) {
             res.data[i].index = i;
           }
           setSingleSpeakerData(res.data);
@@ -36,7 +35,7 @@ export const ListOfEvents = () => {
       }).catch((err) => {
         console.log(err)
       })
-   })
+  })
 
   //Handles the visibility of EventDetails Popup
   const [show, setShow] = useState(false);
