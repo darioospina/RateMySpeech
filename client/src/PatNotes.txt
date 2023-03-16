@@ -1,11 +1,12 @@
 
-- Update ListOfEvents.js, UpcomingEvents.js to pull from database
+- Update ListOfEvents.js, SpeakerList.js to pull from database
+    - fix listofevents key names
+        - table
+        - popup
 
 AboutUs page
     - Insert Jeff Info
     - insert simranjit Info
-
-
 
 ListOfEvents.js
     - make delete button work
@@ -22,6 +23,7 @@ Mar.17 - Check in
         - add event list straight to Dashboard
         - Add reports button to each event listing
         - removed MainMenu widget
+        - about us page in progress
 
 Mar.10 - Check in
     - ProfileDetails.js updated and styled
