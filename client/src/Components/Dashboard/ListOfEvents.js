@@ -21,7 +21,8 @@ export const ListOfEvents = () => {
 
   //Import event data based on logged in user
   useEffect(() =>  {
-    Axios.get(`${process.env.REACT_APP_API_URL}/eventsRoutes/getEventsBySpeaker/64025ccc9f36f204c16b6d33`)
+    //Uses ID of current user (user_ID) to pull events associated to them
+    Axios.get(`${process.env.REACT_APP_API_URL}/eventsRoutes/getEventsBySpeaker/` + user_ID)
       .then((res) => {
         if (res.data.length != 0) {
           //Added index to event entry, needed for Line 49 to operate
@@ -30,7 +31,6 @@ export const ListOfEvents = () => {
             res.data[i].index = i;
           }
           setSingleSpeakerData(res.data);
-          //setData(Array.from(res.data));
         }
 
       }).catch((err) => {
