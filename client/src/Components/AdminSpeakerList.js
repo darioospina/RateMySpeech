@@ -1,20 +1,33 @@
-import React from "react";
-
-//Import DummyData for users
-import UserData from "../Dummy Data/UserData";
+import React, { useEffect, useState } from "react";
+import Axios from "axios";
 
 //Import Table and Nav
 import Table from 'react-bootstrap/Table'
 import { Button, Nav } from "react-bootstrap";
 
 export const SpeakerList = () => {
+  const [users, setUsers] = useState([]);
 
-  const ListOfSpeakers = UserData.map((event) =>
+  // Import user data from DB
+  useEffect(() =>  {
+    Axios.get(`${process.env.REACT_APP_API_URL}/usersRoutes/getAllUsers`)
+      .then((res) => {
+        if (res.data.length != 0) {
+          setUsers(res.data)
+        }
+
+      }).catch((err) => {
+        console.log(err)
+      })
+   })
+
+   //Map over data and render onto table
+  const ListOfSpeakers = users.map((event) =>
     <tr>
       <td>{event.name}</td>
       <td>{event.role}</td>
       <td>{event.email}</td>
-      <td>{event.avescore}</td>
+      <td>{event.phone}</td>
     </tr>
   );
 
