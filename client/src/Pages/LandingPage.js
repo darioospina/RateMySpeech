@@ -3,8 +3,6 @@ import { Carousel, Button } from 'react-bootstrap';
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs';
 
 //Import react-bootstrap components
-import Stack from 'react-bootstrap/Stack';
-import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom'
 
 //Import Images
