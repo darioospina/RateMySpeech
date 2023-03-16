@@ -14,6 +14,8 @@ import { FaSearchPlus } from 'react-icons/fa'
 import { AiFillDelete } from 'react-icons/ai'
 import { MdOutlineDataSaverOff } from 'react-icons/md'
 
+import Axios from 'axios'
+
 export const ListOfEvents = () => {
   //Info on Logged in User
   const user_ID = localStorage.getItem("id")
@@ -40,6 +42,7 @@ export const ListOfEvents = () => {
 
   //Handles the visibility of EventDetails Popup
   const [show, setShow] = useState(false);
+  const [listOfEvents, setListOfEvents] = useState("")
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -49,6 +52,16 @@ export const ListOfEvents = () => {
     setsingleEventData(singleSpeakerData[singleEventData_id]);
     setShow(true);
   }
+
+  // useEffect(() => {
+  //   Axios.get(`${process.env.REACT_APP_API_URL}/eventsRoutes/getEvents`)
+  //   .then((res) => {
+  //     console.log(res.data)
+  //     setListOfEvents(res.data)
+  //   }).catch((err) => {
+  //     console.log(err)
+  //   })
+  // }, [])
 
   //Maps over all the event data and inserts it into the body of the table
   const ListOfEvents = singleSpeakerData.map((event) =>

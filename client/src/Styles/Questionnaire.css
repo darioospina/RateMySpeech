@@ -1,8 +1,9 @@
 
 .carousel {
   margin: auto;
-  padding: 0 120px;
+  padding: 0 150px;
 }
+
 
 .carousel-item {
   padding: 40px 0 0 0;
@@ -10,14 +11,9 @@
   align-items: center;
 }
 
-.carousel-indicators {
+/* .carousel-indicators {
   top: 0; 
-}
-
-.carousel-control-prev, .carousel-control-next {
-  z-index: 1;
-}
-
+} */
 
 .carousel-inner {
   width: 100%;

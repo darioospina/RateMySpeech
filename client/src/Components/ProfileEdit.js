@@ -36,7 +36,7 @@ export const ProfileEdit = () => {
   }  
 
   return (
-    <div style={{margin: 'auto', textAlign:'center'}}>
+    <div style={{margin: '50px auto auto auto', textAlign:'center'}}>
     <Form id='loginComp'>
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Name</Form.Label>

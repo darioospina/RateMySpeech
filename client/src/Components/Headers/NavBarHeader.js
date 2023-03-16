@@ -34,7 +34,7 @@ export const NavBarHeader = () => {
   
     useEffect(() => {
         setQuestionnaireId(getPath.split('/')[getPath.split('/').length - 1])
-        if (location.pathname !== '/' && location.pathname !== '/Questionnaire' && !getPath.split('/').includes('questionnaire')) {  
+        if (location.pathname !== '/' && location.pathname !== '/Login' && location.pathname !== '/profileedit' && location.pathname !== '/Questionnaire' && !getPath.split('/').includes('questionnaire')) {  
             setShowHeader(true);
         } else {
             setShowHeader(false);
@@ -47,7 +47,7 @@ export const NavBarHeader = () => {
         <div className='divHeader'>
             <Navbar expand="lg">
                 <Container>
-                    <Navbar.Brand href="/home">
+                    <Navbar.Brand href="/">
                         <img src={Logo} className="header2-logo" alt="logo" />
                     </Navbar.Brand>
                     <Navbar id="basic-navbar-nav" >
