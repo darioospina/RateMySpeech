@@ -5,7 +5,7 @@ export const Footer = () => {
     return (
         <div className='divFooter'>
             <h4 style={{display:"inline-block"}}>RateMySpeech.co</h4>
-            <Link className="nav-link active" aria-current="page" to="/aboutus" style={{color:"blue"}}>
+            <Link className="nav-link active" aria-current="page" to="/AboutUs" style={{color:"blue"}}>
                 About Us
             </Link>
             <Link className="nav-link active" aria-current="page" to="https://www.parents2partners.org/" style={{color:"blue"}}>
