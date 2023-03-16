@@ -22,6 +22,7 @@ import { Report } from './Pages/Report'
 import { QRCodeComp } from './Components/CreateEvent/QRCodeComp'
 import { Questionnaire } from './Components/Questionnaire'
 import { LandingPage } from './Pages/LandingPage'
+import { AboutUs } from './Pages/AboutUs';
 
 function App() {
   return (
@@ -49,6 +50,8 @@ function App() {
         <Route path='/Dashboard' element={<Dashboard />} />
         <Route path='/Login' index element={<Login />} />   
         <Route path='/Report/:questionnaireId' element={<Report />} />
+        <Route path='/AboutUs' element={<AboutUs />} />
+
 
 
       </Routes>

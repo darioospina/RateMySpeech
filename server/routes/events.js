@@ -6,6 +6,7 @@ import express from 'express'
 import Events from '../models/eventsModel.js'
 import {createEvent, getEvents, getEventsBySpeaker, getEventByID} from '../controllers/eventsController.js'
 
+
 const router = express.Router()
 
 // PENDING - require auth for all course routes

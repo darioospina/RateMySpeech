@@ -1,14 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import _blank from 'react'
 
 export const Footer = () => {
     return (
         <div className='divFooter'>
             <h4 style={{display:"inline-block"}}>RateMySpeech.co</h4>
-            <Link className="nav-link active" aria-current="page" to="/aboutus" style={{color:"blue"}}>
+            <Link className="nav-link active" aria-current="page" to="/AboutUs" style={{color:"blue"}}>
                 About Us
             </Link>
-            <Link className="nav-link active" aria-current="page" to="https://www.parents2partners.org/" style={{color:"blue"}}>
+            <Link target={_blank} className="nav-link active" aria-current="page" to="https://www.parents2partners.org/" style={{color:"blue"}}>
                 Partners2Parents
             </Link>
             <p style={{fontSize: "14px", marginTop: "10px"}}>Copyright © 2023. All rights reserved. </p>

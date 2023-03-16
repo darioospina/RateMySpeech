@@ -8,9 +8,9 @@ import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom'
 
 //Import Images
-import Lecture from "../Images/lecture.png"
-import CompanyLogo from "../Images/parents2partners_logo.jpg"
-import Chart from "../Images/pieChart.jpg"
+import Lecture from "../Images/LandingPage Images/lecture.png"
+import CompanyLogo from "../Images/LandingPage Images/parents2partners_logo.jpg"
+import Chart from "../Images/LandingPage Images/pieChart.jpg"
 
 export const LandingPage = () => {
 

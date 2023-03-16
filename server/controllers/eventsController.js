@@ -16,10 +16,11 @@ export const getEvents = (req, res) => {
         console.log(err))
 }
 
+
 // This module fetch a particular record using EventID in the events collection in mongoDB
 export const getEventsBySpeaker = (req, res) => {
     const SpeakerId = req.params.speakerId
-
+    
     Events.find({ speakerId: SpeakerId })
     .then((result) => {
         console.log(result)
@@ -29,10 +30,11 @@ export const getEventsBySpeaker = (req, res) => {
         console.log(err))
 }
 
+
 // This module fetches the information from One Event based on the EvenId
 export const getEventByID = (req, res) => {
-    const EventId = req.params.eventId
-
+    const EventId = req.params.eventId\
+    
     Events.findOne({"_id": mongoose.Types.ObjectId(EventId)})
     .then((result) => {
         console.log(result)
@@ -101,6 +103,3 @@ Author:                 Jeff Martin Abayon
 //        res.send({message: 'Event not found'})
 //     })
 // })
-
-
-

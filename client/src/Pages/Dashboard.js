@@ -1,8 +1,6 @@
 import React from 'react'
 
 //Import Components
-import { MainMenu } from '../Components/Dashboard/MainMenu'
-import { UpcomingEvents } from '../Components/Dashboard/UpcomingEvents'
 import { SpeakerList } from '../Components/AdminSpeakerList'
 import { ListOfEvents } from '../Components/Dashboard/ListOfEvents'
 
@@ -25,11 +23,19 @@ export const Dashboard = () => {
                 </div>
             </div>
 
-            {(user_Role == 'admin') && (
-                <div id='speakerListTable'>
-                    <SpeakerList />
-                </div>
-            )}
+                {/* If user is an admin, show SpeakerList */}
+                {(user_Role == 'admin') && (
+                    <div>
+                        <SpeakerList />
+                    </div>
+                )}
+                {/* If user is a speaker, show ListOfEvents */}
+                {(user_Role == 'speaker') && (
+                    <div>
+                        <ListOfEvents />
+                    </div>
+                )}
+            </div>
         </div>
     )
 }

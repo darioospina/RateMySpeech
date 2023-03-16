@@ -23,15 +23,30 @@
     width: 200px;
 }
 
+.list-button {
+    text-align: center;
+}
+
 #title-table-block {
     text-align: center;
     margin: auto;
-    width: 80%;
+    width: 90%;
+}
+
+#moreInfoIcon {
+    color: #FFC000;
 }
 
 #deleteIcon {
     color: red;
+}
 
+#reportIcon {
+    color: green;
+}
+
+.eventList-item {
+    vertical-align: middle;
 }
 
 /* UpcomingEvents.js */
@@ -114,20 +129,6 @@
     padding: 50px;
 }
 
-.dashboard-widget {
-    width: 50%;
-    float: left;
-    text-align: center;
-    padding-bottom: 50px;
-}
-
-#speakerListTable {
-    width: 80%;
-    text-align: center;
-    padding: 50px;
-    margin: auto;
-}
-
 /* ProfileDetails.js */
 #profileInfo {
     text-align: center;
@@ -187,6 +188,38 @@
 #logIn-button {
     padding: 10px;
     margin: auto
+}
+
+/* AboutUs.js */
+#titleText {
+    text-align: center;
+}
+
+#titleSubText {
+    text-align: center;
+}
+
+.memberCard {
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+.cardPair {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.cardName {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.cardDesc {
+    font-size: 20px;
 }
 
 nav {
