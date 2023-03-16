@@ -13,7 +13,6 @@
 
 /* NavBarHeader.js */
 .me-auto {
-
     padding-left: 60%;
 }
 
@@ -25,6 +24,7 @@
 
 .list-button {
     text-align: center;
+    margin: 20px;
 }
 
 #title-table-block {
