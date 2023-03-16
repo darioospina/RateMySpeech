@@ -1,7 +1,6 @@
 import React from 'react'
 
 //Import Components
-import { MainMenu } from '../Components/Dashboard/MainMenu'
 import { SpeakerList } from '../Components/AdminSpeakerList'
 import { ListOfEvents } from '../Components/Dashboard/ListOfEvents'
 
