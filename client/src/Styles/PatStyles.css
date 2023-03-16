@@ -23,10 +23,15 @@
     width: 200px;
 }
 
+.list-button
+{
+    text-align: center;
+}
+
 #title-table-block {
     text-align: center;
     margin: auto;
-    width: 80%;
+    width: 90%;
 }
 
 #moreInfoIcon
@@ -126,20 +131,6 @@
 
 #dashboard-container {
     padding: 50px;
-}
-
-.dashboard-widget {
-    width: 50%;
-    float: left;
-    text-align: center;
-    padding-bottom: 50px;
-}
-
-#speakerListTable {
-    width: 80%;
-    text-align: center;
-    padding: 50px;
-    margin: auto;
 }
 
 /* ProfileDetails.js */
