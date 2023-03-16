@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // Import button and form from bootstrap
 import Button from 'react-bootstrap/Button';
@@ -29,7 +29,7 @@ export const ProfileEdit = () => {
         role: role
       }).then((res) => {
         console.log("New Speaker Created")
-        Navigate("../")
+        Navigate("/Dashboard")
       }).catch((err) => {
         console.log(err)
       })
