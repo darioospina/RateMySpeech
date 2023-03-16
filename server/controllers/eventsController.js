@@ -5,7 +5,7 @@ Author:                 Dario Ospina
 import Events from '../models/eventsModel.js'
 import mongoose from 'mongoose'
 
-//Module Description:     This module fetch all records in the events collection in mongoDB
+// This module fetch all records in the events collection in mongoDB
 export const getEvents = (req, res) => {
     Events.find()
     .then((result) => {
@@ -16,10 +16,11 @@ export const getEvents = (req, res) => {
         console.log(err))
 }
 
-//Module Description:     This module fetch a particular record using EventID in the events collection in mongoDB
+
+// This module fetch a particular record using EventID in the events collection in mongoDB
 export const getEventsBySpeaker = (req, res) => {
     const SpeakerId = req.params.speakerId
-
+    
     Events.find({ speakerId: SpeakerId })
     .then((result) => {
         console.log(result)
@@ -30,21 +31,22 @@ export const getEventsBySpeaker = (req, res) => {
 }
 
 
-// app.get("/getEvent/:id", (req, res) => {
-//     const id = req.params.id
+// This module fetches the information from One Event based on the EvenId
+export const getEventByID = (req, res) => {
+    const EventId = req.params.eventId\
+    
+    Events.findOne({"_id": mongoose.Types.ObjectId(EventId)})
+    .then((result) => {
+        console.log(result)
+        res.send(result)
+    })
+    .catch((err) => 
+        console.log(err))
+}
 
-//     Event.find({id: id})
-//     .then((result) => {
-//         console.log(result)
-//         res.send(result)
-//     })
-//     .catch((err) => 
-//         console.log(err))
-// })
 
 
-
-//Module Description:     This module inserts a record into events collection in mongoDB
+// This module inserts a record into events collection in mongoDB
 export const createEvent = (req, res) => {
     const newEvent = new Events({
         eventname: req.body.eventname,

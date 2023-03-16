@@ -7,7 +7,7 @@ export const MainHeader = () => {
     const location = useLocation();
   
     useEffect(() => {
-        if (location.pathname === '/') {
+        if (location.pathname === '/' || location.pathname === '/Login' || location.pathname === '/profileedit') {
             setShowHeader(true);
         } else {
             setShowHeader(false);

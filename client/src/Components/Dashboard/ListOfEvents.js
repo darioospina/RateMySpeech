@@ -14,6 +14,8 @@ import { FaSearchPlus } from 'react-icons/fa'
 import { AiFillDelete } from 'react-icons/ai'
 import { MdOutlineDataSaverOff } from 'react-icons/md'
 
+import Axios from 'axios'
+
 export const ListOfEvents = () => {
   //Info on Logged in User
   const user_ID = localStorage.getItem("id")
@@ -39,6 +41,7 @@ export const ListOfEvents = () => {
 
   //Handles the visibility of EventDetails Popup
   const [show, setShow] = useState(false);
+  const [listOfEvents, setListOfEvents] = useState("")
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
