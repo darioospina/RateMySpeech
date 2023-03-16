@@ -19,11 +19,11 @@ GENERAL OOPSIE NOTES
 
 COMPLETED
 Mar.17 - Check in
-    Reformatted Dashboard.js
+    - Reformatted Dashboard.js
         - add event list straight to Dashboard
         - Add reports button to each event listing
         - removed MainMenu widget
-        - about us page in progress
+    - About Us page in progress
 
 Mar.10 - Check in
     - ProfileDetails.js updated and styled
