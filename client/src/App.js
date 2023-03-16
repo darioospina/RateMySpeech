@@ -10,7 +10,7 @@ import { MainHeader } from './Components/Headers/MainHeader'
 import { AudienceHeader } from './Components/Headers/AudienceHeader';
 import { NavBarHeader } from './Components/Headers/NavBarHeader';
 import { Footer } from './Components/Footer'
-import { ProfileDetails } from './Components/ProfileDetails'
+import { Profile } from './Pages/Profile'
 import { ProfileEdit } from './Components/ProfileEdit'
 import { ListOfEvents } from './Components/Dashboard/ListOfEvents';
 
@@ -39,7 +39,7 @@ function App() {
         <Route path="/Questionnaire/:questionnaireId" element={<Questionnaire />} />
 
         {/* Profile Related Pages*/}
-        <Route path="/profiledetails" element={<ProfileDetails />} />
+        <Route path="/profiledetails" element={<Profile />} />
         <Route path="/profileedit" element={<ProfileEdit />} />
 
         {/* Event Related Pages */}
@@ -48,7 +48,7 @@ function App() {
         {/* General Pages*/}
         <Route path='/Dashboard' element={<Dashboard />} />
         <Route path='/Login' index element={<Login />} />   
-        <Route path='/Report' element={<Report />} />
+        <Route path='/Report/:questionnaireId' element={<Report />} />
 
 
       </Routes>

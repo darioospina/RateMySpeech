@@ -1,7 +1,7 @@
 import Answers from '../models/answersModel.js'
 import mongoose from 'mongoose'
 
-// Module Description:     This module fetch all records in the answers collection in mongoDB
+// This module fetch all records in the answers collection in mongoDB
 export const getAnswers = (req, res) => {
     Answers.find()
     .then((result) => {
@@ -12,7 +12,173 @@ export const getAnswers = (req, res) => {
         console.log(err))
 }
 
-// Module Description:     This module inserts a record into answers collection in mongoDB
+export const getAnswersByQuestionnaire = (req, res) => {
+    const QuestionnaireId = req.params.questionnaireId 
+
+    Answers.find({ questionsId: QuestionnaireId })
+    .then((result) => {
+      console.log(result)
+      res.send(result)
+    })
+    .catch((err) => 
+      console.log(err))
+}
+
+// This module collects the information and aggregates them so that it can be displayed in piecharts
+export const getReportInfo = (req, res) => {
+    const QuestionnaireId = req.params.questionnaireId
+
+    Answers
+    .aggregate([
+        {
+          $match: {
+            questionsId: mongoose.Types.ObjectId(QuestionnaireId)
+          }
+        },
+        {
+          $facet: {
+            answerOne: [
+              {
+                $match: {
+                  answerOne: { $exists: true }
+                }
+              },
+              {
+                $group: {
+                  _id: "$answerOne",
+                  count: { $sum: 1 }
+                }
+              }
+            ],
+            answerTwo: [
+              {
+                $match: {
+                  answerTwo: { $exists: true }
+                }
+              },
+              {
+                $group: {
+                  _id: "$answerTwo",
+                  count: { $sum: 1 }
+                }
+              }
+            ],
+            answerThree: [
+              {
+                $match: {
+                  answerThree: { $exists: true }
+                }
+              },
+              {
+                $group: {
+                  _id: "$answerThree",
+                  count: { $sum: 1 }
+                }
+              }
+            ],
+            answerFour: [
+              {
+                $match: {
+                  answerFour: { $exists: true }
+                }
+              },
+              {
+                $group: {
+                  _id: "$answerFour",
+                  count: { $sum: 1 }
+                }
+              }
+            ],
+            answerFive: [
+              {
+                $match: {
+                  answerFive: { $exists: true }
+                }
+              },
+              {
+                $group: {
+                  _id: "$answerFive",
+                  count: { $sum: 1 }
+                }
+              }
+            ],
+            answerSix: [
+              {
+                $match: {
+                  answerSix: { $exists: true }
+                }
+              },
+              {
+                $group: {
+                  _id: "$answerSix",
+                  count: { $sum: 1 }
+                }
+              }
+            ],
+            answerSeven: [
+              {
+                $match: {
+                  answerSeven: { $exists: true }
+                }
+              },
+              {
+                $group: {
+                  _id: "$answerSeven",
+                  count: { $sum: 1 }
+                }
+              }
+            ],
+            answerEight: [
+              {
+                $match: {
+                  answerSeven: { $exists: true }
+                }
+              },
+              {
+                $group: {
+                  _id: "$answerEight",
+                  count: { $sum: 1 }
+                }
+              }
+            ],
+            answerNine: [
+              {
+                $match: {
+                  answerNine: { $exists: true }
+                }
+              },
+              {
+                $group: {
+                  _id: "$answerNine",
+                  count: { $sum: 1 }
+                }
+              }
+            ],
+            answerTen: [
+              {
+                $match: {
+                  answerTen: { $exists: true }
+                }
+              },
+              {
+                $group: {
+                  _id: "$answerTen",
+                  count: { $sum: 1 }
+                }
+              }
+            ]
+          }
+        }
+      ])
+      .then((result) => {
+        console.log(result)
+        res.send(result)
+      })
+      .catch((err) => 
+        console.log(err))
+}
+
+// This module inserts a record into answers collection in mongoDB
 export const createAnswer = (req, res) => {
     const newAnswer = new Answers({
         attendeeName: req.body.attendeeName,
