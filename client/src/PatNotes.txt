@@ -13,6 +13,8 @@ GENERAL OOPSIE NOTES
 - need a way to promote speakers to admin
 - cleanse DB, only have a couple proper examples
 - you can create a new user with email in wrong format, but login wont work without proper format
+- reports button doesnt go to specific events report
+- if AboutUs page is visited from landing page, dashboard is accesible without prior login
 
 COMPLETED
 Mar.17 - Check in

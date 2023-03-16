@@ -14,12 +14,10 @@ import { FaSearchPlus } from 'react-icons/fa'
 import { AiFillDelete } from 'react-icons/ai'
 import { MdOutlineDataSaverOff } from 'react-icons/md'
 
-import Axios from 'axios'
-
 export const ListOfEvents = () => {
   //Info on Logged in User
   const user_ID = localStorage.getItem("id")
-  
+
   //Import event data based on logged in user
   const [singleSpeakerData, setSingleSpeakerData] = useState([]);
   useEffect(() => {
@@ -76,7 +74,7 @@ export const ListOfEvents = () => {
         <NavLink className='AllEvents-Actions'>
           <FaSearchPlus id='moreInfoIcon' onClick={() => handleButtonClick(event.index)} />
         </NavLink>
-        <NavLink className='AllEvents-Actions' onClick={() => handleDelete(event._id)}>
+        <NavLink className='AllEvents-Actions' >  {/*ADD onClick={() => handleDelete(event._id)} */}
           <AiFillDelete id='deleteIcon' />
         </NavLink>
         <NavLink href='/Report'>

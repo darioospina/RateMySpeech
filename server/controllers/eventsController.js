@@ -33,7 +33,7 @@ export const getEventsBySpeaker = (req, res) => {
 
 // This module fetches the information from One Event based on the EvenId
 export const getEventByID = (req, res) => {
-    const EventId = req.params.eventId\
+    const EventId = req.params.eventId;
     
     Events.findOne({"_id": mongoose.Types.ObjectId(EventId)})
     .then((result) => {
