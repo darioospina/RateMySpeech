@@ -14,8 +14,6 @@ import { FaSearchPlus } from 'react-icons/fa'
 import { AiFillDelete } from 'react-icons/ai'
 import { MdOutlineDataSaverOff } from 'react-icons/md'
 
-import Axios from 'axios'
-
 export const ListOfEvents = () => {
   //Info on Logged in User
   const user_ID = localStorage.getItem("id")
@@ -38,7 +36,7 @@ export const ListOfEvents = () => {
       }).catch((err) => {
         console.log(err)
       })
-   })
+   }, [])
 
   //Handles the visibility of EventDetails Popup
   const [show, setShow] = useState(false);
@@ -53,33 +51,22 @@ export const ListOfEvents = () => {
     setShow(true);
   }
 
-  // useEffect(() => {
-  //   Axios.get(`${process.env.REACT_APP_API_URL}/eventsRoutes/getEvents`)
-  //   .then((res) => {
-  //     console.log(res.data)
-  //     setListOfEvents(res.data)
-  //   }).catch((err) => {
-  //     console.log(err)
-  //   })
-  // }, [])
-
   //Maps over all the event data and inserts it into the body of the table
   const ListOfEvents = singleSpeakerData.map((event) =>
     <tr>
-      <td className='eventList-item'>{event.speaker}</td>
       <td className='eventList-item'>{event.eventname}</td>
       <td className='eventList-item'>{event.eventcapacity}</td>
       <td className='eventList-item'>{event.venue}</td>
       <td>
         {/* These are the clickable icons to open popup with detials of a single event
              and to Delete the entry */}
-        <NavLink className='AllEvents-Actions'>
+        <NavLink className='AllEvents-Actions' style={{display: 'inline-block'}}>
           <FaSearchPlus id='moreInfoIcon' onClick={() => handleButtonClick(event.index)} />
         </NavLink>
-        <NavLink className='AllEvents-Actions'>
+        <NavLink className='AllEvents-Actions' style={{display: 'inline-block'}}>
           <AiFillDelete id='deleteIcon' />
         </NavLink>
-        <NavLink href='/Report'>
+        <NavLink href='/Report' style={{display: 'inline-block'}}>
           <MdOutlineDataSaverOff id='reportIcon' />
         </NavLink>
       </td>
@@ -88,12 +75,12 @@ export const ListOfEvents = () => {
 
   return (
     <div id='title-table-block' >
-      <h1>All Your Events</h1>
+      <h4>All Your Events</h4>
+      
       {/*Creates Table header and then inserts Data from DB into Table body */}
       <Table striped>
         <thead>
           <tr>
-            <th>Speaker</th>
             <th>Event Name</th>
             <th>Auditorium Size</th>
             <th>Location</th>
@@ -104,9 +91,6 @@ export const ListOfEvents = () => {
           {ListOfEvents}
         </tbody>
       </Table>
-      <Nav.Link className='list-button' href="/NewEvent">
-        <Button >Create a New Event</Button>
-      </Nav.Link>
 
       {/* Creates the popup that contains specific event details */}
       {singleEventData && (
@@ -128,6 +112,10 @@ export const ListOfEvents = () => {
           </Modal.Body>
         </Modal>
       )}
+      
+      <Nav.Link className='list-button' href="/NewEvent">
+        <Button variant='warning'>Create a New Event</Button>
+      </Nav.Link>
     </div>
   )
 }
