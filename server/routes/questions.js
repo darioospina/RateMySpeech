@@ -5,7 +5,6 @@ Author:                 Dario Ospina / Jeff Martin Abayon
 import express from 'express'
 import Questions from '../models/questionsModel.js'
 import { createQuestionnaire, getQuestionaries, getQuestionsFromOneEvent, getQuestionnaireId} from '../controllers/questionsController.js'
-//getQuestions, getQuestion,updateQuestion, deleteQuestion
 
 const router = express.Router()
 

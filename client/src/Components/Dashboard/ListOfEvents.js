@@ -106,6 +106,8 @@ export const ListOfEvents = () => {
             <Modal.Title>{singleEventData.eventName}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
+            <h2>Questionnaire ID</h2>
+            <p>{singleEventData.questionnaireId}</p>
             <h2>Event ID</h2>
             <p>{singleEventData._id}</p>
             <h2>Event Date</h2>

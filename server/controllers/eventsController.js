@@ -70,23 +70,23 @@ export const createEvent = (req, res) => {
 // Update the QuestionnaireId for One Event once the Questionnaire is created
 export const updateQuestionnaireId = (req, res) => {
     const eventId = req.params.eventId;
-    const questionnnaireId = req.body.questionnnaireId;
-
-    Events.updateOne(
-        { "_id": mongoose.Types.ObjectId(eventId) },
-        {
-          $set: {
-            "questionsId": questionnnaireId
-          }
+    const questionnaireId = req.body.questionnaireId;
+  
+    return Events.updateOne(
+      { "_id": mongoose.Types.ObjectId(eventId) },
+      {
+        $set: {
+          "questionsId": questionnaireId
         }
-      )
-    .then((result) => {
+      }
+    )
+      .then((result) => {
         console.log(result)
         res.send(result)
-    })
-    .catch((err) => 
+      })
+      .catch((err) => 
         console.log(err))
-}
+  }
 
 
 // Module Description:     This module updates a record in the events collection in mongoDB
