@@ -35,6 +35,9 @@ const eventsSchema = new Schema({
 		ref: 'Users',
 		required: true
 	},
+	questionsId: {
+		type: String
+	},
 	createdAt: {
 	   type: Date,
 	   default: Date.now

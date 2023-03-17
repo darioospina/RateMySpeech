@@ -44,8 +44,6 @@ export const getEventByID = (req, res) => {
         console.log(err))
 }
 
-
-
 // This module inserts a record into events collection in mongoDB
 export const createEvent = (req, res) => {
     const newEvent = new Events({
@@ -55,7 +53,8 @@ export const createEvent = (req, res) => {
         venue: req.body.venue,
         eventcapacity: req.body.eventcapacity,
         qrcode: req.body.qrcode,
-        speakerId: req.body.speakerId 
+        speakerId: req.body.speakerId,
+        questionsId: req.body.questionsId
     });
     newEvent.save()
         .then(myevent => {
@@ -65,6 +64,28 @@ export const createEvent = (req, res) => {
         .catch((err) => {
             console.log(err)
         })
+}
+
+
+// Update the QuestionnaireId for One Event once the Questionnaire is created
+export const updateQuestionnaireId = (req, res) => {
+    const eventId = req.params.eventId;
+    const questionnnaireId = req.body.questionnnaireId;
+
+    Events.updateOne(
+        { "_id": mongoose.Types.ObjectId(eventId) },
+        {
+          $set: {
+            "questionsId": questionnnaireId
+          }
+        }
+      )
+    .then((result) => {
+        console.log(result)
+        res.send(result)
+    })
+    .catch((err) => 
+        console.log(err))
 }
 
 

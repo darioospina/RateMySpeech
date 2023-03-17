@@ -29,6 +29,19 @@ export const getQuestionsFromOneEvent = (req, res) => {
 }
 
 
+// Get the QuestionnaireId for an Specific Event
+export const getQuestionnaireId = (req, res) => {
+    const EventId = req.params.eventId
+
+    Questions.findOne({eventId: EventId})
+    .then((result) => {
+        console.log(result)
+        res.send(result)
+    })
+    .catch((err) => 
+        console.log(err))
+}
+
 // // Module Description:     This module fetch a particular question in the questions collection in mongoDB
 // app.get("/getQuestion/:id", (req, res) => {
 //     const id = req.params.id

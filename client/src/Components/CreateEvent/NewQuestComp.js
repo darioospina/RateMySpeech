@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Import button, form and InputGroup from bootstrap
 import {Form, Button, InputGroup} from 'react-bootstrap';
@@ -7,7 +7,7 @@ import {Form, Button, InputGroup} from 'react-bootstrap';
 // Import Axios
 import Axios from 'axios'
 
-export const NewQuestComp = ({setQuestionnaireId}) => {
+export const NewQuestComp = ({setQuestionnaireId, eventId}) => {
   const [questionOne, setQuestionOne] = useState("");
   const [questionTwo, setQuestionTwo] = useState("");
   const [questionThree, setQuestionThree] = useState("");
@@ -18,7 +18,16 @@ export const NewQuestComp = ({setQuestionnaireId}) => {
   const [questionEight, setQuestionEight] = useState("");
   const [questionNine, setQuestionNine] = useState("");
   const [questionTen, setQuestionTen] = useState("");
-  const [eventId, setEventId] = useState("64025cf99f36f204c16b6d36")
+
+  
+  const updateQuestionnaireId = (questId) => {
+    Axios.patch(`${process.env.REACT_APP_API_URL}/eventsRoutes/updateQuestionnaireId/${eventId}`, {
+      questionnaireId: questId
+    }).then((response) => {
+        console.log(response)
+        console.log("New QuestionaryId Updated")
+    })
+  }
   
   const handleSubmit = (e) => {
       e.preventDefault();
@@ -35,13 +44,14 @@ export const NewQuestComp = ({setQuestionnaireId}) => {
         questionTen: questionTen,
         eventId: eventId
       }).then((res) => {
-        console.log(res)
         setQuestionnaireId(res.data._id)
+        updateQuestionnaireId(res.data._id)
         console.log("New Questionary Created")
       }).catch((err) => {
         console.log(err)
       })
   }  
+
 
   return (
         <Form id='loginComp'>

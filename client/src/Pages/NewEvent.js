@@ -61,7 +61,7 @@ export const NewEvent = () => {
   }, questionnaireId)
 
   return (
-    <div style={{margin: 'auto', textAlign:'center'}}>
+    <div style={{margin: 'auto', textAlign:'center', margin: '40px 0 0 0'}}>
       <Tabs
           defaultActiveKey="step1"
           activeKey={activeKey}
@@ -74,7 +74,7 @@ export const NewEvent = () => {
           <NewEventComp setEventId={setEventId}/>
       </Tab>
       <Tab eventKey="step2" title="Step 2 - Create Questionnaire" disabled={activeKey !== 'step2'}>
-          <NewQuestComp setQuestionnaireId={setQuestionnaireId}/>
+          <NewQuestComp setQuestionnaireId={setQuestionnaireId} eventId={eventId}/>
       </Tab>
       <Tab eventKey="step3" title="Step 3 - QR Code" disabled={activeKey !== 'step3'}>
           <QRCodeComp eventId={eventId} questionnaireId={questionnaireId}/>

@@ -4,7 +4,7 @@ Author:                 Dario Ospina / Jeff Martin Abayon
 */
 import express from 'express'
 import Events from '../models/eventsModel.js'
-import {createEvent, getEvents, getEventsBySpeaker, getEventByID} from '../controllers/eventsController.js'
+import {createEvent, getEvents, getEventsBySpeaker, getEventByID, updateQuestionnaireId} from '../controllers/eventsController.js'
 
 
 const router = express.Router()
@@ -14,6 +14,9 @@ const router = express.Router()
 
 // GET all Events 
 router.get('/getEvents', getEvents)
+
+// UPDATE the QuestionnaireId for ONE Event
+router.patch('/updateQuestionnaireId/:eventId', updateQuestionnaireId)
 
 // GET all Past Events 
 //router.get('/', getPastEvents)

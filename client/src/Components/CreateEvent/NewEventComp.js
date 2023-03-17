@@ -16,6 +16,7 @@ export const NewEventComp = ({setEventId}) => {
   const [eventcapacity, setEventcapacity] = useState("");
   const [qrcode, setQrcode] = useState("");
   const [speakerId, setSpeakerId] = useState(localStorage.getItem('id'));
+  const [questionnaireId, setQuestionnaireId] = useState("questionaryNotCreated")
   
   const handleSubmit = (e) => {
       e.preventDefault();
@@ -26,11 +27,11 @@ export const NewEventComp = ({setEventId}) => {
         venue: venue,
         eventcapacity: eventcapacity,
         qrcode: qrcode,
-        speakerId: speakerId
+        speakerId: speakerId,
+        questionsId: questionnaireId
       }).then((res) => {
         setEventId(res.data._id)
         console.log("New Event Created")
-        localStorage.setItem('EventID',res.data._id)
       }).catch((err) => {
         console.log(err)
       })

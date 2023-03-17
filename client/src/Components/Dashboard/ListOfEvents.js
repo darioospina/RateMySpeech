@@ -12,7 +12,7 @@ import { Button } from 'react-bootstrap'
 // Import Icons
 import { FaSearchPlus } from 'react-icons/fa'
 import { AiFillDelete } from 'react-icons/ai'
-import { MdOutlineDataSaverOff } from 'react-icons/md'
+import { IoIosStats } from 'react-icons/io'
 
 export const ListOfEvents = () => {
   //Info on Logged in User
@@ -21,16 +21,15 @@ export const ListOfEvents = () => {
 
   //Import event data based on logged in user
   useEffect(() =>  {
-    Axios.get(`${process.env.REACT_APP_API_URL}/eventsRoutes/getEventsBySpeaker/64025ccc9f36f204c16b6d33`)
+    Axios.get(`${process.env.REACT_APP_API_URL}/eventsRoutes/getEventsBySpeaker/${user_ID}`)
       .then((res) => {
-        if (res.data.length != 0) {
+        if (res.data.length !== 0) {
           //Added index to event entry, needed for Line 49 to operate
           for (var i = 0; i < res.data.length; i++)
           {
             res.data[i].index = i;
           }
           setSingleSpeakerData(res.data);
-          //setData(Array.from(res.data));
         }
 
       }).catch((err) => {
@@ -54,21 +53,26 @@ export const ListOfEvents = () => {
   //Maps over all the event data and inserts it into the body of the table
   const ListOfEvents = singleSpeakerData.map((event) =>
     <tr>
+      <td className='eventList-item'>{event.questionsId}</td>
       <td className='eventList-item'>{event.eventname}</td>
-      <td className='eventList-item'>{event.eventcapacity}</td>
+      <td className='eventList-item'>{event.eventdate.substring(0, 10)}</td>
       <td className='eventList-item'>{event.venue}</td>
+      {/* These are the clickable icons to open popup with detials of a single event
+      and to Delete the entry */}
+      <td className='eventList-item'>
+          <NavLink className='AllEvents-Actions' style={{display: 'inline-block'}}>
+              <FaSearchPlus id='moreInfoIcon' onClick={() => handleButtonClick(event.index)} />
+          </NavLink>
+      </td>
+      <td className='eventList-item'>
+          <NavLink className='AllEvents-Actions' style={{display: 'inline-block'}}>
+              <AiFillDelete id='deleteIcon' />
+          </NavLink>
+      </td>
       <td>
-        {/* These are the clickable icons to open popup with detials of a single event
-             and to Delete the entry */}
-        <NavLink className='AllEvents-Actions' style={{display: 'inline-block'}}>
-          <FaSearchPlus id='moreInfoIcon' onClick={() => handleButtonClick(event.index)} />
-        </NavLink>
-        <NavLink className='AllEvents-Actions' style={{display: 'inline-block'}}>
-          <AiFillDelete id='deleteIcon' />
-        </NavLink>
-        <NavLink href='/Report' style={{display: 'inline-block'}}>
-          <MdOutlineDataSaverOff id='reportIcon' />
-        </NavLink>
+          <NavLink href={`/Report/${event.questionsId}`} style={{display: 'inline-block'}}>
+              <IoIosStats id='reportIcon' />
+          </NavLink>
       </td>
     </tr>
   );
@@ -81,10 +85,13 @@ export const ListOfEvents = () => {
       <Table striped>
         <thead>
           <tr>
+            <th>Questionnaire Id</th>
             <th>Event Name</th>
-            <th>Auditorium Size</th>
+            <th>Event Date</th>
             <th>Location</th>
-            <th>Actions</th>
+            <th>Details</th>
+            <th>Delete</th>
+            <th>Report</th>
           </tr>
         </thead>
         <tbody>
@@ -99,16 +106,16 @@ export const ListOfEvents = () => {
             <Modal.Title>{singleEventData.eventName}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
+            <h2>Event ID</h2>
+            <p>{singleEventData._id}</p>
             <h2>Event Date</h2>
-            <p>{singleEventData.eventdate}</p>
-            <h2>Speaker</h2>
-            <p>{singleEventData.speaker}</p>
+            <p>{singleEventData.eventdate.substring(0, 10)}</p>
             <h2>Description</h2>
             <p>{singleEventData.eventdesc}</p>
             <h2>Auditorium Size</h2>
-            <p>{singleEventData.auditoriumSize}</p>
+            <p>{singleEventData.eventcapacity}</p>
             <h2>Location</h2>
-            <p>{singleEventData.location}</p>
+            <p>{singleEventData.venue}</p>
           </Modal.Body>
         </Modal>
       )}
