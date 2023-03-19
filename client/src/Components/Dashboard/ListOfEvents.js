@@ -37,10 +37,19 @@ export const ListOfEvents = () => {
       })
   })
 
-//Deletes event listing
-const handleDelete = eventID => {
-  Axios.delete(`${process.env.REACT_APP_API_URL}eventsRoutes/deleteOneEvent/` + eventID)
-}
+  //Deletes event listing
+  const handleDelete = eventID => {
+    Axios.delete(`${process.env.REACT_APP_API_URL}/eventsRoutes/deleteOneEvent/` + eventID)
+      .then((res) => {
+        alert("Event Deleted Succesfully");
+        window.location.reload(true);
+
+      })
+      .catch((err) => {
+        console.log(err)
+        alert("Error Deleting Event");
+      })
+  }
 
   //Handles the visibility of EventDetails Popup
   const [show, setShow] = useState(false);
