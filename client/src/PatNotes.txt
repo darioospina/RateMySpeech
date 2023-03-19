@@ -1,8 +1,5 @@
 AboutUs page
-    - Insert Jeff Info
-
-ListOfEvents.js
-    - make delete button work
+    - Insert Jeff Info  
 
 GENERAL OOPSIE NOTES
 - "Edit Your Info" in ProfileDetails.js takes you to a page that creates new user, instead 
@@ -15,8 +12,13 @@ GENERAL OOPSIE NOTES
 - you can create a new user with email in wrong format, but login wont work without proper format
 - reports button doesnt go to specific events report
 - if AboutUs page is visited from landing page, dashboard is accesible without prior login
+- maybe merge all CSS files into one
 
 COMPLETED
+Mar.25 - Check in
+    - Delete button works on EventList.js
+    - 
+
 Mar.17 - Check in
     - Reformatted Dashboard.js
         - add event list straight to Dashboard
