@@ -50,18 +50,6 @@ export const ListOfEvents = () => {
     setShow(true);
   }
 
-  //Deletes event listing
-  // const handleDelete = eventID => {
-  //   Axios.delete(`${process.env.REACT_APP_API_URL}eventsRoutes/deleteEventByID/` + eventID)
-  //     .then((res) => {
-  //       
-  //       }
-
-  //     }).catch((err) => {
-  //       console.log(err)
-  //     })
-  // }
-
   //Maps over all the event data and inserts it into the body of the table
   const ListOfEvents = singleSpeakerData.map((event) =>
     <tr>
@@ -74,7 +62,7 @@ export const ListOfEvents = () => {
         <NavLink className='AllEvents-Actions'>
           <FaSearchPlus id='moreInfoIcon' onClick={() => handleButtonClick(event.index)} />
         </NavLink>
-        <NavLink className='AllEvents-Actions' >  {/*ADD onClick={() => handleDelete(event._id)} */}
+        <NavLink className='AllEvents-Actions'>
           <AiFillDelete id='deleteIcon' />
         </NavLink>
         <NavLink href='/Report'>
