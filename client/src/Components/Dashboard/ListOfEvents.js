@@ -37,6 +37,11 @@ export const ListOfEvents = () => {
       })
   })
 
+//Deletes event listing
+const handleDelete = eventID => {
+  Axios.delete(`${process.env.REACT_APP_API_URL}eventsRoutes/deleteOneEvent/` + eventID)
+}
+
   //Handles the visibility of EventDetails Popup
   const [show, setShow] = useState(false);
   const [listOfEvents, setListOfEvents] = useState("")
@@ -62,7 +67,7 @@ export const ListOfEvents = () => {
         <NavLink className='AllEvents-Actions'>
           <FaSearchPlus id='moreInfoIcon' onClick={() => handleButtonClick(event.index)} />
         </NavLink>
-        <NavLink className='AllEvents-Actions'>
+        <NavLink className='AllEvents-Actions' onClick={() => handleDelete(event._id)}>
           <AiFillDelete id='deleteIcon' />
         </NavLink>
         <NavLink href='/Report'>

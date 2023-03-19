@@ -4,7 +4,7 @@ Author:                 Dario Ospina / Jeff Martin Abayon
 */
 import express from 'express'
 import Events from '../models/eventsModel.js'
-import {createEvent, getEvents, getEventsBySpeaker, getEventByID} from '../controllers/eventsController.js'
+import {createEvent, getEvents, getEventsBySpeaker, getEventByID, deleteOneEvent} from '../controllers/eventsController.js'
 
 
 const router = express.Router()
@@ -30,10 +30,7 @@ router.get('/getEventByID/:eventId', getEventByID)
 // POST a new Event
 router.post('/createEvent', createEvent)
 
-// UPDATE Event
-//router.delete('/:id', updateEvent)
-
-// DELETE a Event
-//router.patch('/:id', deleteEvent)
+// DELETE one Event
+router.delete('/deleteOneEvent/:eventId', deleteOneEvent)
 
 export default router;

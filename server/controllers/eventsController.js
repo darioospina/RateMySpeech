@@ -67,6 +67,15 @@ export const createEvent = (req, res) => {
         })
 }
 
+export const deleteOneEvent = (req, res) => {
+    const eventId = req.params.eventId
+
+    Events.deleteOne({"_id": mongoose.Types.ObjectId(eventId)})
+    .then((result) => {
+        console.log(result)
+        res.send(`Event with ID ${eventId} successfully deleted`)
+    })
+    .catch((err) => console.log(err))}
 
 // Module Description:     This module updates a record in the events collection in mongoDB
 // app.patch("/deleteEvent/:id", (req, res) => {
