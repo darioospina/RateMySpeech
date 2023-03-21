@@ -78,33 +78,3 @@ export const createQuestionnaire = (req, res) => {
         .catch(err => console.log(err))
 }
 
-
-// //Module Description:     This module updates a record in the questions collection in mongoDB
-// app.patch("/updateQuestion/:id", (req, res) => {
-//     Question.findByIdAndUpdate(req.params._id, {
-//         _id: req.body._id 
-//     }, {
-//         new: true
-//     })
-//     .then((result) => {
-//         console.log(result)
-//         res.send(result)
-//     })
-//     .catch((err) => 
-//         console.log(err))
-// })
-
-// //Module Description:     This module updates a record in the questions collection in mongoDB
-// app.delete("/deleteQuestion/:id", (req, res) => {
-//     MyQuestions.findOneAndRemove({
-//        id: req.params.id,
-//     })
-//     .then((result) => {
-//        console.log(result)
-//        res.send({message: 'Question not found'})
-//     })
-//     .catch((err) => {
-//        console.log(err)
-//        res.send({message: 'Question not found'})
-//     })
-// })

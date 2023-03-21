@@ -17,17 +17,7 @@ router.get('/getQuestionsFromOneEvent/:questionsId', getQuestionsFromOneEvent)
 // GET QuestionnaireId from EventId
 router.get('/getQuestionnaireId/:eventId', getQuestionnaireId)
 
-// // GEt a single Question
-// router.get('/:id', getQuestion)
-
 // POST a new Question
 router.post('/createQuestionnaire', createQuestionnaire)
-
-// // UPDATE Question
-// router.delete('/:id', updateQuestion)
-
-// // DELETE a Question
-// router.patch('/:id', deleteQuestion)
-
 
 export default router;
