@@ -65,19 +65,19 @@ export const ListOfEvents = () => {
       {/* These are the clickable icons to open popup with detials of a single event
       and to Delete the entry */}
       <td className='eventList-item'>
-          <NavLink className='AllEvents-Actions' style={{display: 'inline-block'}}>
+          <Link to={'#'}className='AllEvents-Actions' style={{display: 'inline-block'}}>
               <FaSearchPlus id='moreInfoIcon' onClick={() => handleButtonClick(event.index)} />
-          </NavLink>
+          </Link>
       </td>
       <td className='eventList-item'>
-          <NavLink className='AllEvents-Actions' style={{display: 'inline-block'}}>
+          <Link to={'#'} className='AllEvents-Actions' style={{display: 'inline-block'}}>
               <AiFillDelete id='deleteIcon' />
-          </NavLink>
+          </Link>
       </td>
       <td>
-          <NavLink href={`/Report/${event.questionsId}`} style={{display: 'inline-block'}}>
+          <Link to={`/Report/${event.questionsId}`} style={{display: 'inline-block'}}>
               <IoIosStats id='reportIcon' />
-          </NavLink>
+          </Link>
       </td>
     </tr>
   );
@@ -87,7 +87,7 @@ export const ListOfEvents = () => {
       <h4>All Your Events</h4>
       
       {/*Creates Table header and then inserts Data from DB into Table body */}
-      <Table striped>
+      <Table responsive="sm">
         <thead>
           <tr>
             <th>Questionnaire Id</th>

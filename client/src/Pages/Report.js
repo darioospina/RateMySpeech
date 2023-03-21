@@ -12,16 +12,6 @@ import { PieChart } from 'react-minimal-pie-chart';
 import Table from 'react-bootstrap/Table';
 
 export const Report = () => {
-    // Creating a constructor for the PieChart
-    class PieChartData {
-        constructor(answerNum, title, value, color) {
-          this.answerNum = answerNum;
-          this.title = title;
-          this.value = value;
-          this.color = color;
-        }
-    }
-
     // Getting the QuestionnaireID
     const location = useLocation();
     const pathName = location.pathname.split('/')
@@ -162,7 +152,7 @@ export const Report = () => {
                  <th>Email</th>
                  <th>Phone</th>
                  {data && data.map((question, index) => (
-                    question.length > 1 &&
+                    (question.length >= 1 && Number.isInteger(parseInt(question[0].title))) >= 1 &&
                     <th key={index}>Q{index + 1}</th>
                  ))}
                  <th>Comments</th>
