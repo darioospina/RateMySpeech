@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import Axios from 'axios'
+import { Link } from 'react-router-dom'
 
 //Import Table and Navigation properties
 import Table from 'react-bootstrap/Table'
@@ -8,6 +9,9 @@ import NavLink from 'react-bootstrap/esm/NavLink'
 import { Modal } from "react-bootstrap"
 import { Nav } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
+
+// Import QR Component from qrcode library
+import { QRCodeCanvas } from "qrcode.react";
 
 // Import Icons
 import { FaSearchPlus } from 'react-icons/fa'
@@ -18,6 +22,7 @@ export const ListOfEvents = () => {
   //Info on Logged in User
   const user_ID = localStorage.getItem("id")
   const [singleSpeakerData, setSingleSpeakerData] = useState([]);
+
 
   //Import event data based on logged in user
   useEffect(() =>  {
@@ -106,8 +111,20 @@ export const ListOfEvents = () => {
             <Modal.Title>{singleEventData.eventName}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h2>Questionnaire ID</h2>
-            <p>{singleEventData.questionnaireId}</p>
+            <h2>QR Code</h2>
+            <p>
+              <QRCodeCanvas
+                id="qrCode"
+                value={`/questionnaire/${singleEventData.questionsId}`}
+                size={100}
+                bgColor={"#FFFFFF"}
+                level={"H"}
+              />
+              <br></br>
+              <Link target={'_blank'} to={`/questionnaire/${singleEventData.questionsId}`} style={{textDecoration: 'none'}}>
+                Open the Questionnaire
+              </Link>
+            </p>
             <h2>Event ID</h2>
             <p>{singleEventData._id}</p>
             <h2>Event Date</h2>

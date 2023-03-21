@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Components
 import { MainHeader } from './Components/Headers/MainHeader'
-import { AudienceHeader } from './Components/Headers/AudienceHeader';
 import { NavBarHeader } from './Components/Headers/NavBarHeader';
 import { Footer } from './Components/Footer'
 import { Profile } from './Pages/Profile'
@@ -23,11 +22,11 @@ import { QRCodeComp } from './Components/CreateEvent/QRCodeComp'
 import { Questionnaire } from './Components/Questionnaire'
 import { LandingPage } from './Pages/LandingPage'
 import { AboutUs } from './Pages/AboutUs';
+import { ThankYou } from './Pages/ThankYou';
 
 function App() {
   return (
     <Router>
-      <AudienceHeader />
       <NavBarHeader />
       <MainHeader />
       <Routes>      
@@ -51,6 +50,9 @@ function App() {
         <Route path='/Login' index element={<Login />} />   
         <Route path='/Report/:questionnaireId' element={<Report />} />
         <Route path='/AboutUs' element={<AboutUs />} />
+
+        
+        <Route path='/ThankYou' element={<ThankYou />} />
 
 
 

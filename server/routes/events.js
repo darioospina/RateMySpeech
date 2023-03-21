@@ -4,25 +4,16 @@ Author:                 Dario Ospina / Jeff Martin Abayon
 */
 import express from 'express'
 import Events from '../models/eventsModel.js'
-import {createEvent, getEvents, getEventsBySpeaker, getEventByID, updateQuestionnaireId} from '../controllers/eventsController.js'
-
+import {createEvent, getEvents, getEventsBySpeaker, getEventByID, updateQuestionnaireId, deleteOneEvent} from '../controllers/eventsController.js'
 
 const router = express.Router()
 
-// PENDING - require auth for all course routes
-// router.use(requireAuth)
 
 // GET all Events 
 router.get('/getEvents', getEvents)
 
 // UPDATE the QuestionnaireId for ONE Event
 router.patch('/updateQuestionnaireId/:eventId', updateQuestionnaireId)
-
-// GET all Past Events 
-//router.get('/', getPastEvents)
-
-// GET all FutureEvents 
-//router.get('/', getFutureEvents)
 
 // GET a single Event from SpeakerId
 router.get('/getEventsBySpeaker/:speakerId', getEventsBySpeaker)
@@ -33,10 +24,7 @@ router.get('/getEventByID/:eventId', getEventByID)
 // POST a new Event
 router.post('/createEvent', createEvent)
 
-// UPDATE Event
-//router.delete('/:id', updateEvent)
-
-// DELETE a Event
-//router.patch('/:id', deleteEvent)
+// DELETE one Event
+router.delete('/deleteOneEvent/:eventId', deleteOneEvent)
 
 export default router;

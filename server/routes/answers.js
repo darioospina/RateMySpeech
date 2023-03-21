@@ -20,13 +20,4 @@ router.get('/getAnswersByQuestionnaire/:questionnaireId', getAnswersByQuestionna
 // GET a report with the information from One Questionnaire
 router.get('/getReportInfo/:questionnaireId', getReportInfo)
 
-// // GET a single Answer
-// router.get('/:id', getAnswer)
-
-// // UPDATE Answer
-// router.delete('/:id', updateAnswer)
-
-// // DELETE a Answer
-// router.patch('/:id', deleteAnswer)
-
 export default router;

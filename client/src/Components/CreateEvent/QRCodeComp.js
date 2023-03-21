@@ -1,9 +1,8 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // CSS Style Sheet
 import '../../Styles/DOStyles.css'
-
 
 // Import QR Component from qrcode library
 import { QRCodeCanvas } from "qrcode.react";
@@ -15,7 +14,13 @@ import {AiFillPrinter, AiFillFilePdf, AiOutlineWhatsApp} from 'react-icons/ai'
 
 export const QRCodeComp = ({eventId, questionnaireId}) => {
 
-  const [url, setUrl] = useState("http://www.google.com");
+  const [url, setUrl] = useState("");
+
+  useEffect(() => {
+    console.log(questionnaireId)
+    setUrl(`/questionnaire/${questionnaireId}`)
+  }, [questionnaireId]);
+
 
   const qrcode = (
     <QRCodeCanvas

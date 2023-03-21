@@ -104,7 +104,7 @@ export const Report = () => {
             return {
               title: obj._id ? `${obj._id}` : `${key.slice(-1)}`,
               value: Math.round(obj.count / tabulatedData.length * 100),
-              color: '#' + Math.floor(Math.random() * 16777215).toString(16) // random color
+              color: '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0') // random color except white
             };
           });
           return subarray;
@@ -123,7 +123,7 @@ export const Report = () => {
             </div>
             <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
             {data && data.map((question, index) => (
-                question.length > 1 && 
+                (question.length >= 1 && Number.isInteger(parseInt(question[0].title))) && 
                 <div key={index} className="questionChart">
                     <div>
                     <h5 style={{textAlign: "center", marginBottom: "20px"}}>

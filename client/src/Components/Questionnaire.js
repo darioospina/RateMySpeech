@@ -6,12 +6,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/Questionnaire.css";
 import Form from 'react-bootstrap/Form';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import Axios from 'axios'
+
+// Import Bootstrap components
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+
 
 export const Questionnaire = () => {
   const [index, setIndex] = useState(0);
   const {questionnaireId} = useParams();
   const [questions, setQuestions] = useState("")
+  const [eventId, setEventId] = useState("")
+  const [eventInfo, setEventInfo] = useState("")
 
   // States for the Answers
   const [attendeeName, setAtendeeName] = useState("")
@@ -29,15 +39,29 @@ export const Questionnaire = () => {
   const [answerTen, setAnswerTen] = useState("")
   const [comments, setComments] = useState("")
 
+  const Navigate = useNavigate();
+
   useEffect(() => {
     Axios.get(`${process.env.REACT_APP_API_URL}/questionsRoutes/getQuestionsFromOneEvent/${questionnaireId}`)
     .then((res) => {
       console.log(res.data)
-      setQuestions(res.data)
+      setQuestions(res.data)  
+      setEventId(res.data.eventId)
     }).catch((err) => {
       console.log(err)
     })
   }, [])
+
+  useEffect(() => {
+    console.log(eventId)
+    Axios.get(`${process.env.REACT_APP_API_URL}/eventsRoutes/getEventByID/${eventId}`)
+    .then((res) => {
+      console.log(res.data)
+      setEventInfo(res.data)
+    }).catch((err) => {
+      console.log(err)
+    })
+  }, [questions])
 
   const handleSelect = (selectedIndex) => {
       setIndex(selectedIndex);
@@ -62,7 +86,7 @@ export const Questionnaire = () => {
         comments: comments,
         questionsId: questionnaireId
       }).then((res) => {
-        alert("Questionnarie submited. Thanks for your time and your feedback!")
+        Navigate("/ThankYou")
       }).catch((err) => {
         console.log(err)
       })
@@ -70,6 +94,22 @@ export const Questionnaire = () => {
 
 
   return (
+    <>
+    <div>
+    <Card style={{ width: '90%', margin: '20px auto', backgroundColor: 'white', opacity: 0.7}}>
+    <Card.Body>
+        <ListGroup variant="flush" style={{ backgroundColor: 'white', opacity: 1}}>
+            {eventInfo && 
+                <>
+                <ListGroup.Item><b>Event Name:</b> {eventInfo.eventname}</ListGroup.Item>
+                <ListGroup.Item><b>Venue:</b> {eventInfo.venue}</ListGroup.Item>
+                <ListGroup.Item><b>Event Date:</b> {eventInfo.eventdate.substring(0,10)}</ListGroup.Item> {/* {eventInfo.eventdate.substring(0, 10)} */}
+                </>
+            }
+        </ListGroup>
+    </Card.Body>
+    </Card>
+    </div>
     <div className="Questionnaire">
       <Form id='loginComp' style={{width: "100%", height: "50vh"}}>
       <Carousel 
@@ -222,5 +262,6 @@ export const Questionnaire = () => {
       </Form>
 
     </div>
+    </>
   );
 }

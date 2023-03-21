@@ -90,37 +90,13 @@ export const updateQuestionnaireId = (req, res) => {
 
 
 // Module Description:     This module updates a record in the events collection in mongoDB
-// app.patch("/deleteEvent/:id", (req, res) => {
-//     Event.findByIdAndUpdate(req.params._id, {
-//         _id: req.body._id 
-//     }, {
-//         new: true
-//     })
-//     .then((result) => {
-//         console.log(result)
-//         res.send(result)
-//     })
-//     .catch((err) => 
-//         console.log(err))
-// })
+export const deleteOneEvent = (req, res) => {
+    const eventId = req.params.eventId
 
-
-
-/*
-Module Name:            deleteEvent
-Module Description:     This module updates a record in the events collection in mongoDB
-Author:                 Jeff Martin Abayon
-*/ 
-// app.delete("/updateEvent/:id", (req, res) => {
-//     MyEvents.findOneAndRemove({
-//        id: req.params.id,
-//     })
-//     .then((result) => {
-//        console.log(result)
-//        res.send({message: 'Event not found'})
-//     })
-//     .catch((err) => {
-//        console.log(err)
-//        res.send({message: 'Event not found'})
-//     })
-// })
+    Events.deleteOne({"_id": mongoose.Types.ObjectId(eventId)})
+    .then((result) => {
+        console.log(result)
+        res.send(`Event with ID ${eventId} successfully deleted`)
+    })
+    .catch((err) => console.log(err))
+}
