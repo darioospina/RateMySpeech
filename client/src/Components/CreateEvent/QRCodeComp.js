@@ -10,10 +10,9 @@ import { QRCodeCanvas } from "qrcode.react";
 // Bootstrap components
 import Card from 'react-bootstrap/Card';
 import {TiArrowRightThick} from 'react-icons/ti'
-import {AiFillPrinter, AiFillFilePdf, AiOutlineWhatsApp} from 'react-icons/ai'
+import {AiFillPrinter, AiOutlineMail} from 'react-icons/ai'
 
 export const QRCodeComp = ({eventId, questionnaireId}) => {
-
   const [url, setUrl] = useState("");
 
   useEffect(() => {
@@ -21,6 +20,16 @@ export const QRCodeComp = ({eventId, questionnaireId}) => {
     setUrl(`/questionnaire/${questionnaireId}`)
   }, [questionnaireId]);
 
+  const handlePrintPage = () => {
+    window.print()
+  }
+
+  const handleSendEmail = () => {
+    const emailBody = `Check out this QR code: ${url}`;
+    const href = `mailto:?subject=QR Code&body=${emailBody}`;
+
+    window.location.href = href;
+  }
 
   const qrcode = (
     <QRCodeCanvas
@@ -39,9 +48,8 @@ export const QRCodeComp = ({eventId, questionnaireId}) => {
         <Card.Title className="cardTitle">
             <p style={{margin: "0", color: "#696969"}}>Share This QR Code with your Audience</p>
             <br/>
-            <AiFillFilePdf style={{ color: "#696969", fontSize: "60px", margin: "0 5px" }}/>
-            <AiFillPrinter style={{ color: "#696969", fontSize: "60px", margin: "0 5px" }}/>
-            <AiOutlineWhatsApp style={{ color: "#696969", fontSize: "60px", margin: "0 5px" }}/>
+            <a href="#" onClick={handlePrintPage}><AiFillPrinter style={{ color: "#003FFF", fontSize: "60px", margin: "0 5px", cursor: "pointer" }}/></a>
+            <a href="#" onClick={handleSendEmail}><AiOutlineMail style={{ color: "#696969", fontSize: "60px", margin: "0 5px", cursor: "pointer"}}/></a>
         </Card.Title>
         <div>
             <div style={{margin: 'auto', textAlign: 'center'}}>{qrcode}</div>
