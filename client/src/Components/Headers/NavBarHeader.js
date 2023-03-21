@@ -54,7 +54,7 @@ export const NavBarHeader = () => {
                         <Nav className="me-auto">
                             <Nav.Link href="/Dashboard">Dashboard <RiDashboardLine /> </Nav.Link>
                             <Nav.Link href="/profiledetails">My Profile <CgProfile /> </Nav.Link>
-                            <Nav.Link href="/"> Log-Out <MdLogout /></Nav.Link>
+                            <Nav.Link href="/" onClick={handleLogout}> Log-Out <MdLogout /></Nav.Link>
                         </Nav>
                     </Navbar>
                 </Container>
