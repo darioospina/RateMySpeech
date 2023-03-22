@@ -5,9 +5,11 @@ import { Navigate, useNavigate } from "react-router-dom";
 //Import Dummy Data
 import UserData from '../Dummy Data/UserData';
 
-// Import button and form from bootstrap
+// Import components from bootstrap
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Toast from 'react-bootstrap/Toast';
+import ToastContainer from 'react-bootstrap/ToastContainer';
 
 // Import Axios
 import Axios from 'axios'
@@ -21,6 +23,7 @@ export const Login = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [show, setShow] = useState(false);
 
 
   // Added temporary just for testing
@@ -32,14 +35,14 @@ export const Login = () => {
         Navigate('/Dashboard')
       } 
       else if(action && action.type == 'USER_NOT_FOUND') {
-        alert("User not found. Please try again.")
+        setShow(true)
       }
     });
   }
 
   return (
     <div id='LoginComp-Body'>
-    <Form id='loginComp' onSubmit={authenticateUser} style={{margin: '50px auto auto auto'}}>
+    <Form id='loginComp' style={{margin: '50px auto auto auto'}}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email Address</Form.Label>
         <Form.Control type="text" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} />
@@ -49,10 +52,22 @@ export const Login = () => {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
       </Form.Group>
-      <Button variant="warning" type="submit">
+      <Button variant="warning" type="submit" onClick={authenticateUser}>
         Submit
       </Button>
     </Form>
+    {show && 
+      <div>
+      <ToastContainer position="middle-center" className="p-3">
+        <Toast style={{margin: '10px auto'}} bg={'light'} onClose={() => setShow(false)} show={show} delay={5000} autohide>
+        <Toast.Header>
+          <strong className="me-auto">Error</strong>
+        </Toast.Header>
+        <Toast.Body>User Not Found. Please try again.</Toast.Body>
+      </Toast>
+      </ToastContainer>
+      </div>
+    }
     </div>
   );
 }
