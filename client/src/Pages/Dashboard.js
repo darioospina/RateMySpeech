@@ -10,22 +10,27 @@ export const Dashboard = () => {
     const user_Role = localStorage.getItem("role")
 
     return (
-        <div id='dashboard-body'>
-            <h1 id='dashboard-title'>Welcome {user_Name}!</h1>
-            <h3 id='dashboard-title'>Your Role: <b>{user_Role}</b> </h3>
+        // <div id='dashboard-body'>
+        //     <h1 id='dashboard-title'>Welcome {user_Name}!</h1>
+        //     <h3 id='dashboard-title'>Your Role: <b>{user_Role}</b> </h3>
 
-                {/* If user is an admin, show SpeakerList */}
-                {(user_Role == 'admin') && (
-                    <div>
-                        <SpeakerList />
-                    </div>
-                )}
-                {/* If user is a speaker, show ListOfEvents */}
-                {(user_Role == 'speaker') && (
-                    <div>
-                        <ListOfEvents />
-                    </div>
-                )}
-        </div>
+        //         {/* If user is an admin, show SpeakerList */}
+        //         {(user_Role == 'admin') && (
+        //             <div>
+        //                 <SpeakerList />
+        //             </div>
+        //         )}
+        //         {/* If user is a speaker, show ListOfEvents */}
+        //         {(user_Role == 'speaker') && (
+        //             <div>
+        //                 <ListOfEvents />
+        //             </div>
+        //         )}
+        // </div>
+        <>
+        <h1 id='dashboard-title'>Welcome {user_Name}!</h1>
+        <h3 id='dashboard-title'>Your Role: <b>{user_Role}</b> </h3>
+        <ListOfEvents />
+        </>
     )
 }

@@ -7,14 +7,10 @@ export const MainHeader = () => {
     const location = useLocation();
   
     useEffect(() => {
-        if (location.pathname === '/' || location.pathname === '/Login' || location.pathname === '/profileedit' || location.pathname === '/ThankYou' || location.pathname === '/AboutUs' ||  location.pathname.includes('/questionnaire') === true) {
-            if(localStorage.getItem('name') === null) {
-                setShowHeader(true);
-            }
-            else {
-                setShowHeader(false);
-            }
-        } else {
+        if(!("email" in localStorage) || location.pathname === '/Questionnaire' || location.pathname.split('/').includes('questionnaire')) {
+            setShowHeader(true);
+        }
+        else {
             setShowHeader(false);
         }
     }, [location.pathname]);

@@ -56,52 +56,54 @@ export const ListOfEvents = () => {
   }
 
   //Maps over all the event data and inserts it into the body of the table
-  const ListOfEvents = singleSpeakerData.map((event) =>
-    <tr>
-      <td className='eventList-item'>{event.questionsId}</td>
-      <td className='eventList-item'>{event.eventname}</td>
-      <td className='eventList-item'>{event.eventdate.substring(0, 10)}</td>
-      <td className='eventList-item'>{event.venue}</td>
-      {/* These are the clickable icons to open popup with detials of a single event
-      and to Delete the entry */}
-      <td className='eventList-item'>
-          <Link to={'#'}className='AllEvents-Actions' style={{display: 'inline-block'}}>
-              <FaSearchPlus id='moreInfoIcon' onClick={() => handleButtonClick(event.index)} />
-          </Link>
-      </td>
-      <td className='eventList-item'>
-          <Link to={'#'} className='AllEvents-Actions' style={{display: 'inline-block'}}>
-              <AiFillDelete id='deleteIcon' />
-          </Link>
-      </td>
-      <td>
-          <Link to={`/Report/${event.questionsId}`} style={{display: 'inline-block'}}>
-              <IoIosStats id='reportIcon' />
-          </Link>
-      </td>
-    </tr>
-  );
+  // const ListOfEvents = singleSpeakerData.map((event) =>
+
+  // );
 
   return (
     <div id='title-table-block' >
       <h4>All Your Events</h4>
       
       {/*Creates Table header and then inserts Data from DB into Table body */}
-      <Table responsive="sm">
+      <Table responsive="lg">
         <thead>
           <tr>
             <th>Questionnaire Id</th>
             <th>Event Name</th>
             <th>Event Date</th>
             <th>Location</th>
-            <th>Details</th>
-            <th>Delete</th>
-            <th>Report</th>
+            <th></th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
-        <tbody>
-          {ListOfEvents}
+        {singleSpeakerData && singleSpeakerData.map((event, index) => (
+        <tbody key={index}>
+            <tr>
+            <td className='eventList-item'>{event.questionsId}</td>
+            <td className='eventList-item'>{event.eventname}</td>
+            <td className='eventList-item'>{event.eventdate.substring(0, 10)}</td>
+            <td className='eventList-item'>{event.venue}</td>
+            {/* These are the clickable icons to open popup with detials of a single event
+            and to Delete the entry */}
+            <td className='eventList-item'>
+                <Link to={'#'}className='AllEvents-Actions' style={{display: 'inline-block'}}>
+                    <FaSearchPlus id='moreInfoIcon' onClick={() => handleButtonClick(event.index)} />
+                </Link>
+            </td>
+            <td className='eventList-item'>
+                <Link to={'#'} className='AllEvents-Actions' style={{display: 'inline-block'}}>
+                    <AiFillDelete id='deleteIcon' />
+                </Link>
+            </td>
+            <td>
+                <Link to={`/Report/${event.questionsId}`} style={{display: 'inline-block'}}>
+                    <IoIosStats id='reportIcon' />
+                </Link>
+            </td>
+          </tr>
         </tbody>
+        ))}
       </Table>
 
       {/* Creates the popup that contains specific event details */}

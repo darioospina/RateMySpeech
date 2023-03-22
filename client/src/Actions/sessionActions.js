@@ -30,9 +30,6 @@ export const login = credentials => dispatch => {
 
 export const logout = () => dispatch => {
   console.log("Checking if the dispatch is working")
-  localStorage.removeItem('id');
-  localStorage.removeItem('name');
-  localStorage.removeItem('email');
-  localStorage.removeItem('phone');
+  localStorage.clear()
   dispatch(setCurrentUser(null));
 };

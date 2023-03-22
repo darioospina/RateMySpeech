@@ -33,15 +33,14 @@ export const NavBarHeader = () => {
 
   
     useEffect(() => {
+        console.log("email" in localStorage)
+        console.log(location.pathname !== '/Questionnaire')
+        console.log(!getPath.split('/').includes('questionnaire'))
         setQuestionnaireId(getPath.split('/')[getPath.split('/').length - 1])
-        if (location.pathname !== '/' && location.pathname !== '/Login' && location.pathname !== '/ThankYou' && location.pathname !== '/profileedit' && location.pathname !== '/Questionnaire' && !getPath.split('/').includes('questionnaire')) {  
-            if(localStorage.getItem('name') !== null) {
-                setShowHeader(true);
-            }
-            else {
-                setShowHeader(false);
-            }
-        } else {
+        if("email" in localStorage && location.pathname !== '/Questionnaire' && !getPath.split('/').includes('questionnaire')) {
+            setShowHeader(true);
+        }
+        else {
             setShowHeader(false);
         }
     }, [location.pathname]);
