@@ -9,6 +9,7 @@ import Logo from '../../Images/logo.png'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 
 //Import Icons
 import { CgProfile } from 'react-icons/cg'
@@ -56,9 +57,9 @@ export const NavBarHeader = () => {
                     </Navbar.Brand>
                     <Navbar id="basic-navbar-nav" >
                         <Nav className="me-auto">
-                            <Nav.Link href="/Dashboard">Dashboard <RiDashboardLine /> </Nav.Link>
-                            <Nav.Link href="/profiledetails">My Profile <CgProfile /> </Nav.Link>
-                            <Nav.Link href="/" onClick={handleLogout}> Log-Out <MdLogout /></Nav.Link>
+                            <Link className='NavBarLink' to={"/Dashboard"}>Dashboard <RiDashboardLine /> </Link>
+                            <Link className='NavBarLink' to={"/profiledetails"}>My Profile <CgProfile /> </Link>
+                            <Link className='NavBarLink' to={"/"} onClick={handleLogout}> Log-Out <MdLogout /></Link>
                         </Nav>
                     </Navbar>
                 </Container>

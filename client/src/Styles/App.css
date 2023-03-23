@@ -54,6 +54,18 @@ body {
   align-items: center;
 }
 
+.NavBarLink {
+  text-decoration: none;
+  padding: 10px;
+  color: #6C6C6C;
+  border-top: 1px solid rgba(0, 0, 0, 0);  
+}
+
+.NavBarLink:hover {
+  color: black;
+  border-top: 1px solid black;
+}
+
 @media screen and (min-width: 768px) {
   .upcoming-events-container {
       flex-direction: row;

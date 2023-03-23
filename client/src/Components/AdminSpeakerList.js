@@ -35,9 +35,7 @@ export const SpeakerList = () => {
           {ListOfSpeakers}
         </tbody>
       </Table>
-      <Nav.Link className="list-button" href="/profileedit">
-        <Button >Register a New Speaker</Button>
-      </Nav.Link>
+        <Button href="/profileedit">Register a New Speaker</Button>
     </div>
   );
 };

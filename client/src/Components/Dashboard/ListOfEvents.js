@@ -55,10 +55,19 @@ export const ListOfEvents = () => {
     setShow(true);
   }
 
-  //Maps over all the event data and inserts it into the body of the table
-  // const ListOfEvents = singleSpeakerData.map((event) =>
+  //Deletes event listing
+  const handleDelete = eventID => {
+    Axios.delete(`${process.env.REACT_APP_API_URL}/eventsRoutes/deleteOneEvent/` + eventID)
+      .then((res) => {
+        alert("Event Deleted Succesfully");
+        window.location.reload(true);
 
-  // );
+      })
+      .catch((err) => {
+        console.log(err)
+        alert("Error Deleting Event");
+      })
+  }
 
   return (
     <div id='title-table-block' >
@@ -68,23 +77,19 @@ export const ListOfEvents = () => {
       <Table responsive="lg">
         <thead>
           <tr>
-            <th>Questionnaire Id</th>
+            <th></th>
+            <th></th>
+            <th></th>
             <th>Event Name</th>
             <th>Event Date</th>
             <th>Location</th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>Event ID</th>
           </tr>
         </thead>
         {singleSpeakerData && singleSpeakerData.map((event, index) => (
         <tbody key={index}>
             <tr>
-            <td className='eventList-item'>{event.questionsId}</td>
-            <td className='eventList-item'>{event.eventname}</td>
-            <td className='eventList-item'>{event.eventdate.substring(0, 10)}</td>
-            <td className='eventList-item'>{event.venue}</td>
-            {/* These are the clickable icons to open popup with detials of a single event
+                        {/* These are the clickable icons to open popup with detials of a single event
             and to Delete the entry */}
             <td className='eventList-item'>
                 <Link to={'#'}className='AllEvents-Actions' style={{display: 'inline-block'}}>
@@ -93,7 +98,7 @@ export const ListOfEvents = () => {
             </td>
             <td className='eventList-item'>
                 <Link to={'#'} className='AllEvents-Actions' style={{display: 'inline-block'}}>
-                    <AiFillDelete id='deleteIcon' />
+                    <AiFillDelete id='deleteIcon' onClick={() => handleDelete(event._id)} />
                 </Link>
             </td>
             <td>
@@ -101,6 +106,10 @@ export const ListOfEvents = () => {
                     <IoIosStats id='reportIcon' />
                 </Link>
             </td>
+            <td className='eventList-item'>{event.eventname}</td>
+            <td className='eventList-item'>{event.eventdate.substring(0, 10)}</td>
+            <td className='eventList-item'>{event.venue}</td>
+            <td className='eventList-item'>{event._id}</td>
           </tr>
         </tbody>
         ))}
@@ -140,10 +149,7 @@ export const ListOfEvents = () => {
           </Modal.Body>
         </Modal>
       )}
-      
-      <Nav.Link className='list-button' href="/NewEvent">
-        <Button variant='warning'>Create a New Event</Button>
-      </Nav.Link>
+        <Button variant='warning' href='/NewEvent'>Create a New Event</Button>
     </div>
   )
 }
