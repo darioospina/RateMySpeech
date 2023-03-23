@@ -39,7 +39,6 @@ export const Dashboard = () => {
         // </div>
         <>
         <h1 id='dashboard-title'>Welcome {user_Name}!</h1>
-        <h3 id='dashboard-title'>Your Role: <b>{user_Role}</b> </h3>
         <ToastContainer position="middle-end" className="p-3">
         <Toast style={{margin: '10px auto'}} bg={'light'} onClose={() => setShow(false)} show={show} delay={6000} autohide>
             <Toast.Header>

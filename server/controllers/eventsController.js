@@ -21,7 +21,7 @@ export const getEvents = (req, res) => {
 export const getEventsBySpeaker = (req, res) => {
     const SpeakerId = req.params.speakerId
     
-    Events.find({ speakerId: SpeakerId })
+    Events.find({ speakerId: SpeakerId }).sort({eventdate: -1})
     .then((result) => {
         console.log(result)
         res.send(result)

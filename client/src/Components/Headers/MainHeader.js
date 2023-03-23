@@ -7,7 +7,7 @@ export const MainHeader = () => {
     const location = useLocation();
   
     useEffect(() => {
-        if(!("email" in localStorage) || location.pathname === '/Questionnaire' || location.pathname.split('/').includes('questionnaire')) {
+        if(!("email" in localStorage) || location.pathname === '/Questionnaire' || location.pathname === '/ThankYou' || location.pathname.split('/').includes('questionnaire')) {
             setShowHeader(true);
         }
         else {

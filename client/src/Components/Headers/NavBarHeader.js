@@ -37,7 +37,7 @@ export const NavBarHeader = () => {
         console.log(location.pathname !== '/Questionnaire')
         console.log(!getPath.split('/').includes('questionnaire'))
         setQuestionnaireId(getPath.split('/')[getPath.split('/').length - 1])
-        if("email" in localStorage && location.pathname !== '/Questionnaire' && !getPath.split('/').includes('questionnaire')) {
+        if("email" in localStorage && location.pathname !== '/Questionnaire' && location.pathname !== '/ThankYou' && !getPath.split('/').includes('questionnaire')) {
             setShowHeader(true);
         }
         else {
@@ -49,7 +49,7 @@ export const NavBarHeader = () => {
 
     return (
         <div className='divHeader'>
-            <Navbar expand="lg">
+            <Navbar expand="sm">
                 <Container>
                     <Navbar.Brand href="/">
                         <img src={Logo} className="header2-logo" alt="logo" />
