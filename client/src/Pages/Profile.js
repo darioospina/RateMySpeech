@@ -16,7 +16,7 @@ export const Profile = () => {
     const user_Role = localStorage.getItem("role")
     const user_Phone = localStorage.getItem('phone')
     return (
-        <div style={{ background: 'rgb(255, 255, 255, 0.9)', boxShadow: '0px 0px 3px rgba(0, 0, 0, 0.2)', padding: '20px', width: '80%', margin: '20px auto' }}>
+        <div style={{ background: 'rgb(255, 255, 255, 0.9)', boxShadow: '0px 0px 3px rgba(0, 0, 0, 0.2)', padding: '20px', width: '80%', margin: '20px auto'}}>
         <Row className="justify-content-center">
           <Col sm={12} md={6}>
             <Card.Text>

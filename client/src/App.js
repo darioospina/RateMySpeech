@@ -53,6 +53,7 @@ function App() {
 
         
         <Route path='/ThankYou' element={<ThankYou />} />
+        <Route path='*' element={<div>Error 404 Page Not Found!</div>} />
 
 
 
